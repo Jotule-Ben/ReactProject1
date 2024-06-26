@@ -1,3 +1,11 @@
+li {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+}
+
 .footerContainer {
   background-color: #eeeeee;
   margin: 0;
@@ -23,4 +31,19 @@
 .media {
   display: flex;
   padding-left: 10px;
+}
+
+.footerLinks {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.footerLinks h3 {
+  font-size: 20px;
+}
+
+.footerLinks li {
+  font-size: 13px;
 }
