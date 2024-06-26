@@ -1,5 +1,14 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
 a {
   text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
 }
 
 li {
@@ -8,7 +17,10 @@ li {
 
 h3 {
   background-color: #005dab;
+  text-align: center;
+  padding: 15px;
 }
+
 h3 a {
   color: #fefefe;
   font-weight: 600;
@@ -17,6 +29,8 @@ h3 a {
 
 .navLinks {
   background-color: #eeeeee;
+  padding: 20px;
+  padding-right: 50px;
 }
 
 .navLinks a {
@@ -24,40 +38,119 @@ h3 a {
 }
 
 .navLinksFirstGroup {
-  padding-left: 50px;
+  padding-left: 300px;
+  padding-bottom: 20px;
+}
+
+.navLinksFirstGroup a {
+  font-size: 15px;
+}
+
+.navLinksFirstGroup ul {
   display: flex;
-  font-size: 17px;
+  justify-content: space-between;
 }
 
 .navLinkSecondGroup {
   display: flex;
+  justify-content: space-between;
+  align-items: center;
   font-size: 18px;
+  padding-left: 100px;
+}
+
+.inputGroup {
+  display: flex;
+}
+
+.navLinkSecondGroup img {
+  width: 13%;
+  height: 20%;
+}
+
+.navLinkSecondGroup input {
+  border: 1px solid blue;
+  border-right: none;
+  width: 530px;
+  padding: 13px 15px;
+}
+
+.navLinkSecondGroup button {
+  border: 1px solid blue;
+  border-left: none;
+}
+
+.navLinkSecondGroup ul {
+  display: flex;
+  font-size: 13px;
+}
+
+.navLinkSecondGroup li {
+  border-right: 1px solid gray;
+  padding: 10px;
+  height: 20px;
+}
+
+.navLinkSecondGroup li:last-of-type {
+  border-right: none;
 }
 
 .navLinkThirdGroup {
   background-color: #0073a6;
+  padding: 12px;
+  padding-left: 50px;
+  font-size: 15px;
+}
+
+.navLinkThirdGroup ul {
   display: flex;
-  padding: 5px 5px 15px 25px;
-  font-size: 18px;
+  justify-content: space-between;
+  width: 80%;
+}
+
+.navLinkThirdGroup a {
+  color: #fff;
+  font-weight: 500;
 }
 
 .navSecondGroup {
   background-color: #fafafa;
-  border-bottom: 1px solid #424242;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 1px 2px 0px;
+  padding: 20px;
+  padding-top: 10px;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex p {
+  font-size: 12px;
+  padding-bottom: 7px;
 }
 
 .secGroupFlex {
   display: flex;
   justify-content: space-between;
-  padding: 10px 8px 10px 8px;
+  width: 95%;
+  padding: 10px;
+}
+
+.secGroupFlex h4 {
+  font-size: 12px;
+}
+
+.navSecondGroupLink ul {
+  display: flex;
 }
 
 .navSecondGroupLink a {
   color: #0060a9;
-  font-size: 15px;
+  font-size: 14px;
 }
 
-.navSecondGroupLink p {
+.navSecondGroup p:nth-child(2) {
   color: #db4e81;
-  font-size: 15px;
+  font-size: 12px;
+  padding-left: 5px;
 }

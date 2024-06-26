@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { Form, InputGroup, Button } from "react-bootstrap";
 import "../css/nav.css";
 import costcologo from "../asset/costcoLogo.png";
 
@@ -49,8 +50,16 @@ const Navbar = () => {
         <div className="navLinkSecondGroup">
           <img src={costcologo} alt="Logo" />
           <div>
-            <input type="search" name="" id="" />
-            <i>search icon</i>
+            <InputGroup className="mb-3 inputGroup">
+              <Form.Control
+                placeholder="Search"
+                aria-label="Recipient's username"
+                aria-describedby="basic-addon2"
+              />
+              <Button variant="outline-secondary" id="button-addon2">
+                <img src="" alt="search icon" />
+              </Button>
+            </InputGroup>
           </div>
           <ul>
             <li>
@@ -119,33 +128,35 @@ const Navbar = () => {
 
       <div className="navSecondGroup">
         <div className="secGroupFlex">
-          <div>
+          <div className="flex">
             <div>
               <p>My Warehouse</p>
-              <h3>
+              <h4>
                 <span>
                   <img src="" alt="Location Icon" />
                 </span>
                 Seattle
-              </h3>
+              </h4>
             </div>
             <div>
               <p>Delivery Location</p>
-              <h3>
+              <h4>
                 <span>
                   <img src="" alt="Delivery Icon" />
                 </span>
                 98101
-              </h3>
+              </h4>
             </div>
           </div>
           <div className="navSecondGroupLink">
-            <li>
-              <Link>Lists /</Link>
-            </li>
-            <li>
-              <Link>Buy Again</Link>
-            </li>
+            <ul>
+              <li>
+                <Link>Lists /</Link>
+              </li>
+              <li>
+                <Link>Buy Again</Link>
+              </li>
+            </ul>
           </div>
         </div>
         <p>Closed: Open 10:00 AM Wednesday</p>

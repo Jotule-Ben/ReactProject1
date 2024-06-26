@@ -228,7 +228,43 @@ const Footer = () => {
           </div>
         </div>
 
-        <div></div>
+        <div>
+          <div>
+            <ul>
+              <li>
+                <Link>Site Map </Link>
+              </li>
+              <li>
+                <Link>Terms and Conditions </Link>
+              </li>
+              <li>
+                <Link>Your Privacy Rights</Link>
+              </li>
+              <li>
+                <Link>CA Notice</Link>
+              </li>
+              <li>
+                <Link>Cookie Settings</Link>
+              </li>
+              <li>
+                <Link>
+                  <img
+                    src=""
+                    alt="iconCalifornia Consumer Privacy Act (CCPA) Opt-Out Icon"
+                  />
+                  Your Privacy Choices
+                </Link>
+              </li>
+              <li>
+                <Link>Consumer Health Data </Link>
+              </li>
+              <li>
+                <Link>Feedback </Link>
+              </li>
+            </ul>
+          </div>
+          <div></div>
+        </div>
       </div>
     </>
   );
