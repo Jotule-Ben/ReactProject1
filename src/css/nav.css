@@ -1,0 +1,29 @@
+a {
+  text-decoration: none;
+}
+
+h3 {
+  background-color: #005dab;
+}
+h3 a {
+  color: #fefefe;
+  font-weight: 600;
+  font-size: 20px;
+}
+
+.navLinks {
+  background-color: #eeeeee;
+}
+
+.navLinks a {
+  color: #0060a9;
+}
+
+.navLinksFirstGroup {
+  display: flex;
+  font-size: 17px;
+}
+
+.navLinkSecondGroup {
+  display: flex;
+}
