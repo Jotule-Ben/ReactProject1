@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "../css/nav.css";
+import costcologo from "../asset/costcoLogo.png";
 
 const Navbar = () => {
   return (
@@ -46,7 +47,7 @@ const Navbar = () => {
           </ul>
         </div>
         <div className="navLinkSecondGroup">
-          <img src="" alt="Logo" />
+          <img src={costcologo} alt="Logo" />
           <div>
             <input type="search" name="" id="" />
             <i>search icon</i>
@@ -60,11 +61,94 @@ const Navbar = () => {
             </li>
             <li>
               <Link>
-                <span></span>Cart
+                <span>
+                  <img src="" alt="cart_icon" />
+                </span>
+                Cart
               </Link>
             </li>
           </ul>
         </div>
+      </div>
+
+      <div className="navLinkThirdGroup">
+        <ul>
+          <li>
+            <Link>
+              <span>
+                <img src="" alt="Humbuger Icon" />
+              </span>
+              Shop
+            </Link>
+          </li>
+          <li>
+            <Link>Grocery</Link>
+          </li>
+          <li>
+            <Link>Same-Day</Link>
+          </li>
+          <li>
+            <Link>Deals</Link>
+          </li>
+          <li>
+            <Link>Business Delivery</Link>
+          </li>
+          <li>
+            <Link>Optical</Link>
+          </li>
+          <li>
+            <Link>Pharmacy</Link>
+          </li>
+          <li>
+            <Link>Services</Link>
+          </li>
+          <li>
+            <Link>Photo</Link>
+          </li>
+          <li>
+            <Link>Travel</Link>
+          </li>
+          <li>
+            <Link>Membership</Link>
+          </li>
+          <li>
+            <Link>Location</Link>
+          </li>
+        </ul>
+      </div>
+
+      <div className="navSecondGroup">
+        <div className="secGroupFlex">
+          <div>
+            <div>
+              <p>My Warehouse</p>
+              <h3>
+                <span>
+                  <img src="" alt="Location Icon" />
+                </span>
+                Seattle
+              </h3>
+            </div>
+            <div>
+              <p>Delivery Location</p>
+              <h3>
+                <span>
+                  <img src="" alt="Delivery Icon" />
+                </span>
+                98101
+              </h3>
+            </div>
+          </div>
+          <div className="navSecondGroupLink">
+            <li>
+              <Link>Lists /</Link>
+            </li>
+            <li>
+              <Link>Buy Again</Link>
+            </li>
+          </div>
+        </div>
+        <p>Closed: Open 10:00 AM Wednesday</p>
       </div>
     </>
   );

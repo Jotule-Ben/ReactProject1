@@ -2,6 +2,10 @@ a {
   text-decoration: none;
 }
 
+li {
+  list-style-type: none;
+}
+
 h3 {
   background-color: #005dab;
 }
@@ -20,10 +24,40 @@ h3 a {
 }
 
 .navLinksFirstGroup {
+  padding-left: 50px;
   display: flex;
   font-size: 17px;
 }
 
 .navLinkSecondGroup {
   display: flex;
+  font-size: 18px;
+}
+
+.navLinkThirdGroup {
+  background-color: #0073a6;
+  display: flex;
+  padding: 5px 5px 15px 25px;
+  font-size: 18px;
+}
+
+.navSecondGroup {
+  background-color: #fafafa;
+  border-bottom: 1px solid #424242;
+}
+
+.secGroupFlex {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 8px 10px 8px;
+}
+
+.navSecondGroupLink a {
+  color: #0060a9;
+  font-size: 15px;
+}
+
+.navSecondGroupLink p {
+  color: #db4e81;
+  font-size: 15px;
 }
