@@ -5,7 +5,7 @@ import React from "react";
 // import AccountNavbar from "./components/AccountNavbar";
 // import AccountFooter from "./components/AccountFooter";
 // import SignUp from "./pages/SignUp";
-import Register from "./components/Register";
+import RegisterNew from "./pages/RegisterNew";
 
 function App() {
   return (
@@ -15,7 +15,7 @@ function App() {
       <AccountNavbar />
       <AccountFooter />
       <SignUp />*/}
-      <Register />
+      <RegisterNew />
     </div>
   );
 }
