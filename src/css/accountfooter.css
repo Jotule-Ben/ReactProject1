@@ -24,15 +24,20 @@
 .accountfooter ul {
   display: flex;
   justify-content: space-between;
-  width: 90%;
+  width: 100%;
 }
 
 .accountfooter .footerLinks {
-  max-width: 250px;
+  max-width: 270px;
   text-wrap: nowrap;
   margin: auto;
   border-bottom: none;
   text-align: center;
+  padding-bottom: 10px;
+}
+
+.accountfooter .footerLinks a {
+  color: gray;
 }
 
 .accountfooter .footerText {

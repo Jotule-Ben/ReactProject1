@@ -1,13 +1,10 @@
 import React from "react";
-import AccountNavbar from "../components/AccountNavbar";
-import AccountFooter from "../components/AccountFooter";
 import { Link } from "react-router-dom";
 import "../css/signup.css";
 
 const SignUp = () => {
   return (
     <>
-      <AccountNavbar />
       <div className="signUp">
         <h1>Sign In</h1>
 
@@ -30,7 +27,6 @@ const SignUp = () => {
           <button>Create Account</button>
         </div>
       </div>
-      <AccountFooter />
     </>
   );
 };
