@@ -38,13 +38,14 @@
 
 .signUp form a {
   font-size: 12px;
-  text-decoration: dotted;
+  border-bottom: 1px dotted blue;
+  text-decoration: none;
   color: blue;
-  padding-left: 25px;
+  margin-left: 25px;
 }
 
 .signUp form a:hover {
-  text-decoration: underline;
+  border-bottom: 1px solid blue;
 }
 
 .signUp .checkbox {
