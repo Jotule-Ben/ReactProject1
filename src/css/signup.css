@@ -1,0 +1,50 @@
+.signUp {
+  max-width: 800px;
+  margin: auto;
+}
+
+.signInForm {
+  padding: 25px;
+  border: 1px solid gray;
+}
+
+.signUp form input {
+  padding: 10px 15px;
+  width: 100%;
+}
+
+.signUp form a {
+  font-size: 12px;
+  text-decoration: dotted;
+  color: #45caff;
+  padding-left: 8px;
+}
+
+.signUp form span {
+  font-size: 12px;
+}
+
+.signUp form p {
+  font-size: 10px;
+}
+
+.signUp button {
+  width: 100%;
+  background-color: #eaeaea;
+  color: #fff;
+  padding: 15px;
+  text-align: center;
+}
+
+.signUp form button {
+  width: 100%;
+  background-color: #3071a9;
+  color: #fff;
+  padding: 15px;
+  text-align: center;
+}
+
+.signUp form {
+  border-bottom: 1px solid gray;
+  padding-bottom: 8px;
+}
