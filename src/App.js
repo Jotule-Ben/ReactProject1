@@ -4,7 +4,8 @@ import React from "react";
 // import Footer from "./components/Footer";
 // import AccountNavbar from "./components/AccountNavbar";
 // import AccountFooter from "./components/AccountFooter";
-import SignUp from "./pages/SignUp";
+// import SignUp from "./pages/SignUp";
+import Register from "./components/Register";
 
 function App() {
   return (
@@ -12,8 +13,9 @@ function App() {
       {/* <Navbar />
       <Footer /> 
       <AccountNavbar />
-      <AccountFooter />*/}
-      <SignUp />
+      <AccountFooter />
+      <SignUp />*/}
+      <Register />
     </div>
   );
 }

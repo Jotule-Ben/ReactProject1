@@ -1,0 +1,117 @@
+.register {
+  max-width: 430px;
+  margin: auto;
+  padding-top: 40px;
+  padding-bottom: 70px;
+}
+
+.registerForm {
+  padding: 25px;
+  border: 1px solid rgb(198, 198, 198);
+}
+
+.register h1 {
+  padding-bottom: 20px;
+  font-weight: 400;
+  font-size: 40px;
+}
+
+.register form input {
+  padding: 10px 15px;
+  width: 90%;
+  border: 1px solid black;
+  font-size: 18px;
+  border-radius: 5px;
+  margin-bottom: 8px;
+  margin-bottom: 20px;
+}
+
+.register form input:last-of-type {
+  width: 70%;
+  margin-bottom: 2px;
+}
+
+.register form input[type="checkbox"] {
+  padding: 0px;
+  width: 5%;
+  margin-top: 10px;
+  margin-bottom: 0px;
+}
+
+.register form a {
+  font-size: 12px;
+  border-bottom: 1px dotted blue;
+  text-decoration: none;
+  color: blue;
+}
+
+.register form a:nth-child(1) {
+  font-size: 14px;
+}
+
+.register form a:hover {
+  border-bottom: 1px solid blue;
+}
+
+.register .checkbox {
+  font-size: 13px;
+}
+
+.register form p {
+  font-size: 17px;
+  padding-bottom: 15px;
+  padding-top: 15px;
+}
+
+.register form a:nth-child(1) {
+  font-size: 17px;
+}
+
+.register button {
+  width: 100%;
+  background-color: #eaeaea;
+  color: #333;
+  padding: 15px;
+  text-align: center;
+  border: none;
+  cursor: pointer;
+}
+
+.register button:hover {
+  background-color: #c6c6c6;
+}
+
+.register form button {
+  width: 100%;
+  background-color: #3071a9;
+  color: #fff;
+  padding: 15px;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.register form button:hover {
+  background-color: #297ac0;
+}
+
+.register form {
+  border-bottom: 1px solid rgb(205, 205, 205);
+  margin-bottom: 30px;
+}
+
+.register h3 {
+  padding-bottom: 20px;
+  font-weight: normal;
+  font-size: 17px;
+}
+
+.register h3 a {
+  font-size: 17px;
+  border-bottom: 1px dotted blue;
+  text-decoration: none;
+  color: blue;
+}
+
+.register h3 a:hover {
+  border-bottom: 1px solid blue;
+}
