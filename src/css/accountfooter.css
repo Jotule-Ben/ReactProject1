@@ -1,0 +1,43 @@
+* {
+  margin: 0;
+  padding: 0px;
+}
+
+.accountfooter {
+  color: grey;
+  background-color: #eeeeee;
+  padding: 20px;
+}
+
+.accountfooter li {
+  list-style-type: none;
+}
+
+.accountfooter a {
+  text-decoration: none;
+}
+
+.accountfooter a:hover {
+  text-decoration: underline;
+}
+
+.accountfooter ul {
+  display: flex;
+  justify-content: space-between;
+  width: 90%;
+}
+
+.accountfooter .footerLinks {
+  max-width: 250px;
+  text-wrap: nowrap;
+  margin: auto;
+  border-bottom: none;
+  text-align: center;
+}
+
+.accountfooter .footerText {
+  max-width: 500px;
+  margin: auto;
+  border-bottom: none;
+  text-align: center;
+}
