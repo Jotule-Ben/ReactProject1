@@ -1,6 +1,7 @@
 import React from "react";
 import { Form, InputGroup, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import "../css/footer.css";
 
 const Footer = () => {
   return (
@@ -8,7 +9,7 @@ const Footer = () => {
       <div className="footerContainer">
         <div className="footerGroupOne">
           <div>
-            <h3>Customer Service</h3>
+            <h4>Customer Service</h4>
             <p>
               <span>
                 <img src="" alt="question mark icon" />
@@ -18,13 +19,12 @@ const Footer = () => {
           </div>
 
           <div>
-            <h3>Find a Warehouse</h3>
+            <h4>Find a Warehouse</h4>
             <div>
               {" "}
-              {/* <input type="search" placeholder="City, state or zip" /> */}
               <InputGroup className="mb-3">
                 <Form.Control
-                  placeholder="Recipient's username"
+                  placeholder="City, state or zip"
                   aria-label="Recipient's username"
                   aria-describedby="basic-addon2"
                 />
@@ -38,12 +38,11 @@ const Footer = () => {
           </div>
 
           <div>
-            <h3>Get Email Offers</h3>
+            <h4>Get Email Offers</h4>
             <div>
-              {/* <input type="email" placeholder="Enter your email" /> */}
               <InputGroup className="mb-3">
                 <Form.Control
-                  placeholder="Recipient's username"
+                  placeholder="Enter your email"
                   aria-label="Recipient's username"
                   aria-describedby="basic-addon2"
                 />
@@ -55,7 +54,7 @@ const Footer = () => {
           </div>
 
           <div>
-            <h3>Follow Us</h3>
+            <h4>Follow Us</h4>
             <div className="media">
               <img src="" alt="fb logo" />
               <img src="" alt="pin interest logo" />
@@ -64,7 +63,7 @@ const Footer = () => {
           </div>
 
           <div>
-            <h3>Get the Costco App</h3>
+            <h4>Get the Costco App</h4>
             <div>
               <img src="" alt="Costco logo" />
             </div>
@@ -73,7 +72,7 @@ const Footer = () => {
 
         <div className="footerLinks">
           <div>
-            <h3>About Us</h3>
+            <h4>About Us</h4>
             <ul>
               <li>
                 <Link>Charitable Contributions</Link>
@@ -113,7 +112,7 @@ const Footer = () => {
 
           <div>
             <div>
-              <h3>Membership </h3>
+              <h4>Membership </h4>
               <ul>
                 <li>
                   <Link>Join Now</Link>
@@ -132,9 +131,10 @@ const Footer = () => {
                 </li>
               </ul>
             </div>
-
+            <br />
+            <br />
             <div>
-              <h3>Vendors & Suppliers </h3>
+              <h4>Vendors & Suppliers </h4>
               <ul>
                 <li>
                   <Link>Supply Chain Disclosure</Link>
@@ -153,7 +153,7 @@ const Footer = () => {
           </div>
 
           <div>
-            <h3>Customer Service </h3>
+            <h4>Customer Service </h4>
             <ul>
               <li>
                 <Link>Costco Shop Card Balance </Link>
@@ -195,7 +195,7 @@ const Footer = () => {
           </div>
 
           <div>
-            <h3>Locations & Services </h3>
+            <h4>Locations & Services </h4>
             <ul>
               <li>
                 <Link>Find a Warehouse </Link>
@@ -228,8 +228,8 @@ const Footer = () => {
           </div>
         </div>
 
-        <div>
-          <div>
+        <div className="footerGroupTwo">
+          <div className="footerLinksTwo">
             <ul>
               <li>
                 <Link>Site Map </Link>
@@ -263,7 +263,12 @@ const Footer = () => {
               </li>
             </ul>
           </div>
-          <div></div>
+          <div className="footerLastSection">
+            <p>
+              &copy;1998 - 2024 Costco Wholesale Corporation.All rights
+              reserved.
+            </p>
+          </div>
         </div>
       </div>
     </>
