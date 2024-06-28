@@ -7,4 +7,5 @@
 .hero img {
   border-radius: 10px;
   width: 100%;
+  cursor: pointer;
 }
