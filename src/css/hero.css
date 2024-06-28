@@ -17,6 +17,7 @@
 
 .card img {
   width: 90%;
+  cursor: pointer;
 }
 
 .card1 p:first-of-type {
