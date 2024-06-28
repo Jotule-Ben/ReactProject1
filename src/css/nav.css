@@ -178,11 +178,6 @@ h3 a {
   padding-right: 4px;
 }
 
-.navbar {
-  overflow: hidden;
-  background-color: #333;
-}
-
 .dropdown {
   float: left;
   overflow: hidden;
@@ -226,4 +221,65 @@ h3 a {
 .column h6:hover {
   color: black;
   font-weight: 500;
+}
+
+.dropdown2 {
+  float: right;
+  overflow: hidden;
+}
+
+.dropdown-content2 {
+  display: none;
+  position: absolute;
+  width: 100%;
+  left: 0;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  transition: 0.5s;
+}
+
+.dropdown2:hover .dropdown-content2 {
+  display: block;
+}
+
+.column2 {
+  width: 14%;
+  text-wrap: nowrap;
+  padding: 10px;
+  background-color: #fff;
+  height: 360px;
+  margin-left: 1130px;
+}
+
+.column2 h6 {
+  font-size: 16px;
+  font-weight: normal;
+  width: 100%;
+  float: right;
+  color: #333;
+  padding: 2px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+  cursor: pointer;
+}
+
+.column2 a {
+  font-size: 16px;
+  font-weight: normal;
+  float: right;
+  color: blue;
+  padding: 2px;
+  line-height: 1.5;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+  cursor: pointer;
+  width: 100%;
+}
+
+.column2 a:hover {
+  color: blue;
+  font-weight: 400;
+  background-color: #e0e0e0;
 }

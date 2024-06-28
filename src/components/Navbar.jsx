@@ -65,10 +65,29 @@ const Navbar = () => {
             <li>
               <Link> Customer Service </Link>
             </li>
-            <li>
-              <Link>
+            <li className="dropdown2">
+              <Link className="dropbtn2">
                 {" "}
                 US <FaAngleDown />
+                <div class="dropdown-content2">
+                  <div class="row2">
+                    <div class="column2">
+                      <h6>Select country/region: </h6>
+                      <Link> United States </Link>
+                      <Link>Canada United Kingdom </Link>
+                      <Link>Mexico </Link>
+                      <Link>South Korea </Link>
+                      <Link>Taiwan </Link>
+                      <Link>Japan </Link>
+                      <Link>Australia </Link>
+                      <Link>Iceland </Link>
+                      <Link>France </Link>
+                      <Link>Spain </Link>
+                      <Link>New Zealand </Link>
+                      <Link>Sweden</Link>
+                    </div>
+                  </div>
+                </div>
               </Link>
             </li>
           </ul>
