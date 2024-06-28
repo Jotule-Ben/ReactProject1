@@ -40,13 +40,14 @@ a {
   border: 1px solid gray;
   border-right: none;
   width: 200px;
-  padding: 5px 10px;
+  padding: 7px 10px;
 }
 
 .footerGroupOne button {
   border: 1px solid gray;
   border-left: none;
-  padding: 5px;
+  padding: 6px;
+  padding-bottom: 7px;
 }
 
 .media {
@@ -93,4 +94,24 @@ a {
 .footerLastSection {
   color: gray;
   text-align: center;
+}
+
+.question {
+  background-color: #0060a9;
+  color: #fff;
+  padding: 5px;
+  border-radius: 70%;
+  margin: 2px;
+  font-size: 12px;
+}
+
+.gobtn {
+  background-color: #0060a9;
+  color: #fff;
+  padding: 8px !important;
+  border: none !important;
+}
+
+.footerSearch {
+  font-size: 13px;
 }

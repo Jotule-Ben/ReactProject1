@@ -2,6 +2,8 @@ import React from "react";
 import { Form, InputGroup, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import "../css/footer.css";
+import { FaQuestion } from "react-icons/fa6";
+import { FaSearch } from "react-icons/fa";
 
 const Footer = () => {
   return (
@@ -11,8 +13,8 @@ const Footer = () => {
           <div>
             <h4>Customer Service</h4>
             <p>
-              <span>
-                <img src="" alt="question mark icon" />
+              <span className="question">
+                <FaQuestion />
               </span>{" "}
               Get Help
             </p>
@@ -29,8 +31,8 @@ const Footer = () => {
                   aria-describedby="basic-addon2"
                 />
                 <Button variant="outline-secondary" id="button-addon2">
-                  <span>
-                    <img src="" alt="search icon" />
+                  <span className="footerSearch">
+                    <FaSearch />
                   </span>
                 </Button>
               </InputGroup>
@@ -46,7 +48,11 @@ const Footer = () => {
                   aria-label="Recipient's username"
                   aria-describedby="basic-addon2"
                 />
-                <Button variant="outline-secondary" id="button-addon2">
+                <Button
+                  variant="outline-secondary"
+                  id="button-addon2"
+                  className="gobtn"
+                >
                   Go
                 </Button>
               </InputGroup>
