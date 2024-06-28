@@ -1,21 +1,21 @@
 import React from "react";
 // import { Route, Router, Routes } from "react-router-dom";
-// import Navbar from "./components/Navbar";
+import Navbar from "./components/Navbar";
 // import Footer from "./components/Footer";
 // import AccountNavbar from "./components/AccountNavbar";
 // import AccountFooter from "./components/AccountFooter";
 // import SignUp from "./pages/SignUp";
-import RegisterNew from "./pages/RegisterNew";
+// import RegisterNew from "./pages/RegisterNew";
 
 function App() {
   return (
     <div>
-      {/* <Navbar />
-      <Footer /> 
+      <Navbar />
+      {/*<Footer /> 
       <AccountNavbar />
       <AccountFooter />
-      <SignUp />*/}
-      <RegisterNew />
+      <SignUp />
+      <RegisterNew />*/}
     </div>
   );
 }

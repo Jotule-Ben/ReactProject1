@@ -3,6 +3,13 @@ import { Link } from "react-router-dom";
 import { Form, InputGroup, Button } from "react-bootstrap";
 import "../css/nav.css";
 import costcologo from "../asset/costcoLogo.png";
+import {
+  FaAngleDown,
+  FaBox,
+  FaCartArrowDown,
+  FaLocationDot,
+} from "react-icons/fa6";
+import { FaHamburger, FaSearch } from "react-icons/fa";
 
 const Navbar = () => {
   return (
@@ -10,6 +17,27 @@ const Navbar = () => {
       <h3>
         <Link> Uber Two $50 eGift Cards $79.99 eDelivery</Link>
       </h3>
+
+      {/* <div class="navbar">
+        <a href="#home">Home</a>
+        <a href="#news">News</a>
+        <div class="dropdown">
+          <button class="dropbtn">
+            Dropdown
+            <i class="fa fa-caret-down"></i>
+          </button>
+          <div class="dropdown-content">
+            <div class="row">
+              <div class="column">
+                <a href="#">Link 1</a>
+                <a href="#">Link 2</a>
+                <a href="#">Link 3</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div> */}
+
       <div className="navLinks">
         <div className="navLinksFirstGroup">
           <ul>
@@ -38,12 +66,10 @@ const Navbar = () => {
               <Link> Customer Service </Link>
             </li>
             <li>
-              <Link> US </Link>
-            </li>
-            <li>
-              <i class="fa fa-angle-down" aria-hidden="true">
-                Angle Down
-              </i>
+              <Link>
+                {" "}
+                US <FaAngleDown />
+              </Link>
             </li>
           </ul>
         </div>
@@ -57,7 +83,9 @@ const Navbar = () => {
                 aria-describedby="basic-addon2"
               />
               <Button variant="outline-secondary" id="button-addon2">
-                <img src="" alt="search icon" />
+                <span className="search">
+                  <FaSearch />
+                </span>
               </Button>
             </InputGroup>
           </div>
@@ -70,8 +98,8 @@ const Navbar = () => {
             </li>
             <li>
               <Link>
-                <span>
-                  <img src="" alt="cart_icon" />
+                <span className="cart">
+                  <FaCartArrowDown />
                 </span>
                 Cart
               </Link>
@@ -82,13 +110,47 @@ const Navbar = () => {
 
       <div className="navLinkThirdGroup">
         <ul>
-          <li>
-            <Link>
+          <li className="dropdown">
+            <Link className="dropbtn">
               <span>
-                <img src="" alt="Humbuger Icon" />
+                <FaHamburger />
               </span>
               Shop
             </Link>
+
+            <div class="dropdown-content">
+              <div class="row">
+                <div class="column">
+                  <h6>Appliances </h6>
+                  <h6>Baby </h6>
+                  <h6>Beauty </h6>
+                  <h6>Clothing, Luggage & Handbags </h6>
+                  <h6>Computers </h6>
+                  <h6>Costco Direct </h6>
+                  <h6>Costco Next </h6>
+                  <h6>Electronics </h6>
+                  <h6>Floral & Gift Baskets </h6>
+                  <h6>Furniture </h6>
+                  <h6>
+                    Gift Cards & Tickets Grocery, Household Essentials & Pet
+                  </h6>
+                  <h6>Health & Personal Care </h6>
+                  <h6>Holiday & Seasonal </h6>
+                  <h6>Home & Installation Services</h6>
+                  <h6>Home & Kitchen </h6>
+                  <h6>Home Improvement </h6>
+                  <h6>Jewelry, Watches & Sunglasses </h6>
+                  <h6>Mattresses </h6>
+                  <h6>Office Products </h6>
+                  <h6>Patio, Lawn & Garden </h6>
+                  <h6>Special Events </h6>
+                  <h6>Sports & Fitness </h6>
+                  <h6>Tires & Auto </h6>
+                  <h6>Toys & Books </h6>
+                  <h6>View More Categories</h6>
+                </div>
+              </div>
+            </div>
           </li>
           <li>
             <Link>Grocery</Link>
@@ -132,17 +194,17 @@ const Navbar = () => {
             <div>
               <p>My Warehouse</p>
               <h4>
-                <span>
-                  <img src="" alt="Location Icon" />
+                <span className="location">
+                  <FaLocationDot />
                 </span>
                 Seattle
               </h4>
             </div>
-            <div>
+            <div className="delivery">
               <p>Delivery Location</p>
               <h4>
                 <span>
-                  <img src="" alt="Delivery Icon" />
+                  <FaBox />
                 </span>
                 98101
               </h4>

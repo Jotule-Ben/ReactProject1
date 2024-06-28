@@ -154,3 +154,76 @@ h3 a {
   font-size: 12px;
   padding-left: 5px;
 }
+
+.search {
+  padding: 10px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.cart {
+  font-size: 20px;
+  padding: 5px;
+}
+
+.location {
+  padding-right: 4px;
+}
+
+.delivery {
+  padding-left: 8px;
+}
+
+.delivery span {
+  padding-right: 4px;
+}
+
+.navbar {
+  overflow: hidden;
+  background-color: #333;
+}
+
+.dropdown {
+  float: left;
+  overflow: hidden;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  width: 100%;
+  left: 0;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  transition: 0.5s;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.column {
+  width: 30%;
+  padding: 10px;
+  background-color: #fff;
+  height: auto;
+  margin-left: 40px;
+}
+
+.column h6 {
+  font-size: 13px;
+  font-weight: normal;
+  float: none;
+  color: gray;
+  padding: 2px;
+  line-height: 1.4;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+  cursor: pointer;
+}
+
+.column h6:hover {
+  color: black;
+  font-weight: 500;
+}
