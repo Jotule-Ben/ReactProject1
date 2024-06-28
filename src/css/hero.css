@@ -4,8 +4,67 @@
   padding-top: 50px;
 }
 
-.hero img {
+.heroMain img {
   border-radius: 10px;
   width: 100%;
   cursor: pointer;
+}
+
+.card {
+  display: flex;
+  padding-top: 20px;
+}
+
+.card img {
+  width: 90%;
+}
+
+.card1 p:first-of-type {
+  background: linear-gradient(to right, #d03e4f, white);
+  text-align: center;
+  padding: 10px;
+  margin-bottom: -3px;
+  width: 87%;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.card1 p:last-of-type {
+  background-color: #d03e4f;
+  text-align: center;
+  padding: 10px;
+  margin-top: -3px;
+  width: 87%;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  color: white;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.card2 p:first-of-type {
+  background: linear-gradient(to left, #1e6aa3, white);
+  text-align: center;
+  padding: 10px;
+  margin-bottom: -3px;
+  width: 87%;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.card2 p:last-of-type {
+  background-color: #1e6aa3;
+  text-align: center;
+  padding: 10px;
+  margin-top: -3px;
+  width: 87%;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  color: white;
+  font-size: 12px;
+  font-weight: 500;
 }
