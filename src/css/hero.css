@@ -1,5 +1,5 @@
 .hero {
-  max-width: 1600px;
+  max-width: 1270px;
   margin: auto;
   padding-top: 50px;
 }
@@ -11,16 +11,25 @@
 }
 
 .cardsec {
+  max-width: 1600px;
   display: flex;
-  justify-content: space-between;
-  width: 95%;
+  width: 100%;
   padding-top: 20px;
   border: none;
 }
 
 .cardsec img {
   width: 100%;
+  justify-content: space-between;
   cursor: pointer;
+}
+
+.card1 {
+  margin-right: 10px;
+}
+
+.card2 {
+  margin-left: 10px;
 }
 
 .card1 p:first-of-type {
