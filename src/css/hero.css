@@ -1,5 +1,5 @@
 .hero {
-  max-width: 1300px;
+  max-width: 1600px;
   margin: auto;
   padding-top: 50px;
 }
@@ -10,13 +10,16 @@
   cursor: pointer;
 }
 
-.card {
+.cardsec {
   display: flex;
+  justify-content: space-between;
+  width: 95%;
   padding-top: 20px;
+  border: none;
 }
 
-.card img {
-  width: 90%;
+.cardsec img {
+  width: 100%;
   cursor: pointer;
 }
 
@@ -25,7 +28,7 @@
   text-align: center;
   padding: 10px;
   margin-bottom: -3px;
-  width: 87%;
+  width: 100%;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
   font-size: 16px;
@@ -37,7 +40,7 @@
   text-align: center;
   padding: 10px;
   margin-top: -3px;
-  width: 87%;
+  width: 100%;
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
   color: white;
@@ -50,7 +53,7 @@
   text-align: center;
   padding: 10px;
   margin-bottom: -3px;
-  width: 87%;
+  width: 100%;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
   font-size: 16px;
@@ -62,7 +65,7 @@
   text-align: center;
   padding: 10px;
   margin-top: -3px;
-  width: 87%;
+  width: 100%;
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
   color: white;
