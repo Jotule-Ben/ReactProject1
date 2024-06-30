@@ -1,0 +1,42 @@
+* {
+  max-width: 1270px;
+  margin: auto;
+}
+
+.cardSection {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.cardsec2 {
+  text-align: center;
+  padding-top: 3px;
+  padding-bottom: 3px;
+  cursor: pointer;
+}
+
+.cardsec2 h6 {
+  background-color: #eeeeee;
+  color: #000;
+  font-weight: 600;
+  margin: 0;
+  padding: 7px;
+  font-size: 18px;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+}
+
+.cardsec2 p {
+  background-color: #eeeeee;
+  color: #000;
+  padding: 6px;
+  font-size: 11px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  font-weight: 700;
+}
+
+.cardsec2 img {
+  height: 290px;
+}

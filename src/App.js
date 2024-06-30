@@ -3,6 +3,7 @@ import React from "react";
 // import Navbar from "./components/Navbar";
 // import Footer from "./components/Footer";
 import Hero from "./components/Hero";
+import Cards from "./components/Card";
 // import AccountNavbar from "./components/AccountNavbar";
 // import AccountFooter from "./components/AccountFooter";
 // import SignUp from "./pages/SignUp";
@@ -12,6 +13,7 @@ function App() {
   return (
     <div>
       <Hero />
+      <Cards />
       {/*<Navbar />
       <AccountNavbar />
       <AccountFooter />
