@@ -90,7 +90,7 @@ const Navbar = () => {
             </div>
             <ul>
               <li>
-                <Link to="/signin"> Sign In / Register </Link>
+                <Link to="/signUp"> Sign In / Register </Link>
               </li>
               <li>
                 <Link> Orders & Returns </Link>

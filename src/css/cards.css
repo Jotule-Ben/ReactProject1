@@ -10,6 +10,11 @@
   margin-bottom: 20px;
 }
 
+.cardSection > div {
+  width: 21%;
+  margin-bottom: 20px;
+}
+
 .cardsec2 {
   text-align: center;
   padding-top: 3px;
@@ -40,4 +45,5 @@
 
 .cardsec2 img {
   height: 290px;
+  width: 100%;
 }

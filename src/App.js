@@ -1,5 +1,5 @@
 import React from "react";
-// import { Route, Router, Routes } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 // import Navbar from "./components/Navbar";
 // import Footer from "./components/Footer";
 // import Hero from "./components/Hero";
@@ -7,19 +7,26 @@ import React from "react";
 import Home from "./pages/Home";
 // import AccountNavbar from "./components/AccountNavbar";
 // import AccountFooter from "./components/AccountFooter";
-// import SignUp from "./pages/SignUp";
-// import RegisterNew from "./pages/RegisterNew";
+import SignUp from "./pages/SignUp";
+import RegisterNew from "./pages/RegisterNew";
 
 function App() {
   return (
-    <div>
-      <Home />
-      {/*<Navbar />
-      <AccountNavbar />
-      <AccountFooter />
-      <SignUp />
-      <RegisterNew />*/}
-    </div>
+    // <div>
+    //   <Home />
+    // <Navbar />
+    //   <AccountNavbar />
+    //   <AccountFooter />
+    //   <SignUp />
+    //   <RegisterNew />
+    // </div>
+    <>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/signUp" exac element={<SignUp />} />
+        <Route path="/register" exac element={<RegisterNew />} />
+      </Routes>
+    </>
   );
 }
 

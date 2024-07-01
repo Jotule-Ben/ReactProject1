@@ -12,6 +12,8 @@ const Home = () => {
       <div className="cardssec">
         <Cards />
       </div>
+
+      <div className="bonus"></div>
       <Footer />
     </>
   );

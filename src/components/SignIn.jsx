@@ -24,7 +24,9 @@ const SignIn = () => {
             <button>Sign In</button>
           </form>
           <h3>New to Costco?</h3>
-          <button>Create Account</button>
+          <button>
+            <Link to="/register">Create Account</Link>
+          </button>
         </div>
       </div>
     </>
