@@ -11,92 +11,94 @@ import "../css/cards.css";
 const Cards = () => {
   return (
     <>
-      <div className="cardSection">
-        <div className="cardsec2">
-          <h6>$799.99 After $400 OFF</h6>
-          <div>
-            <img src={card1} alt="" />
+      <div className="cardsectionContainer">
+        <div className="cardSection">
+          <div className="cardsec2">
+            <h6>$799.99 After $400 OFF</h6>
+            <div>
+              <img src={card1} alt="" />
+            </div>
+            <p>CORTLAND 7-PIECE DINING TABLE SET</p>
           </div>
-          <p>CORTLAND 7-PIECE DINING TABLE SET</p>
-        </div>
 
-        <div className="cardsec2">
-          <h6>$799.99 After $400 OFF</h6>
-          <div>
-            <img src={card2} alt="" />
+          <div className="cardsec2">
+            <h6>$799.99 After $400 OFF</h6>
+            <div>
+              <img src={card2} alt="" />
+            </div>
+            <p>CORTLAND 7-PIECE DINING TABLE SET</p>
           </div>
-          <p>CORTLAND 7-PIECE DINING TABLE SET</p>
-        </div>
 
-        <div className="cardsec2">
-          <h6>$799.99 After $400 OFF</h6>
-          <div>
-            <img src={card3} alt="" />
+          <div className="cardsec2">
+            <h6>$799.99 After $400 OFF</h6>
+            <div>
+              <img src={card3} alt="" />
+            </div>
+            <p>CORTLAND 7-PIECE DINING TABLE SET</p>
           </div>
-          <p>CORTLAND 7-PIECE DINING TABLE SET</p>
-        </div>
 
-        <div className="cardsec2">
-          <h6>$799.99 After $400 OFF</h6>
-          <div>
-            <img src={card1} alt="" />
+          <div className="cardsec2">
+            <h6>$799.99 After $400 OFF</h6>
+            <div>
+              <img src={card1} alt="" />
+            </div>
+            <p>CORTLAND 7-PIECE DINING TABLE SET</p>
           </div>
-          <p>CORTLAND 7-PIECE DINING TABLE SET</p>
-        </div>
 
-        <div className="cardsec2">
-          <h6>$799.99 After $400 OFF</h6>
-          <div>
-            <img src={card1} alt="" />
+          <div className="cardsec2">
+            <h6>$799.99 After $400 OFF</h6>
+            <div>
+              <img src={card1} alt="" />
+            </div>
+            <p>CORTLAND 7-PIECE DINING TABLE SET</p>
           </div>
-          <p>CORTLAND 7-PIECE DINING TABLE SET</p>
-        </div>
 
-        <div className="cardsec2">
-          <h6>$799.99 After $400 OFF</h6>
-          <div>
-            <img src={card1} alt="" />
+          <div className="cardsec2">
+            <h6>$799.99 After $400 OFF</h6>
+            <div>
+              <img src={card1} alt="" />
+            </div>
+            <p>CORTLAND 7-PIECE DINING TABLE SET</p>
           </div>
-          <p>CORTLAND 7-PIECE DINING TABLE SET</p>
-        </div>
 
-        <div className="cardsec2">
-          <h6>$799.99 After $400 OFF</h6>
-          <div>
-            <img src={card1} alt="" />
+          <div className="cardsec2">
+            <h6>$799.99 After $400 OFF</h6>
+            <div>
+              <img src={card1} alt="" />
+            </div>
+            <p>CORTLAND 7-PIECE DINING TABLE SET</p>
           </div>
-          <p>CORTLAND 7-PIECE DINING TABLE SET</p>
-        </div>
 
-        <div className="cardsec2">
-          <h6>$799.99 After $400 OFF</h6>
-          <div>
-            <img src={card1} alt="" />
+          <div className="cardsec2">
+            <h6>$799.99 After $400 OFF</h6>
+            <div>
+              <img src={card1} alt="" />
+            </div>
+            <p>CORTLAND 7-PIECE DINING TABLE SET</p>
           </div>
-          <p>CORTLAND 7-PIECE DINING TABLE SET</p>
-        </div>
 
-        <div className="cardsec2">
-          <div>
-            <img src={card7} alt="" />
+          <div className="cardsec2">
+            <div>
+              <img src={card7} alt="" />
+            </div>
           </div>
-        </div>
 
-        <div className="cardsec2">
-          <div>
-            <img src={card6} alt="" />
+          <div className="cardsec2">
+            <div>
+              <img src={card6} alt="" />
+            </div>
           </div>
-        </div>
 
-        <div className="cardsec2">
-          <div>
-            <img src={card5} alt="" />
+          <div className="cardsec2">
+            <div>
+              <img src={card5} alt="" />
+            </div>
           </div>
-        </div>
 
-        <div className="cardsec2">
-          <div>
-            <img src={card4} alt="" />
+          <div className="cardsec2">
+            <div>
+              <img src={card4} alt="" />
+            </div>
           </div>
         </div>
       </div>

@@ -1,57 +1,61 @@
-* {
+.navbarContainer {
   margin: 0;
   padding: 0;
 }
 
-a {
+.navbarContainer h3:first-of-type {
+  margin: 0;
+}
+
+.navbarContainer a {
   text-decoration: none;
 }
 
-a:hover {
+.navbarContainer a:hover {
   text-decoration: underline;
 }
 
-li {
+.navbarContainer li {
   list-style-type: none;
 }
 
-h3 {
+.navbarContainer h3 {
   background-color: #005dab;
   text-align: center;
   padding: 15px;
 }
 
-h3 a {
+.navbarContainer h3 a {
   color: #fefefe;
   font-weight: 600;
   font-size: 20px;
 }
 
-.navLinks {
+.navbarContainer .navLinks {
   background-color: #eeeeee;
-  padding: 20px;
-  padding-right: 50px;
+  padding: 13px;
+  padding-right: 45px;
 }
 
-.navLinks a {
+.navbarContainer .navLinks a {
   color: #0060a9;
 }
 
-.navLinksFirstGroup {
+.navbarContainer .navLinksFirstGroup {
   padding-left: 300px;
   padding-bottom: 20px;
 }
 
-.navLinksFirstGroup a {
+.navbarContainer .navLinksFirstGroup a {
   font-size: 15px;
 }
 
-.navLinksFirstGroup ul {
+.navbarContainer .navLinksFirstGroup ul {
   display: flex;
   justify-content: space-between;
 }
 
-.navLinkSecondGroup {
+.navbarContainer .navLinkSecondGroup {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -59,131 +63,133 @@ h3 a {
   padding-left: 100px;
 }
 
-.inputGroup {
+.navbarContainer .inputGroup {
   display: flex;
 }
 
-.navLinkSecondGroup img {
+.navbarContainer .navLinkSecondGroup img {
   width: 13%;
   height: 20%;
 }
 
-.navLinkSecondGroup input {
+.navbarContainer .navLinkSecondGroup input {
   border: 1px solid blue;
   border-right: none;
   width: 530px;
   padding: 13px 15px;
 }
 
-.navLinkSecondGroup button {
+.navbarContainer .navLinkSecondGroup button {
   border: 1px solid blue;
   border-left: none;
 }
 
-.navLinkSecondGroup ul {
+.navbarContainer .navLinkSecondGroup ul {
   display: flex;
   font-size: 13px;
 }
 
-.navLinkSecondGroup li {
+.navbarContainer .navLinkSecondGroup li {
   border-right: 1px solid gray;
-  padding: 10px;
+  margin: 8px;
+  padding-right: 7px;
   height: 20px;
 }
 
-.navLinkSecondGroup li:last-of-type {
+.navbarContainer .navLinkSecondGroup li:last-of-type {
   border-right: none;
+  margin-top: -1px;
 }
 
-.navLinkThirdGroup {
+.navbarContainer .navLinkThirdGroup {
   background-color: #0073a6;
   padding: 12px;
   padding-left: 50px;
   font-size: 15px;
 }
 
-.navLinkThirdGroup ul {
+.navbarContainer .navLinkThirdGroup ul {
   display: flex;
   justify-content: space-between;
   width: 80%;
 }
 
-.navLinkThirdGroup a {
+.navbarContainer .navLinkThirdGroup a {
   color: #fff;
   font-weight: 500;
 }
 
-.navSecondGroup {
+.navbarContainer .navSecondGroup {
   background-color: #fafafa;
   box-shadow: rgba(0, 0, 0, 0.2) 0px 1px 2px 0px;
   padding: 20px;
   padding-top: 10px;
 }
 
-.flex {
+.navbarContainer .flex {
   display: flex;
 }
 
-.flex p {
+.navbarContainer .flex p {
   font-size: 12px;
   padding-bottom: 7px;
 }
 
-.secGroupFlex {
+.navbarContainer .secGroupFlex {
   display: flex;
   justify-content: space-between;
   width: 95%;
   padding: 10px;
 }
 
-.secGroupFlex h4 {
+.navbarContainer .secGroupFlex h4 {
   font-size: 12px;
 }
 
-.navSecondGroupLink ul {
+.navbarContainer .navSecondGroupLink ul {
   display: flex;
 }
 
-.navSecondGroupLink a {
+.navbarContainer .navSecondGroupLink a {
   color: #0060a9;
   font-size: 14px;
 }
 
-.navSecondGroup p:nth-child(2) {
+.navbarContainer .navSecondGroup p:nth-child(2) {
   color: #db4e81;
   font-size: 12px;
   padding-left: 5px;
 }
 
-.search {
+.navbarContainer .search {
   padding: 10px;
   font-size: 20px;
   cursor: pointer;
 }
 
-.cart {
+.navbarContainer .cart {
   font-size: 20px;
   padding: 5px;
 }
 
-.location {
+.navbarContainer .location {
   padding-right: 4px;
 }
 
-.delivery {
+.navbarContainer .delivery {
   padding-left: 8px;
 }
 
-.delivery span {
+.navbarContainer .delivery span {
   padding-right: 4px;
 }
 
-.dropdown {
+.navbarContainer .dropdown {
   float: left;
   overflow: hidden;
 }
 
-.dropdown-content {
+.navbarContainer .dropdown-content {
   display: none;
   position: absolute;
   width: 100%;
@@ -193,11 +199,11 @@ h3 a {
   transition: 0.5s;
 }
 
-.dropdown:hover .dropdown-content {
+.navbarContainer .dropdown:hover .dropdown-content {
   display: block;
 }
 
-.column {
+.navbarContainer .column {
   width: 30%;
   padding: 10px;
   background-color: #fff;
@@ -205,7 +211,7 @@ h3 a {
   margin-left: 40px;
 }
 
-.column h6 {
+.navbarContainer .column h6 {
   font-size: 13px;
   font-weight: normal;
   float: none;
@@ -218,7 +224,7 @@ h3 a {
   cursor: pointer;
 }
 
-.column h6:hover {
+.navbarContainer .column h6:hover {
   color: black;
   font-weight: 500;
 }

@@ -1,14 +1,19 @@
-* {
+.footerContainer {
   margin: 0;
   padding: 0;
 }
 
-li {
+.footerContainer li {
   list-style-type: none;
 }
 
-a {
+.footerContainer a {
   text-decoration: none;
+  color: gray;
+}
+
+.footerContainer a:hover {
+  text-decoration: underline;
   color: gray;
 }
 
@@ -18,44 +23,84 @@ a {
   padding: 30px;
 }
 
-.footerGroupOne {
+.footerContainer .footerGroupOne {
   display: flex;
   justify-content: space-between;
+  width: 100%;
   padding-bottom: 40px;
   border-bottom: 1px solid #333;
 }
 
-.footerGroupOne h4 {
+.footerContainer .footerGroupOne h4 {
+  font-size: 15px;
+  color: #303030;
+  font-weight: 400;
+}
+
+.footerContainer .footerGroupOne h4 {
   font-size: 20px;
   color: #303030;
   font-weight: 400;
 }
 
-.footerGroupOne p {
+.footerContainer .footerGroupOne p {
   font-size: 15px;
   color: #303030;
 }
 
-.footerGroupOne input {
+.footerContainer .footerGroupOne input {
   border: 1px solid gray;
   border-right: none;
+  border-radius: 0;
   width: 200px;
   padding: 7px 10px;
 }
 
-.footerGroupOne button {
+.footerContainer .footerGroupOne button {
   border: 1px solid gray;
   border-left: none;
   padding: 6px;
   padding-bottom: 7px;
+  border-radius: 0;
 }
 
-.media {
+.footerContainer .footerGroupOne > div {
+  width: 33.33%;
+  margin-right: 5px;
+  gap: 20px;
+}
+
+.footerContainer .footerGroupOne > div:nth-child(1) {
+  width: 25%;
+}
+
+.footerContainer .footerGroupOne > div:nth-child(2) {
+  width: 30%;
+  margin-left: -20px;
+  margin-right: 30px;
+}
+
+.footerContainer .footerGroupOne > div:nth-child(3) {
+  width: 30%;
+  margin-right: 30px;
+}
+
+.footerContainer .footerGroupOne > div:nth-child(4) {
+  width: 33.33%;
+  margin-right: -150px;
+}
+
+.footerContainer .footerGroupOne > div:nth-child(5) {
+  width: 33.33%;
+  margin-right: -29px;
+}
+
+.footerContainer .media {
   display: flex;
-  padding-left: 10px;
+  cursor: pointer;
 }
 
-.footerLinks {
+.footerContainer .footerLinks {
   display: flex;
   justify-content: space-between;
   padding-top: 40px;
@@ -63,20 +108,26 @@ a {
   border-bottom: 1px solid rgb(172, 172, 172);
 }
 
-.footerLinks h3 {
+.footerContainer .footerLinks h4 {
   font-size: 20px;
+  margin-left: 25px;
+  cursor: pointer;
 }
 
-.footerLinks li {
-  font-size: 13px;
+.footerContainer .footerLinks h4:hover {
+  text-decoration: underline;
+}
+
+.footerContainer .footerLinks li {
+  font-size: 15px;
   line-height: 2.5;
 }
 
-.footerGroupTwo {
+.footerContainer .footerGroupTwo {
   padding-top: 20px;
 }
 
-.footerLinksTwo {
+.footerContainer .footerLinksTwo {
   max-width: 1000px;
   margin: auto;
   padding-bottom: 20px;
@@ -84,19 +135,24 @@ a {
   text-align: center;
 }
 
-.footerLinksTwo ul {
-  font-size: 12px;
+.ccpa {
+  width: 20%;
+}
+
+.footerContainer .footerLinksTwo ul {
+  font-size: 14px;
   display: flex;
+  text-wrap: nowrap;
   justify-content: space-between;
   width: 100%;
 }
 
-.footerLastSection {
+.footerContainer .footerLastSection {
   color: gray;
   text-align: center;
 }
 
-.question {
+.footerContainer .question {
   background-color: #0060a9;
   color: #fff;
   padding: 5px;
@@ -105,13 +161,29 @@ a {
   font-size: 12px;
 }
 
-.gobtn {
+.footerContainer .gobtn {
   background-color: #0060a9;
   color: #fff;
   padding: 8px !important;
   border: none !important;
 }
 
-.footerSearch {
+.footerContainer .footerSearch {
   font-size: 13px;
+}
+
+.footerContainer .mediaContainer img {
+  width: 10%;
+  padding-left: 6px;
+}
+
+.footerContainer .footerLogo img {
+  width: 10%;
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+.footerLinksTwo img {
+  width: 23%;
+  padding-right: 10px;
 }

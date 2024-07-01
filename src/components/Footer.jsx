@@ -4,6 +4,11 @@ import { Link } from "react-router-dom";
 import "../css/footer.css";
 import { FaQuestion } from "react-icons/fa6";
 import { FaSearch } from "react-icons/fa";
+import logo from "../asset/costco21.png";
+import ccpa from "../asset/costco38.svg";
+import fb from "../asset/costco42.svg";
+import pinInterest from "../asset/costco43.svg";
+import ig from "../asset/costco51.svg";
 
 const Footer = () => {
   return (
@@ -59,19 +64,19 @@ const Footer = () => {
             </div>
           </div>
 
-          <div>
+          <div className="mediaContainer">
             <h4>Follow Us</h4>
             <div className="media">
-              <img src="" alt="fb logo" />
-              <img src="" alt="pin interest logo" />
-              <img src="" alt="instagram logo" />
+              <img src={fb} alt="fb logo" />
+              <img src={pinInterest} alt="pin interest logo" />
+              <img src={ig} alt="instagram logo" />
             </div>
           </div>
 
-          <div>
+          <div className="footerLogo">
             <h4>Get the Costco App</h4>
             <div>
-              <img src="" alt="Costco logo" />
+              <img src={logo} alt="Costco logo" />
             </div>
           </div>
         </div>
@@ -252,13 +257,15 @@ const Footer = () => {
               <li>
                 <Link>Cookie Settings</Link>
               </li>
-              <li>
+              <li className="ccpa">
                 <Link>
-                  <img
-                    src=""
-                    alt="iconCalifornia Consumer Privacy Act (CCPA) Opt-Out Icon"
-                  />
-                  Your Privacy Choices
+                  <span>
+                    <img
+                      src={ccpa}
+                      alt="iconCalifornia Consumer Privacy Act (CCPA) Opt-Out Icon"
+                    />
+                  </span>
+                  <span>Your Privacy Choices</span>
                 </Link>
               </li>
               <li>
