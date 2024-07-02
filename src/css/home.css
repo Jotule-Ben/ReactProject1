@@ -1,0 +1,64 @@
+.bonusContainer {
+  max-width: 1300px;
+  margin: auto;
+  background-color: #fafafa;
+  border: 1px solid #b5b5b5;
+  padding: 20px;
+}
+
+.bonusContainer img {
+  width: 20%;
+}
+
+.bonusContainer > div {
+  display: flex;
+  justify-content: space-between;
+}
+
+.bonusLogoSection {
+  width: 40%;
+  padding-right: 20px;
+  border-right: 1px solid rgb(196, 196, 196);
+  display: flex;
+  color: #333333;
+  padding-top: 30px;
+}
+
+.bonusLogo1 {
+  display: block;
+  top: 0;
+  margin-top: -70px;
+  margin-left: 10px;
+}
+
+.bonusLogo1 img {
+  width: 40%;
+}
+
+.bonusLogo1 img:first-of-type {
+  margin-left: 220px;
+}
+
+.bonusLogo1 img:last-of-type {
+  width: 20%;
+  margin-top: -30px;
+  position: absolute;
+}
+/* 
+.lgo {
+  z-index: 999;
+} */
+
+/* .bonusLogo2 {
+  display: block;
+}
+
+.bonusLogo2 div {
+  right: 0;
+  margin-right: -10px;
+}
+
+.bonusLogo2 img {
+  display: block;
+  width: 50px;
+} */
