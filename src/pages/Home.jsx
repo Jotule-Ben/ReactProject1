@@ -18,47 +18,46 @@ const Home = () => {
         <Cards />
       </div>
 
-      <div className="bonusContainer">
-        <div className="bonusTextContainer">
-          <div className="bonusLogoSection">
-            <div className="bonusLogo1">
-              <img src={img1} alt="" />
-              <img src={img2} alt="" />
-            </div>
-            <div className="bonusLogo2">
-              <h1>Benefit from Buying More</h1>
-              <div>
-                <img src={img3} alt="" />
-                <img src={img3} alt="" />
+      <div className="bonusdiv">
+        <div className="bonusContainer">
+          <div className="bonusTextContainer">
+            <div className="bonusLogoSection">
+              <div className="bonusLogo1">
+                <img src={img1} alt="" />
+                <img src={img2} alt="" />
+              </div>
+              <div className="bonusLogo2">
+                <h1>Benefit from Buying More</h1>
+                <div>
+                  <img src={img3} alt="" />
+                  <img src={img3} alt="" />
+                </div>
               </div>
             </div>
+            <div className="bonusTextSection">
+              <p>Combine with other promotions for additional savings!</p>
+              <p>Delivery in 3-5 Days in Most Areas*</p>
+              <h3>
+                {" "}
+                Participating items are marked{" "}
+                <span>
+                  <img src={img4} alt="" />
+                </span>
+              </h3>
+            </div>
           </div>
-          <div>
-            <p>
-              Costco Direct Benefit from Buying More Combine with other
-              promotions for additional savings!
-            </p>
-            <p>Delivery in 3-5 Days in Most Areas*</p>
-            <h3>
-              {" "}
-              Participating items are marked{" "}
-              <span>
-                <img src={img4} alt="" />
-              </span>
-            </h3>
-          </div>
-        </div>
 
-        <div className="bonusCardContainer">
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
+          <div className="bonusCardContainer">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>
         </div>
-        <p>
+        <h6>
           ONLINE-ONLY | LIMIT 2 REDEMPTIONS PER MEMBERSHIP | *SEE ITEM PAGE FOR
           DETAILS
-        </p>
+        </h6>
       </div>
       <Footer />
     </>
