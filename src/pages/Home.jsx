@@ -7,6 +7,19 @@ import img1 from "../asset/costco41.png";
 import img2 from "../asset/costco39.png";
 import img3 from "../asset/costco48.svg";
 import img4 from "../asset/costco49.svg";
+import img5 from "../asset/costco44.svg";
+import img6 from "../asset/costco45.svg";
+import img7 from "../asset/costco46.svg";
+import img8 from "../asset/costco47.svg";
+import img9 from "../asset/bonusCard1.png";
+import img10 from "../asset/bonusCard2.png";
+import img11 from "../asset/bonusCard3.png";
+import img12 from "../asset/bonusCard4.png";
+import img13 from "../asset/halfHero.png";
+import img14 from "../asset/rightHalfHero1.png";
+import img15 from "../asset/rightHalfHero2.png";
+import img16 from "../asset/rightHalfHero3.png";
+import img17 from "../asset/rightHalfHero4.png";
 import "../css/home.css";
 
 const Home = () => {
@@ -48,10 +61,55 @@ const Home = () => {
           </div>
 
           <div className="bonusCardContainer">
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
+            <div>
+              <div>
+                <h1>
+                  <span>
+                    <img src={img8} alt="" />
+                  </span>
+                  <span>SAVE $100</span>
+                </h1>
+              </div>
+              <div className="bonusCardContainerImg">
+                <img src={img9} alt="" />
+              </div>
+            </div>
+
+            <div>
+              <h1>
+                <span>
+                  <img src={img7} alt="" />
+                </span>
+                SAVE $200
+              </h1>
+              <div className="bonusCardContainerImg2">
+                <img src={img10} alt="" />
+              </div>
+            </div>
+
+            <div>
+              <h1>
+                <span>
+                  <img src={img6} alt="" />
+                </span>
+                SAVE $300
+              </h1>
+              <div className="bonusCardContainerImg">
+                <img src={img11} alt="" />
+              </div>
+            </div>
+
+            <div>
+              <h1>
+                <span>
+                  <img src={img5} alt="" />
+                </span>
+                SAVE $400
+              </h1>
+              <div className="bonusCardContainerImg">
+                <img src={img12} alt="" />
+              </div>
+            </div>
           </div>
         </div>
         <h6>
@@ -59,6 +117,31 @@ const Home = () => {
           DETAILS
         </h6>
       </div>
+
+      <div className="LGTVsContainer">
+        <div className="LGTVs">
+          <div className="LGTVsGroup1">
+            <h3>LG TVS</h3>
+            <img src={img13} alt="" />
+            <button>SHOP NOW</button>
+          </div>
+          <div className="LGTVsGroup2">
+            <div className="LGTVsimg1">
+              <img src={img14} alt="" />
+            </div>
+            <div>
+              <img src={img15} alt="" />
+            </div>
+            <div>
+              <img src={img16} alt="" />
+            </div>
+            <div>
+              <img src={img17} alt="" />
+            </div>
+          </div>
+        </div>
+      </div>
+
       <Footer />
     </>
   );
