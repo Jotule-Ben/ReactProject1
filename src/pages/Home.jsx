@@ -40,6 +40,7 @@ import { IoIosHammer } from "react-icons/io";
 import { FaAward, FaStar, FaStarHalf } from "react-icons/fa6";
 import { TbTruckDelivery } from "react-icons/tb";
 import { BiSolidDollarCircle } from "react-icons/bi";
+import SingleCard from "../components/SingleColumnCard";
 
 const Home = () => {
   return (
@@ -380,68 +381,23 @@ const Home = () => {
         </div>
       </div>
 
-      <Carousel data-bs-theme="dark" className="carouselSec">
-        <Carousel.Item>
-          <>
-            <div className="cardsec2">
-              <h6>$799.99 After $400 OFF</h6>
-              <div>
-                <img src={img19} alt="" />
-              </div>
-              <p>CORTLAND 7-PIECE DINING TABLE SET</p>
-            </div>
+      <div className="firstCardCarouselSec">
+        <h2>Selected For You</h2>
 
-            <div className="cardsec2">
-              <h6>$799.99 After $400 OFF</h6>
-              <div>
-                <img src={img20} alt="" />
-              </div>
-              <p>CORTLAND 7-PIECE DINING TABLE SET</p>
-            </div>
+        <Carousel data-bs-theme="dark" className="carouselSec">
+          <Carousel.Item>
+            <SingleCard />
+          </Carousel.Item>
 
-            <div className="cardsec2">
-              <h6>$799.99 After $400 OFF</h6>
-              <div>
-                <img src={img21} alt="" />
-              </div>
-              <p>CORTLAND 7-PIECE DINING TABLE SET</p>
-            </div>
+          <Carousel.Item>
+            <SingleCard />
+          </Carousel.Item>
 
-            <div className="cardsec2">
-              <h6>$799.99 After $400 OFF</h6>
-              <div>
-                <img src={img20} alt="" />
-              </div>
-              <p>CORTLAND 7-PIECE DINING TABLE SET</p>
-            </div>
-          </>
-        </Carousel.Item>
-
-        <Carousel.Item>
-          <img className="d-block w-100" src="" alt="Second slide" />
-        </Carousel.Item>
-
-        <Carousel.Item>
-          <img className="d-block w-100" src="" alt="Third slide" />
-        </Carousel.Item>
-
-        <Carousel.Item>
-          <img className="d-block w-100" src="" alt="fourth slide" />
-        </Carousel.Item>
-
-        <Carousel.Item>
-          <img className="d-block w-100" src="" alt="fifth slide" />
-        </Carousel.Item>
-
-        <Carousel.Item>
-          <img className="d-block w-100" src="" alt="sixth slide" />
-        </Carousel.Item>
-
-        <Carousel.Item>
-          <img className="d-block w-100" src="" alt="seventh slide" />
-        </Carousel.Item>
-      </Carousel>
-
+          <Carousel.Item>
+            <SingleCard />
+          </Carousel.Item>
+        </Carousel>
+      </div>
       <Footer />
     </>
   );

@@ -348,3 +348,10 @@
 .advertSec2text button:hover {
   background-color: #0060a9;
 }
+
+.firstCardCarouselSec h2 {
+  font-size: 30px;
+  padding-top: 5px;
+  margin: 0;
+  text-align: center;
+}
