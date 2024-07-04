@@ -24,6 +24,7 @@ import img18 from "../asset/whyBuyAppliancesImg.png";
 import img19 from "../asset/costco10.jpg";
 import img20 from "../asset/costco16.jpg";
 import img21 from "../asset/costco15.jpg";
+import { Carousel } from "react-bootstrap";
 import "../css/home.css";
 import {
   GiBigDiamondRing,
@@ -308,6 +309,138 @@ const Home = () => {
           </p>
         </div>
       </div>
+
+      <div className="cardssec">
+        <div className="cardsectionContainer">
+          <div className="cardSection">
+            <div className="cardsec2">
+              <h6>$799.99 After $400 OFF</h6>
+              <div>
+                <img src={img19} alt="" />
+              </div>
+              <p>CORTLAND 7-PIECE DINING TABLE SET</p>
+            </div>
+
+            <div className="cardsec2">
+              <h6>$799.99 After $400 OFF</h6>
+              <div>
+                <img src={img20} alt="" />
+              </div>
+              <p>CORTLAND 7-PIECE DINING TABLE SET</p>
+            </div>
+
+            <div className="cardsec2">
+              <h6>$799.99 After $400 OFF</h6>
+              <div>
+                <img src={img21} alt="" />
+              </div>
+              <p>CORTLAND 7-PIECE DINING TABLE SET</p>
+            </div>
+
+            <div className="cardsec2">
+              <h6>$799.99 After $400 OFF</h6>
+              <div>
+                <img src={img20} alt="" />
+              </div>
+              <p>CORTLAND 7-PIECE DINING TABLE SET</p>
+            </div>
+
+            <div className="cardsec2">
+              <h6>$799.99 After $400 OFF</h6>
+              <div>
+                <img src={img21} alt="" />
+              </div>
+              <p>CORTLAND 7-PIECE DINING TABLE SET</p>
+            </div>
+
+            <div className="cardsec2">
+              <h6>$799.99 After $400 OFF</h6>
+              <div>
+                <img src={img20} alt="" />
+              </div>
+              <p>CORTLAND 7-PIECE DINING TABLE SET</p>
+            </div>
+
+            <div className="cardsec2">
+              <h6>$799.99 After $400 OFF</h6>
+              <div>
+                <img src={img21} alt="" />
+              </div>
+              <p>CORTLAND 7-PIECE DINING TABLE SET</p>
+            </div>
+
+            <div className="cardsec2">
+              <h6>$799.99 After $400 OFF</h6>
+              <div>
+                <img src={img20} alt="" />
+              </div>
+              <p>CORTLAND 7-PIECE DINING TABLE SET</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <Carousel data-bs-theme="dark" className="carouselSec">
+        <Carousel.Item>
+          <>
+            <div className="cardsec2">
+              <h6>$799.99 After $400 OFF</h6>
+              <div>
+                <img src={img19} alt="" />
+              </div>
+              <p>CORTLAND 7-PIECE DINING TABLE SET</p>
+            </div>
+
+            <div className="cardsec2">
+              <h6>$799.99 After $400 OFF</h6>
+              <div>
+                <img src={img20} alt="" />
+              </div>
+              <p>CORTLAND 7-PIECE DINING TABLE SET</p>
+            </div>
+
+            <div className="cardsec2">
+              <h6>$799.99 After $400 OFF</h6>
+              <div>
+                <img src={img21} alt="" />
+              </div>
+              <p>CORTLAND 7-PIECE DINING TABLE SET</p>
+            </div>
+
+            <div className="cardsec2">
+              <h6>$799.99 After $400 OFF</h6>
+              <div>
+                <img src={img20} alt="" />
+              </div>
+              <p>CORTLAND 7-PIECE DINING TABLE SET</p>
+            </div>
+          </>
+        </Carousel.Item>
+
+        <Carousel.Item>
+          <img className="d-block w-100" src="" alt="Second slide" />
+        </Carousel.Item>
+
+        <Carousel.Item>
+          <img className="d-block w-100" src="" alt="Third slide" />
+        </Carousel.Item>
+
+        <Carousel.Item>
+          <img className="d-block w-100" src="" alt="fourth slide" />
+        </Carousel.Item>
+
+        <Carousel.Item>
+          <img className="d-block w-100" src="" alt="fifth slide" />
+        </Carousel.Item>
+
+        <Carousel.Item>
+          <img className="d-block w-100" src="" alt="sixth slide" />
+        </Carousel.Item>
+
+        <Carousel.Item>
+          <img className="d-block w-100" src="" alt="seventh slide" />
+        </Carousel.Item>
+      </Carousel>
 
       <Footer />
     </>
