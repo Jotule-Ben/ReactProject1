@@ -20,7 +20,25 @@ import img14 from "../asset/rightHalfHero1.png";
 import img15 from "../asset/rightHalfHero2.png";
 import img16 from "../asset/rightHalfHero3.png";
 import img17 from "../asset/rightHalfHero4.png";
+import img18 from "../asset/whyBuyAppliancesImg.png";
+import img19 from "../asset/costco10.jpg";
+import img20 from "../asset/costco16.jpg";
+import img21 from "../asset/costco15.jpg";
 import "../css/home.css";
+import {
+  GiBigDiamondRing,
+  GiFlatTire,
+  GiLaptop,
+  GiScrew,
+  GiWashingMachine,
+} from "react-icons/gi";
+import { IoBedOutline } from "react-icons/io5";
+import { PiCarProfileLight, PiTelevisionSimpleLight } from "react-icons/pi";
+import { FaGasPump } from "react-icons/fa";
+import { IoIosHammer } from "react-icons/io";
+import { FaAward, FaStar, FaStarHalf } from "react-icons/fa6";
+import { TbTruckDelivery } from "react-icons/tb";
+import { BiSolidDollarCircle } from "react-icons/bi";
 
 const Home = () => {
   return (
@@ -139,6 +157,155 @@ const Home = () => {
               <img src={img17} alt="" />
             </div>
           </div>
+        </div>
+      </div>
+
+      <div className="advert">
+        <div className="advertSec1">
+          <h1>Why Buy at Costco?</h1>
+          <h4>The price you SEE is the price you PAY</h4>
+          <p>
+            Compare Costco's all-in pricing. No surprises at checkout for
+            services such as installation, haul away and extended warranties.
+            See product pages for details.
+          </p>
+          <div>
+            <table class="custom-table">
+              <tbody>
+                <tr>
+                  <td class="GiWashingMachine">
+                    <GiWashingMachine />
+                  </td>
+                  <td>Appliances</td>
+                </tr>
+                <tr>
+                  <td class="IoBedOutline">
+                    <IoBedOutline />
+                  </td>
+                  <td>Mattress</td>
+                </tr>
+                <tr>
+                  <td class="GiFlatTire">
+                    <GiFlatTire />
+                  </td>
+                  <td colSpan="2">Tires</td>
+                </tr>
+                <tr>
+                  <td class="PiTelevisionSimpleLight">
+                    <PiTelevisionSimpleLight />
+                  </td>
+                  <td colSpan="2">Television</td>
+                </tr>
+                <tr>
+                  <td class="GiLaptop">
+                    <GiLaptop />
+                  </td>
+                  <td colSpan="2">Computer</td>
+                </tr>
+                <tr>
+                  <td class="GiBigDiamondRing">
+                    <GiBigDiamondRing />
+                  </td>
+                  <td colSpan="2">Jewelry</td>
+                </tr>
+                <tr>
+                  <td class="PiCarProfileLight">
+                    <PiCarProfileLight />
+                  </td>
+                  <td colSpan="2">Travel Rental Cars</td>
+                </tr>
+                <tr>
+                  <td class="FaGasPump">
+                    <FaGasPump />
+                  </td>
+                  <td colSpan="2">Gas</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div className="advertSec2">
+          <h1>Why Buy Appliances at Costco?</h1>
+          <div className="advertSec2group">
+            <div className="advertSec2Img">
+              <img src={img18} alt="" />
+            </div>
+            <div className="advertSec2text">
+              <p>
+                Costco offers a large selection of premium, feature-loaded
+                appliances to make your life a whole lot easier. Browse our
+                extensive selection of high-end appliances in a variety of
+                sizes, colors and finishes—you're sure to find something you
+                love. Best of all, our prices include a two-year manufacturer
+                warranty, delivery, installation and haul away service of your
+                old equipment, and basic installation parts on select
+                appliances.*
+              </p>
+              <h3>Additional member values included</h3>
+              <div className="additionalValuesDiv">
+                <div>
+                  <span className="IoIosHammer">
+                    <IoIosHammer />
+                  </span>
+                  <p>Delivery & Installation*</p>
+                </div>
+
+                <div>
+                  <span className="TbTruckDelivery">
+                    <TbTruckDelivery />
+                  </span>
+                  <p>Haul Away*</p>
+                </div>
+
+                <div>
+                  <span className="FaAward">
+                    <FaAward />
+                  </span>
+                  <p>Two Year Warranty</p>
+                </div>
+
+                <div>
+                  <span className="GiScrew">
+                    <GiScrew />
+                  </span>
+                  <p>Basic Installation Parts*</p>
+                </div>
+
+                <div>
+                  <span className="BiSolidDollarCircle">
+                    <BiSolidDollarCircle />
+                  </span>
+                  <p>Costco Direct Savings**</p>
+                </div>
+
+                <div>
+                  <span className="TbTruckDelivery">
+                    <TbTruckDelivery />
+                  </span>
+                  <p>
+                    Costco Direct Delivery**{" "}
+                    <span>
+                      <FaStar /> <FaStar /> <FaStar /> <FaStar /> <FaStarHalf />
+                    </span>
+                  </p>
+                </div>
+
+                <div>
+                  <span className="FaStar">
+                    <FaStar />
+                  </span>
+                  <p>Up to 4% in rewards†</p>
+                </div>
+              </div>
+              <button>Shop Appliances</button>
+            </div>
+          </div>
+          <p className="advertSec2lastP">
+            *Online purchases only. In most areas. **On select appliances. See
+            product page for details. †Terms and conditions apply. See
+            calculator for details.
+          </p>
         </div>
       </div>
 

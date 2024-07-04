@@ -106,6 +106,7 @@
   padding: 12px;
   padding-left: 50px;
   font-size: 15px;
+  position: relative;
 }
 
 .navbarContainer .navLinkThirdGroup ul {
@@ -189,13 +190,12 @@
   overflow: hidden;
 }
 
-.navbarContainer .dropdown-content {
+.dropdown-content {
   display: none;
   position: absolute;
   width: 100%;
-  left: 0;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-  z-index: 1;
+  z-index: 100;
   transition: 0.5s;
 }
 
@@ -204,7 +204,7 @@
 }
 
 .navbarContainer .column {
-  width: 30%;
+  width: 100%;
   padding: 10px;
   background-color: #fff;
   height: auto;
