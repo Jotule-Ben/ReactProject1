@@ -1,0 +1,23 @@
+.cardSec2 {
+  max-width: 1300px;
+  margin: auto;
+  display: flex;
+  gap: 20;
+  width: 100%;
+  padding-top: 20px;
+  border: none;
+}
+
+.cardSec2 > div {
+  width: 33%;
+}
+
+/* .cardSec2 > div:last-of-type {
+  margin-left: 10px;
+} */
+
+.cardSec2 img {
+  width: 100%;
+  justify-content: space-between;
+  cursor: pointer;
+}

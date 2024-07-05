@@ -26,6 +26,7 @@ import img20 from "../asset/costco16.jpg";
 import img21 from "../asset/costco15.jpg";
 import img22 from "../asset/twoColumnCard1.png";
 import img23 from "../asset/twoColumnCard2.png";
+import banner2 from "../asset/hero2.png";
 import { Carousel } from "react-bootstrap";
 import "../css/home.css";
 import {
@@ -43,6 +44,8 @@ import { FaAward, FaStar, FaStarHalf } from "react-icons/fa6";
 import { TbTruckDelivery } from "react-icons/tb";
 import { BiSolidDollarCircle } from "react-icons/bi";
 import SingleCard from "../components/SingleColumnCard";
+import ThreeCard from "../components/ThreeCard";
+import Rewards from "../components/Rewards";
 
 const Home = () => {
   return (
@@ -425,6 +428,20 @@ const Home = () => {
         </div>
         <div>
           <img src={img23} alt="" />
+        </div>
+      </div>
+
+      <div>
+        <ThreeCard />
+      </div>
+
+      <div>
+        <Rewards />
+      </div>
+
+      <div className="hero2">
+        <div className="heroMain2">
+          <img src={banner2} alt="Banner" />
         </div>
       </div>
 

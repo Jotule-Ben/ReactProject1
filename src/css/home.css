@@ -378,3 +378,16 @@
   justify-content: space-between;
   cursor: pointer;
 }
+
+.hero2 {
+  max-width: 1270px;
+  margin: auto;
+  padding-top: 50px;
+}
+
+.heroMain2 img {
+  border-radius: 10px;
+  width: 100%;
+  cursor: pointer;
+  margin-top: 0;
+}
