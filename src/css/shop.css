@@ -1,5 +1,7 @@
 .shop {
   max-width: 1300px;
+  margin: auto;
+  padding: 8px;
 }
 
 .bbyHero {
@@ -8,4 +10,23 @@
 
 .bbyHero img {
   width: 100%;
+}
+
+.cardSection {
+  display: flex;
+  flex-wrap: nowrap;
+  cursor: pointer;
+}
+
+.cardSection > div p {
+  font-size: 14px;
+  padding-left: 10px;
+}
+
+.cardSection > div:hover p {
+  text-decoration: underline;
+}
+
+.cardSection img:hover {
+  margin-top: -5px;
 }

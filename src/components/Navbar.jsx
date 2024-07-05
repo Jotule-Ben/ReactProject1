@@ -110,7 +110,7 @@ const Navbar = () => {
         <div className="navLinkThirdGroup">
           <ul>
             <li className="dropdown">
-              <Link className="dropbtn">
+              <Link className="dropbtn" to="/shop">
                 <span>
                   <FaHamburger />
                 </span>

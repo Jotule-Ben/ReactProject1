@@ -9,6 +9,7 @@ import Home from "./pages/Home";
 // import AccountFooter from "./components/AccountFooter";
 import SignUp from "./pages/SignUp";
 import RegisterNew from "./pages/RegisterNew";
+import Shop from "./components/Shop";
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/signUp" exac element={<SignUp />} />
         <Route path="/register" exac element={<RegisterNew />} />
+        <Route path="/shop" exac element={<Shop />} />
       </Routes>
     </>
   );
