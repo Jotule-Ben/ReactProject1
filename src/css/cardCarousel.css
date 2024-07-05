@@ -1,0 +1,36 @@
+.cardCarouselSection {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.cardCarouselContainer {
+  width: 20%;
+  margin: 5px;
+  height: 170px;
+  background-color: #fff !important;
+  border: none !important;
+  color: #333 !important;
+}
+
+.cardCarouselSection a {
+  font-size: 15px;
+  color: #4a8ec2;
+  margin-bottom: 0;
+  padding-bottom: 0;
+  border-bottom: 1px dotted #4a8ec2;
+  text-decoration: none;
+}
+
+.cardCarouselSection a:hover {
+  border-bottom: 1px solid #4a8ec2;
+}
+
+.cardCarouselContainer img {
+  height: 280px;
+}
+
+.cardTitle {
+  font-weight: 600 !important;
+  font-size: 23px !important;
+}
