@@ -26,6 +26,13 @@ import img20 from "../asset/costco16.jpg";
 import img21 from "../asset/costco15.jpg";
 import img22 from "../asset/twoColumnCard1.png";
 import img23 from "../asset/twoColumnCard2.png";
+import img24 from "../asset/costco54.png";
+import img25 from "../asset/costco55.png";
+import img26 from "../asset/costco56.png";
+import img27 from "../asset/costco57.png";
+import img28 from "../asset/costco58.png";
+import img29 from "../asset/costco59.png";
+import img30 from "../asset/costco60.png";
 import banner2 from "../asset/hero2.png";
 import { Carousel } from "react-bootstrap";
 import "../css/home.css";
@@ -46,6 +53,7 @@ import { BiSolidDollarCircle } from "react-icons/bi";
 import SingleCard from "../components/SingleColumnCard";
 import ThreeCard from "../components/ThreeCard";
 import Rewards from "../components/Rewards";
+import Appliances from "../components/Appliances";
 
 const Home = () => {
   return (
@@ -442,6 +450,92 @@ const Home = () => {
       <div className="hero2">
         <div className="heroMain2">
           <img src={banner2} alt="Banner" />
+        </div>
+      </div>
+
+      <div className="cardCarouselSec">
+        <h2>LG Appliances</h2>
+
+        <Carousel data-bs-theme="dark" className="carouselSec">
+          <Carousel.Item>
+            <Appliances />
+          </Carousel.Item>
+
+          <Carousel.Item>
+            <Appliances />
+          </Carousel.Item>
+        </Carousel>
+      </div>
+
+      <div className="cardCarouselSec">
+        <h2>Samsung Appliances</h2>
+
+        <Carousel data-bs-theme="dark" className="carouselSec">
+          <Carousel.Item>
+            <Appliances />
+          </Carousel.Item>
+
+          <Carousel.Item>
+            <Appliances />
+          </Carousel.Item>
+        </Carousel>
+      </div>
+
+      <div className="cardSec2">
+        <div>
+          <img src={img24} alt="" />
+        </div>
+        <div>
+          <img src={img25} alt="" />
+        </div>
+      </div>
+
+      <div>
+        <div className="threeCard">
+          <div>
+            <img src={img26} alt="" />
+          </div>
+
+          <div>
+            <img src={img27} alt="" />
+          </div>
+
+          <div>
+            <img src={img28} alt="" />
+          </div>
+
+          <div>
+            <img src={img26} alt="" />
+          </div>
+
+          <div>
+            <img src={img27} alt="" />
+          </div>
+
+          <div>
+            <img src={img28} alt="" />
+          </div>
+
+          <div>
+            <img src={img26} alt="" />
+          </div>
+
+          <div>
+            <img src={img27} alt="" />
+          </div>
+
+          <div>
+            <img src={img28} alt="" />
+          </div>
+        </div>
+      </div>
+
+      <div className="cardSec2">
+        <div>
+          <img src={img29} alt="" />
+        </div>
+        <div>
+          <img src={img30} alt="" />
         </div>
       </div>
 

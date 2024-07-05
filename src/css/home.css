@@ -391,3 +391,24 @@
   cursor: pointer;
   margin-top: 0;
 }
+
+.threeCard {
+  max-width: 1300px;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  width: 100%;
+  padding-top: 20px;
+  border: none;
+}
+
+.threeCard > div {
+  width: 32%;
+}
+
+.threeCard img {
+  width: 100%;
+  justify-content: space-between;
+  cursor: pointer;
+}
