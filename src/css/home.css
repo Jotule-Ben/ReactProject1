@@ -349,9 +349,32 @@
   background-color: #0060a9;
 }
 
-.firstCardCarouselSec h2 {
+.cardCarouselSec h2 {
   font-size: 30px;
-  padding-top: 5px;
+  padding-top: 10px;
   margin: 0;
   text-align: center;
+}
+
+.cardSec2 {
+  max-width: 1300px;
+  margin: auto;
+  display: flex;
+  width: 100%;
+  padding-top: 20px;
+  border: none;
+}
+
+.cardSec2 > div {
+  width: 50%;
+}
+
+.cardSec2 > div:last-of-type {
+  margin-left: 10px;
+}
+
+.cardSec2 img {
+  width: 100%;
+  justify-content: space-between;
+  cursor: pointer;
 }

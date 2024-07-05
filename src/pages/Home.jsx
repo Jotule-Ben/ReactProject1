@@ -24,6 +24,8 @@ import img18 from "../asset/whyBuyAppliancesImg.png";
 import img19 from "../asset/costco10.jpg";
 import img20 from "../asset/costco16.jpg";
 import img21 from "../asset/costco15.jpg";
+import img22 from "../asset/twoColumnCard1.png";
+import img23 from "../asset/twoColumnCard2.png";
 import { Carousel } from "react-bootstrap";
 import "../css/home.css";
 import {
@@ -381,7 +383,7 @@ const Home = () => {
         </div>
       </div>
 
-      <div className="firstCardCarouselSec">
+      <div className="cardCarouselSec">
         <h2>Selected For You</h2>
 
         <Carousel data-bs-theme="dark" className="carouselSec">
@@ -398,6 +400,34 @@ const Home = () => {
           </Carousel.Item>
         </Carousel>
       </div>
+
+      <div className="cardCarouselSec">
+        <h2>Best Sellers In Your Area</h2>
+
+        <Carousel data-bs-theme="dark" className="carouselSec">
+          <Carousel.Item>
+            <SingleCard />
+          </Carousel.Item>
+
+          <Carousel.Item>
+            <SingleCard />
+          </Carousel.Item>
+
+          <Carousel.Item>
+            <SingleCard />
+          </Carousel.Item>
+        </Carousel>
+      </div>
+
+      <div className="cardSec2">
+        <div>
+          <img src={img22} alt="" />
+        </div>
+        <div>
+          <img src={img23} alt="" />
+        </div>
+      </div>
+
       <Footer />
     </>
   );
