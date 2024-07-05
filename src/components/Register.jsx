@@ -24,7 +24,10 @@ const Register = () => {
               By creating an account you agree to Costco,
               <Link>terms and conditions</Link> of use.
             </p>
-            <button>Create Account</button>
+            <button>
+              {" "}
+              <Link to="/signUp">Create Account</Link>
+            </button>
           </form>
           <h3>
             Already have an account? <Link to="/signUp">Sign In</Link>

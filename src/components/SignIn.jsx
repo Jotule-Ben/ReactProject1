@@ -21,7 +21,9 @@ const SignIn = () => {
             </div>
             <br />
             <p>Check this box only when on a private device.</p>
-            <button>Sign In</button>
+            <button>
+              <Link to="/">Sign In</Link>
+            </button>
           </form>
           <h3>New to Costco?</h3>
           <button>
