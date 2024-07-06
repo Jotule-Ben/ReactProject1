@@ -104,10 +104,12 @@ const Shop = () => {
         <div className="cardContainer">
           <div className="cardsec">
             <Card className="cardContent">
-              <Card.Img variant="top" src={card6} />
+              <Link to="/detail">
+                <Card.Img variant="top" src={card6} />
+              </Link>
               <Card.Body>
                 <Card.Title>$21.99</Card.Title>
-                <Link>
+                <Link to="/detail">
                   Kirkland signature baby wipes fragrance free, 900-count
                 </Link>
                 <br />

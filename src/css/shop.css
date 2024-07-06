@@ -13,6 +13,15 @@
   text-decoration: underline;
 }
 
+.shop a {
+  text-decoration: none;
+  font-size: 13px;
+}
+
+.shop a:hover {
+  text-decoration: underline;
+}
+
 .bbyHero {
   width: 100%;
 }

@@ -10,6 +10,7 @@ import Home from "./pages/Home";
 import SignUp from "./pages/SignUp";
 import RegisterNew from "./pages/RegisterNew";
 import Shop from "./components/Shop";
+import ProductDetail from "./components/ProductDetail";
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
         <Route path="/signUp" exac element={<SignUp />} />
         <Route path="/register" exac element={<RegisterNew />} />
         <Route path="/shop" exac element={<Shop />} />
+        <Route path="/detail" exac element={<ProductDetail />} />
       </Routes>
     </>
   );
