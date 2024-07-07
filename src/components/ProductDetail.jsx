@@ -77,10 +77,10 @@ const ProductDetail = () => {
                 <FaPrint /> Print
               </p>
             </div>
-            <div className="delivery delivery1">
+            <div className="deliverySec delivery1">
               <strong>Delivery</strong>
             </div>
-            <div className="delivery">
+            <div className="deliverySec">
               <strong>Same-Day Delivery</strong>
               <div>
                 <img src="{img6}" alt="" />
@@ -94,47 +94,98 @@ const ProductDetail = () => {
             <input type="checkbox" /> <span> Compare Product</span>
           </div>
         </div>
-      </div>
 
-      <div className="stickyNav">
-        <div className="stickyNavSec1">
-          <div>
-            <img src={img1} alt="" />
+        <div className="stickyNav">
+          <div className="stickyNavSec1">
+            <div>
+              <img src={img1} alt="" />
+            </div>
+            <div>
+              <strong>
+                Kirkland Signature Baby Wipes Fragrance Free, 900-count
+              </strong>
+              <div className="ratingSec2">
+                <p>
+                  <IoStarSharp /> <IoStarSharp /> <IoStarSharp />{" "}
+                  <IoStarSharp />
+                  <IoStarSharp />
+                </p>
+                <p>4.8 (10188) </p>
+                <p>Write a review</p>
+              </div>
+            </div>
           </div>
-          <div>
-            <strong>
-              Kirkland Signature Baby Wipes Fragrance Free, 900-count
-            </strong>
-            <div className="ratingSec2">
-              <p>
-                <IoStarSharp /> <IoStarSharp /> <IoStarSharp /> <IoStarSharp />
-                <IoStarSharp />
-              </p>
-              <p>4.8 (10188) </p>
-              <p>Write a review</p>
+          <div className="stickyNavSec2">
+            <p>$21.99</p>
+            <div className="stickyNavAddToCartBtn">
+              <span>-</span> <span>1</span> <span>+</span>
+              <Button variant="primary">Add</Button>
             </div>
           </div>
         </div>
-        <div className="stickyNavSec2">
-          <p>$21.99</p>
-          <div className="stickyNavAddToCartBtn">
-            <span>-</span> <span>1</span> <span>+</span>
-            <Button variant="primary">Add</Button>
+
+        <div>
+          <div className="fixedSec">
+            <ul>
+              <li>Product Details</li>
+              <li>Specifications</li>
+              <li>Shipping & Returns</li>
+              <li>Reviews</li>
+            </ul>
+          </div>
+
+          <div className="aboutContainer">
+            <div className="aboutSecOneContainer">
+              <div>
+                <div className="productDetailsMain">
+                  <div className="productDetailsSub">
+                    <h4>Product Details</h4>
+                    <small>
+                      Item may be available in your local warehouse for a lower,
+                      non-delivered price.
+                    </small>{" "}
+                    <br />
+                    <small>Limit 3 Per Membership</small> <br />
+                    <small>
+                      Product details have been supplied by the manufacturer and
+                      are hosted by a third party.
+                    </small>
+                    <h4>Overview</h4>
+                    <div className="videoContainer">
+                      <p>
+                        Kirkland Signature™ Baby Wipes are quality-made. The
+                        wipes are thick and made with purified water for a
+                        gentle clean. The naturally derived ingredient formula
+                        is clinically proven to help moisturize skin which helps
+                        maintain healthy skin. The formula is gentle enough for
+                        sensitive, eczema and eczema-prone skin.
+                      </p>
+                      <p>
+                        Kirkland Signature Baby Wipes are made with soft fibers
+                        that are derived from trees grown in environmentally
+                        managed forests and made into plant-based material in an
+                        eco-responsible manner. Kirkland Signature Baby Wipe
+                        cartons and flip-top lids are made of recyclable
+                        material.
+                      </p>
+                    </div>
+                  </div>
+                  <div className="viewMoreDetails">
+                    <h4>Details</h4>
+                    <button>View More</button>
+                  </div>
+                </div>
+              </div>
+              <div className="imgContainer"></div>
+            </div>
+
+            <div className="aboutSecTwoContainer">
+              <div></div>
+              <div></div>
+            </div>
           </div>
         </div>
       </div>
-
-      <div>
-        <div className="fixedSec">
-          <ul>
-            <li>Product Details</li>
-            <li>Specifications</li>
-            <li>Shipping & Returns</li>
-            <li>Reviews</li>
-          </ul>
-        </div>
-      </div>
-
       <Footer />
     </>
   );
