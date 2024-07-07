@@ -96,6 +96,45 @@ const ProductDetail = () => {
         </div>
       </div>
 
+      <div className="stickyNav">
+        <div className="stickyNavSec1">
+          <div>
+            <img src={img1} alt="" />
+          </div>
+          <div>
+            <strong>
+              Kirkland Signature Baby Wipes Fragrance Free, 900-count
+            </strong>
+            <div className="ratingSec2">
+              <p>
+                <IoStarSharp /> <IoStarSharp /> <IoStarSharp /> <IoStarSharp />
+                <IoStarSharp />
+              </p>
+              <p>4.8 (10188) </p>
+              <p>Write a review</p>
+            </div>
+          </div>
+        </div>
+        <div className="stickyNavSec2">
+          <p>$21.99</p>
+          <div className="stickyNavAddToCartBtn">
+            <span>-</span> <span>1</span> <span>+</span>
+            <Button variant="primary">Add</Button>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <div className="fixedSec">
+          <ul>
+            <li>Product Details</li>
+            <li>Specifications</li>
+            <li>Shipping & Returns</li>
+            <li>Reviews</li>
+          </ul>
+        </div>
+      </div>
+
       <Footer />
     </>
   );
