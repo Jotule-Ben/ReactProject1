@@ -392,6 +392,23 @@
   margin-top: 0;
 }
 
+/* .appliances h2 {
+  text-align: center;
+}
+
+.appliances {
+  width: 20%;
+  margin: 5px;
+  height: 170px;
+  background-color: #fff !important;
+  border: none !important;
+  color: #333 !important;
+}
+
+.appliances img {
+  height: 400px;
+} */
+
 .threeCard {
   max-width: 1300px;
   margin: auto;

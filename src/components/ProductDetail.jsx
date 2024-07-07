@@ -136,7 +136,7 @@ const ProductDetail = () => {
 
           <div className="aboutContainer">
             <div className="aboutSecOneContainer">
-              <div>
+              <div className="textContainer">
                 <div className="productDetailsMain">
                   <div className="productDetailsSub">
                     <h4>Product Details</h4>
@@ -178,9 +178,61 @@ const ProductDetail = () => {
 
                 <div className="specifications">
                   <h4>Specifications</h4>
+                  <div className="specificationFirstRow">
+                    <div>Brand</div>
+                    <div>Kirkland Signature</div>
+                  </div>
+                  <div className="specificationSecondRow">
+                    <div>Quantity</div>
+                    <div>900 Count(s)</div>
+                  </div>
+                </div>
+                <div className="shippingAndReturns">
+                  <h4>Shipping & Returns</h4>
+                  <p>
+                    If you’re not completely satisfied with this Kirkland
+                    Signature product, your money will be refunded.
+                  </p>
+                  <p>
+                    Standard shipping via UPS Ground is included in the quoted
+                    price.
+                  </p>
+                  <p>Express shipping is via UPS.</p>
+                  <p>Please choose your shipping method at checkout.</p>
+                  <p>
+                    An additional Shipping and Handling fee will apply to
+                    express shipments. This fee will be quoted at checkout.
+                  </p>
+                  <p>
+                    *Delivery is available to Alaska, Hawaii and Puerto Rico;
+                    however, an additional Shipping and Handling fee will apply.
+                    This fee will be quoted at checkout. Additional transit time
+                    may also be required.
+                  </p>
                 </div>
               </div>
-              <div className="imgContainer"></div>
+              <div className="imgContainer">
+                <div>
+                  <h3>Members also brought</h3>
+                  <img src={img4} alt="" />
+                  <small>$169.99</small> <br />
+                  <Link>Hisense 43" Class - A45H Series - 1080p LED TV</Link>
+                </div>
+
+                <div>
+                  <img src={img5} alt="" />
+                  <small>$799.99</small> <br />
+                  <Link>
+                    Sony 65" Class - BRAVIA 3 Series - 4K UHD LED LCD TV
+                  </Link>
+                </div>
+
+                <div>
+                  <img src={img6} alt="" />
+                  <small>$89.99 </small> <br />
+                  <Link>Sanus Home 42"- 86" Full Motion TV Mount</Link>
+                </div>
+              </div>
             </div>
 
             <div className="aboutSecTwoContainer">
