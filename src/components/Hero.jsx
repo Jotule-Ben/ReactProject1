@@ -14,7 +14,7 @@ const Hero = () => {
           <img src={Banner} alt="Banner" />
         </div>
 
-        <div className="cardsec">
+        <div className="cardsecHero">
           <div className="card1">
             <p>Increased Values on Appliances!</p>
             <img src={Card1} alt="" />

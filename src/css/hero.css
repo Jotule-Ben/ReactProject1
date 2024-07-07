@@ -10,7 +10,7 @@
   cursor: pointer;
 }
 
-.cardsec {
+.cardsecHero {
   max-width: 1600px;
   display: flex;
   width: 100%;
@@ -18,7 +18,7 @@
   border: none;
 }
 
-.cardsec img {
+.cardsecHero img {
   width: 100%;
   justify-content: space-between;
   cursor: pointer;
