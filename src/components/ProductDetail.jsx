@@ -3,8 +3,8 @@ import "../css/productDetail.css";
 import { Link } from "react-router-dom";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
-import { IoStarSharp } from "react-icons/io5";
-import { FaTruck } from "react-icons/fa";
+import { IoArrowRedoSharp, IoStarSharp } from "react-icons/io5";
+import { FaPrint, FaTruck } from "react-icons/fa";
 import { Button } from "react-bootstrap";
 import { TfiMenuAlt } from "react-icons/tfi";
 import img1 from "../asset/productPreview.png";
@@ -13,6 +13,7 @@ import img3 from "../asset/mini2.png";
 import img4 from "../asset/block1.png";
 import img5 from "../asset/block2.png";
 import img6 from "../asset/block3.png";
+// import img7 from "../asset/costco40.svg";
 
 const ProductDetail = () => {
   return (
@@ -43,23 +44,20 @@ const ProductDetail = () => {
           <div className="productPreviewText">
             <h6> Kirkland Signature Baby Wipes Fragrance Free, 900-count</h6>
             <span>Item 14934488</span>
-            <div>
+            <div className="ratingSec">
               <p>
-                <IoStarSharp /> <IoStarSharp />
-                <IoStarSharp />
-                <IoStarSharp />
+                <IoStarSharp /> <IoStarSharp /> <IoStarSharp /> <IoStarSharp />{" "}
                 <IoStarSharp />
               </p>
               <p>4.8 (10188) </p>
               <p>Write a review</p>
             </div>
-            <div>
+            <div className="price">
               <h6>Your Price</h6>
-              <h6>$21.99</h6>
+              <h6>$--.--</h6>
             </div>
-            <p>
-              <em>Shipping & Handling Included*</em>
-            </p>
+            <small>Price Per EACH: $-.- -</small> <br />
+            <small>Shipping & Handling Included*</small> <br /> <br />
             Features:
             <ul>
               <li>(9) 100 ct Flip-Top Lid Soft Packs</li>
@@ -71,42 +69,26 @@ const ProductDetail = () => {
             </ul>
           </div>
           <div className="productPreviewTextTwo">
-            <div>
-              <p>Share</p>
-              <p>Print</p>
+            <div className="print">
+              <p>
+                <IoArrowRedoSharp /> Share
+              </p>
+              <p>
+                <FaPrint /> Print
+              </p>
+            </div>
+            <div className="delivery delivery1">
+              <strong>Delivery</strong>
             </div>
             <div className="delivery">
-              <p>Delivery</p>
+              <strong>Same-Day Delivery</strong>
               <div>
-                <div>
-                  <FaTruck />
-                </div>
-                <div>
-                  <p>
-                    <span>Estimated Wednesday, July 10</span> if ordered now.
-                  </p>
-                  <p>
-                    {" "}
-                    Delivery ZIP Code: <strong>98101 </strong>Change
-                  </p>
-                </div>
-              </div>
-              <div>
-                <p>
-                  <span>-</span> <span>1</span> <span>+</span>
-                </p>
-              </div>
-              <Button>Add to Cart</Button>
-            </div>
-            <div className="delivery">
-              <p>Same-Day Delivery</p>
-              <div>
-                <img src="40" alt="" />
+                <img src="{img6}" alt="" />
                 <p>Prices and Availability Will Vary</p>
               </div>
               <Button>Shop Same-Day Now</Button>
             </div>
-            <Button>
+            <Button className="addbtn">
               <TfiMenuAlt /> Add to List
             </Button>
             <input type="checkbox" /> <span> Compare Product</span>
