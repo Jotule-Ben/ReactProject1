@@ -326,7 +326,7 @@ const Home = () => {
 
       <div className="cardssec">
         <div className="cardsectionContainer">
-          <div className="cardSection">
+          <div className="cardSectionHome">
             <div className="cardsec2">
               <h6>$799.99 After $400 OFF</h6>
               <div>

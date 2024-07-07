@@ -3,14 +3,14 @@
   margin: auto;
 }
 
-.cardSection {
+.cardSectionHome {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   margin-bottom: 20px;
 }
 
-.cardSection > div {
+.cardSectionHome > div {
   width: 21%;
   margin-bottom: 20px;
 }

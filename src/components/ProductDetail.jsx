@@ -175,6 +175,10 @@ const ProductDetail = () => {
                     <button>View More</button>
                   </div>
                 </div>
+
+                <div className="specifications">
+                  <h4>Specifications</h4>
+                </div>
               </div>
               <div className="imgContainer"></div>
             </div>
