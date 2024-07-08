@@ -600,3 +600,67 @@
   border-bottom-left-radius: 3px;
   background-color: #2a7ab7;
 }
+
+.reviewMainText {
+  display: flex;
+  /* justify-content: space-between; */
+}
+
+.reviewMainText div h5 {
+  padding-bottom: 10px;
+  padding-top: 20px;
+  font-weight: normal;
+}
+
+.reviewMainText div {
+  width: 90%;
+}
+
+.reviewMainText div div {
+  display: flex;
+  justify-content: space-between;
+}
+
+.reviewMainText div div p:first-of-type {
+  color: #0060a9;
+}
+
+.reviewMainText div p:last-of-type {
+  color: #0060a9;
+  font-size: 18px;
+}
+
+.customizedBtn {
+  background-color: #eaeaea !important;
+  color: #3071a9 !important;
+  font-weight: normal;
+  padding: 8px 15px !important;
+  border: none !important;
+  width: 300px;
+  margin-left: 500px;
+  margin-bottom: 10px;
+}
+
+.customizedBtn:hover {
+  background-color: #dbd9d9 !important;
+}
+
+.aboutSecTwoContainer hr:last-of-type {
+  color: #dddddd;
+  width: 100%;
+}
+
+.cardCarouselContainer a {
+  color: #2a7ab7;
+  text-decoration: none;
+  border-bottom: 1px dotted #2a7ab7;
+}
+
+.cardCarouselContainer a:hover {
+  border-bottom: 1px solid #2a7ab7;
+  text-decoration: none;
+}
+
+.cardCarouselContainer img {
+  height: 220px;
+}

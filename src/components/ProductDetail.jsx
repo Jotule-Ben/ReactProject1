@@ -5,7 +5,7 @@ import Navbar from "./Navbar";
 import Footer from "./Footer";
 import { IoArrowRedoSharp, IoStarSharp } from "react-icons/io5";
 import { FaPrint, FaSearch, FaStar, FaTruck } from "react-icons/fa";
-import { Button, Form, InputGroup } from "react-bootstrap";
+import { Button, Card, Form, InputGroup } from "react-bootstrap";
 import { TfiMenuAlt } from "react-icons/tfi";
 import img1 from "../asset/productPreview.png";
 import img2 from "../asset/mini1.png";
@@ -13,6 +13,11 @@ import img3 from "../asset/mini2.png";
 import img4 from "../asset/block1.png";
 import img5 from "../asset/block2.png";
 import img6 from "../asset/block3.png";
+import card1 from "../asset/bbySecCard5.png";
+import card2 from "../asset/bbySecCard4.png";
+import card3 from "../asset/bbySecCard6.png";
+import card4 from "../asset/bbySecCard7.png";
+import { MdStars } from "react-icons/md";
 // import img7 from "../asset/costco40.svg";
 
 const ProductDetail = () => {
@@ -267,6 +272,7 @@ Search topics and reviews"
                 </InputGroup>
                 <hr />
               </div>
+
               <div>
                 <div className="reviewButtonSec">
                   <p>Reviews</p> <Button>Write a review</Button>
@@ -349,9 +355,96 @@ Search topics and reviews"
                     </p>
                   </div>
                 </div>
+
+                <div className="reviewMainText">
+                  <div>
+                    <h5>Most Helpful Favourable Review</h5>
+                    <div className="verifiedPurchasers">
+                      <p>
+                        <FaStar /> <FaStar /> <FaStar /> <FaStar /> <FaStar />
+                      </p>
+
+                      <p>
+                        <MdStars /> Verified Purchaser
+                      </p>
+                    </div>
+                    <p>Carol · 3 years ago</p>{" "}
+                    <p>Excellent for many reasons!</p>
+                  </div>
+
+                  <div>
+                    <h5>Most Helpful Critical Review</h5>
+                    <div className="verifiedPurchasers">
+                      <p>
+                        <FaStar /> <FaStar /> <FaStar /> <FaStar /> <FaStar />
+                      </p>
+
+                      <p>
+                        <MdStars /> Verified Purchaser
+                      </p>
+                    </div>
+                    <p>Meghan22 · 3 years ago</p>
+                    <p>Bring back the previous version. These are AWFUL</p>
+                  </div>
+                </div>
+
+                <Button className="customizedBtn">View More</Button>
+                <hr />
               </div>
             </div>
           </div>
+        </div>
+
+        <div className="cardCarouselSection">
+          <Card className="cardCarouselContainer">
+            <Card.Img variant="top" src={card2} />
+            <Card.Body>
+              <Card.Title className="cardTitle">$21.99</Card.Title>
+              <Link variant="primary">
+                Kirkland Signature Scented Baby Wipes 900-Count
+              </Link>
+            </Card.Body>
+          </Card>
+
+          <Card className="cardCarouselContainer">
+            <Card.Img variant="top" src={card3} />
+            <Card.Body>
+              <Card.Title className="cardTitle">$22.99</Card.Title>
+              <Link variant="primary">RICO Baby Wipes 720-count</Link>
+            </Card.Body>
+          </Card>
+
+          <Card className="cardCarouselContainer">
+            <Card.Img variant="top" src={card4} />
+            <Card.Body>
+              <Card.Title className="cardTitle">$39.99</Card.Title>
+              <Link variant="primary">Huggies Plus Diapers Size Newborn</Link>
+            </Card.Body>
+          </Card>
+
+          <Card className="cardCarouselContainer">
+            <Card.Img variant="top" src={card1} />
+            <Card.Body>
+              <Card.Text>Start at</Card.Text>
+              <Card.Title className="cardTitle">$44.99</Card.Title>
+              <Card.Text>Free Shipping*</Card.Text>
+              <Link variant="primary">
+                Kirkland Signature Diapers Sizes 3-6
+              </Link>
+            </Card.Body>
+          </Card>
+
+          <Card className="cardCarouselContainer">
+            <Card.Img variant="top" src={card2} />
+            <Card.Body>
+              <Card.Text>Starting at</Card.Text>
+              <Card.Title className="cardTitle">$34.99</Card.Title>
+              <Card.Text>Free Shipping*</Card.Text>
+              <Link variant="primary">
+                Kirkland Signature Diapers Sizes 1-2
+              </Link>
+            </Card.Body>
+          </Card>
         </div>
       </div>
       <Footer />
