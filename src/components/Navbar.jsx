@@ -10,6 +10,7 @@ import {
   FaLocationDot,
 } from "react-icons/fa6";
 import { FaHamburger, FaSearch } from "react-icons/fa";
+import { FiMenu } from "react-icons/fi";
 
 const Navbar = () => {
   return (
@@ -112,14 +113,14 @@ const Navbar = () => {
             <li className="dropdown">
               <Link className="dropbtn" to="/shop">
                 <span>
-                  <FaHamburger />
+                  <FiMenu />
                 </span>
                 Shop
               </Link>
 
-              <div class="dropdown-content">
-                <div class="row">
-                  <div class="column">
+              <div className="dropdown-content">
+                <div className="row">
+                  <div className="column">
                     <h6>Appliances </h6>
                     <h6>Baby </h6>
                     <h6>Beauty </h6>
