@@ -4,8 +4,8 @@ import { Link } from "react-router-dom";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
 import { IoArrowRedoSharp, IoStarSharp } from "react-icons/io5";
-import { FaPrint, FaTruck } from "react-icons/fa";
-import { Button } from "react-bootstrap";
+import { FaPrint, FaSearch, FaStar, FaTruck } from "react-icons/fa";
+import { Button, Form, InputGroup } from "react-bootstrap";
 import { TfiMenuAlt } from "react-icons/tfi";
 import img1 from "../asset/productPreview.png";
 import img2 from "../asset/mini1.png";
@@ -236,8 +236,120 @@ const ProductDetail = () => {
             </div>
 
             <div className="aboutSecTwoContainer">
-              <div></div>
-              <div></div>
+              <div className="reviewsContainer">
+                <h4>Reviews</h4>
+                <div>
+                  <p>
+                    <IoStarSharp /> <IoStarSharp /> <IoStarSharp />{" "}
+                    <IoStarSharp />
+                    <IoStarSharp />
+                  </p>
+                  <p>4.8 </p> | <p>10214 Reviews</p>
+                </div>
+                <hr />
+
+                <InputGroup className="mb-3 reviewSearch">
+                  <Form.Control
+                    placeholder="
+Search topics and reviews"
+                    aria-label="Recipient's username"
+                    aria-describedby="basic-addon2"
+                  />
+                  <Button
+                    variant="outline-secondary secondary"
+                    id="button-addon2"
+                    className="reviewButton"
+                  >
+                    <span className="reviewSearch">
+                      <FaSearch />
+                    </span>
+                  </Button>
+                </InputGroup>
+                <hr />
+              </div>
+              <div>
+                <div className="reviewButtonSec">
+                  <p>Reviews</p> <Button>Write a review</Button>
+                </div>
+
+                <div className="ratingSnapshot">
+                  <div>
+                    <p>Rating Snapshot</p>
+                    <p>Select a row below to filter reviews</p>
+                    {/* <p>
+                      <span>5 </span>
+                      <span>
+                        <FaStar />
+                      </span>
+                      <span> 9050</span>
+                    </p> */}
+                    <div>
+                      <p>
+                        5<FaStar className="mt-1" />
+                      </p>
+                      <span className="histogramSpan">
+                        <span className="histogram"></span>
+                        <span className="histogram2"></span>
+                      </span>
+                      <div> 9050</div>
+                    </div>
+
+                    <div>
+                      <p>
+                        4<FaStar className="mt-1" />
+                      </p>
+                      <span className="histogramSpan">
+                        <span className="histogram3"></span>
+                        <span className="histogram2"></span>
+                      </span>
+                      <div> 625</div>
+                    </div>
+
+                    <div>
+                      <p>
+                        3<FaStar className="mt-1" />
+                      </p>
+                      <span className="histogramSpan">
+                        <span className="histogram4"></span>
+                        <span className="histogram2"></span>
+                      </span>
+                      <div> 207</div>
+                    </div>
+
+                    <div>
+                      <p>
+                        2<FaStar className="mt-1" />
+                      </p>
+                      <span className="histogramSpan">
+                        <span className="histogram5"></span>
+                        <span className="histogram2"></span>
+                      </span>
+                      <div> 95</div>
+                    </div>
+
+                    <div>
+                      <p>
+                        1<FaStar className="mt-1" />
+                      </p>
+                      <span className="histogramSpan">
+                        <span className="histogram6"></span>
+                        <span className="histogram2"></span>
+                      </span>
+                      <div> 248</div>
+                    </div>
+                  </div>
+                  <div>
+                    <p>Average Customer Ratings</p>
+                    <p>
+                      Overall
+                      <span>
+                        <FaStar /> <FaStar /> <FaStar /> <FaStar /> <FaStar />
+                      </span>
+                      <span>4.8</span>
+                    </p>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>

@@ -109,7 +109,6 @@
 
 .productPreviewText ul {
   font-size: 15px;
-  /* line-height: 1.7; */
   color: #5e5e5e;
 }
 
@@ -179,6 +178,7 @@
   border-bottom: 1px solid #bbbbbb;
 
   position: sticky;
+  z-index: 99;
   /*top: 0;
   width: 100%;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); */
@@ -277,6 +277,7 @@
   padding-top: 5px;
   box-shadow: rgb(238, 238, 238) 0px 1px 3px 0px;
   position: sticky;
+  z-index: 99;
   top: 0;
   width: 100%;
   background-color: #ffffff;
@@ -461,4 +462,141 @@
 .imgContainer a:hover {
   text-decoration: none;
   border-bottom: 1px solid #3071a9;
+}
+
+.reviewsContainer div {
+  display: flex;
+  width: 50%;
+}
+
+.reviewsContainer div p {
+  padding-left: 10px;
+  font-size: 18px;
+}
+
+.reviewsContainer div p:nth-child(2) {
+  padding-right: 10px;
+}
+
+.reviewsContainer div p:first-of-type {
+  color: #0060a9;
+}
+
+.reviewsContainer div p:nth-child(3) {
+  font-weight: normal;
+  color: #676565;
+}
+
+.reviewsContainer hr {
+  color: #676565;
+  width: 100%;
+  margin-bottom: 5px;
+}
+
+.reviewSearch {
+  color: #ffffff;
+  font-weight: 700;
+  width: 20%;
+  border-radius: 0 !important;
+}
+
+.reviewButton {
+  background-color: #787878 !important;
+  width: 15%;
+  border-radius: 0 !important;
+}
+
+.reviewButton:hover {
+  background-color: #6b6969 !important;
+}
+
+.reviewSearch {
+  margin-top: 5px;
+}
+
+.reviewButtonSec {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 10px;
+  padding-bottom: 20px;
+}
+
+.reviewButtonSec Button {
+  background-color: #3473aa !important;
+  border-radius: 3px !important;
+}
+
+.ratingSnapshot {
+  display: flex;
+  justify-content: space-between;
+  width: 65%;
+}
+
+.ratingSnapshot div:last-of-type p:last-of-type span:nth-child(1) {
+  color: #3473aa;
+  padding-left: 15px;
+  padding-right: 50px;
+}
+
+.ratingSnapshot div:first-of-type div {
+  display: flex;
+  justify-content: space-between;
+  width: 600px;
+}
+
+.ratingSnapshot div:first-of-type div p {
+  display: flex;
+  margin-right: 10px;
+}
+
+.ratingSnapshot div:first-of-type div div {
+  margin-left: 10px;
+}
+
+.histogramSpan {
+  background-color: #c9c9c9;
+  width: 100%;
+  height: 22px;
+  margin-top: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.histogram {
+  border-top-left-radius: 3px;
+  border-bottom-left-radius: 3px;
+  background-color: #2a7ab7;
+  padding-right: 240px;
+}
+
+.histogram2 {
+  background-color: #c9c9c9;
+}
+
+.ratingSnapshot .histogram3 {
+  padding-right: 35px;
+  border-top-left-radius: 3px;
+  border-bottom-left-radius: 3px;
+  background-color: #2a7ab7;
+}
+
+.ratingSnapshot .histogram4 {
+  padding-right: 20px;
+  border-top-left-radius: 3px;
+  border-bottom-left-radius: 3px;
+  background-color: #2a7ab7;
+}
+
+.ratingSnapshot .histogram5 {
+  padding-right: 8px;
+  border-top-left-radius: 3px;
+  border-bottom-left-radius: 3px;
+  background-color: #2a7ab7;
+}
+
+.ratingSnapshot .histogram6 {
+  padding-right: 13px;
+  border-top-left-radius: 3px;
+  border-bottom-left-radius: 3px;
+  background-color: #2a7ab7;
 }
