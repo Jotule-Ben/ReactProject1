@@ -14,6 +14,7 @@ import ProductDetail from "./components/ProductDetail";
 import MerchantAccount from "./components/MerchantAccount";
 import UpdateMerchantPassword from "./components/UpdateMerchantPassword";
 import UpdateMerchantInfo from "./components/UpdateMerchantInfo";
+import UpdateUserDetails from "./components/UpdateUserDetails";
 
 function App() {
   return (
@@ -35,6 +36,7 @@ function App() {
           exac
           element={<UpdateMerchantInfo />}
         />
+        <Route path="/updateUserDetail" exac element={<UpdateUserDetails />} />
       </Routes>
     </>
   );

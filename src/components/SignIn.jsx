@@ -36,7 +36,7 @@ const SignIn = () => {
             <input type="email" placeholder="Email Address" ref={email} />
             <br />
             <input type="password" placeholder="password" ref={password} />
-            <Link>Forgot Password?</Link>
+            <Link to="/updateUserDetail">Forgot Password?</Link>
             <br />
             <div className="checkbox">
               <input type="checkbox" />
