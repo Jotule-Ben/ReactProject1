@@ -91,7 +91,7 @@ const MerchantAccount = () => {
               <input type="email" placeholder="Email Address" ref={email} />
               <br />
               <input type="password" placeholder="password" ref={password} />
-              <Link to="updatemerchantpassword">Forgot Password?</Link>
+              <Link to="/updatemerchantpassword">Forgot Password?</Link>
               <br />
               <div className="checkbox">
                 <input type="checkbox" />

@@ -12,17 +12,11 @@ import RegisterNew from "./pages/RegisterNew";
 import Shop from "./components/Shop";
 import ProductDetail from "./components/ProductDetail";
 import MerchantAccount from "./components/MerchantAccount";
+import UpdateMerchantPassword from "./components/UpdateMerchantPassword";
+import UpdateMerchantInfo from "./components/UpdateMerchantInfo";
 
 function App() {
   return (
-    // <div>
-    //   <Home />
-    // <Navbar />
-    //   <AccountNavbar />
-    //   <AccountFooter />
-    //   <SignUp />
-    //   <RegisterNew />
-    // </div>
     <>
       <Routes>
         <Route path="/" element={<Home />} />
@@ -31,6 +25,16 @@ function App() {
         <Route path="/shop" exac element={<Shop />} />
         <Route path="/detail" exac element={<ProductDetail />} />
         <Route path="/merchantaccount" exac element={<MerchantAccount />} />
+        <Route
+          path="/updatemerchantpassword"
+          exac
+          element={<UpdateMerchantPassword />}
+        />
+        <Route
+          path="/updateMerchantInfo"
+          exac
+          element={<UpdateMerchantInfo />}
+        />
       </Routes>
     </>
   );
