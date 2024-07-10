@@ -1,0 +1,79 @@
+.createAccount {
+  display: flex;
+  justify-content: space-between;
+}
+
+.createAccount {
+  padding-top: 60px;
+  padding-bottom: 70px;
+}
+
+.merchantSignInForm {
+  padding: 25px;
+  border: 1px solid rgb(198, 198, 198);
+  height: 60vh;
+}
+
+.merchantLogInForm {
+  padding: 25px;
+  border: 1px solid rgb(198, 198, 198);
+}
+
+.createAccount h1 {
+  padding-bottom: 30px;
+  font-weight: 400;
+  font-size: 40px;
+  color: #333333;
+}
+
+.createAccount form input {
+  padding: 10px 15px;
+  width: 100%;
+  border: 1px solid black;
+  font-size: 18px;
+  border-radius: 5px;
+  margin-bottom: 8px;
+}
+
+.createAccount form input {
+  margin-bottom: 30px;
+}
+
+.createAccount form input:last-of-type {
+  margin-bottom: 10px;
+}
+
+.createAccount form input[type="checkbox"] {
+  padding: 0px;
+  width: 5%;
+  margin-top: 10px;
+  margin-bottom: 0px;
+}
+
+.createAccount .checkbox {
+  font-size: 13px;
+}
+
+.createAccount form p {
+  font-size: 12px;
+  padding-bottom: 10px;
+}
+
+.createAccount form button {
+  width: 100%;
+  background-color: #3071a9;
+  color: #fff;
+  padding: 15px;
+  border: none;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.createAccount form button a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.createAccount form button:hover {
+  background-color: #297ac0;
+}

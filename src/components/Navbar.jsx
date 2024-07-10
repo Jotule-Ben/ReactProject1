@@ -35,9 +35,6 @@ const Navbar = () => {
                 <Link> Treasure Hunt </Link>
               </li>
               <li>
-                <Link> What's New </Link>
-              </li>
-              <li>
                 <Link> New Lower Prices </Link>
               </li>
               <li>
@@ -45,6 +42,9 @@ const Navbar = () => {
               </li>
               <li>
                 <Link> Customer Service </Link>
+              </li>
+              <li>
+                <Link to="/merchantaccount"> Settings </Link>
               </li>
               <li className="dropdown2">
                 <Link className="dropbtn2">

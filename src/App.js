@@ -11,6 +11,7 @@ import SignUp from "./pages/SignUp";
 import RegisterNew from "./pages/RegisterNew";
 import Shop from "./components/Shop";
 import ProductDetail from "./components/ProductDetail";
+import MerchantAccount from "./components/MerchantAccount";
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
         <Route path="/register" exac element={<RegisterNew />} />
         <Route path="/shop" exac element={<Shop />} />
         <Route path="/detail" exac element={<ProductDetail />} />
+        <Route path="/merchantaccount" exac element={<MerchantAccount />} />
       </Routes>
     </>
   );
