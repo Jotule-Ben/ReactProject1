@@ -30,7 +30,7 @@
 
 .mainImage img {
   width: 100%;
-  height: 340px;
+  height: 350px;
 }
 
 .mainImageSpan {
@@ -127,7 +127,12 @@
 
 .deliverySec {
   border: 1px solid forestgreen;
-  padding: 20px;
+  padding: 10px;
+}
+
+.deliverySec img {
+  margin-left: 50px;
+  margin-top: 10px;
 }
 
 .delivery1 {
@@ -135,9 +140,64 @@
   border: 1px solid #333;
 }
 
+.delivery1Div {
+  display: flex;
+  padding-top: 5px;
+}
+
+.delivery1Div strong:first-of-type {
+  color: #008000;
+}
+
+.delivery1Div span {
+  color: #5200ff;
+}
+
+.delivery1span {
+  text-align: center;
+}
+
+.delivery1span span {
+  background-color: #eaeaea;
+  color: #0060a9;
+  border: 1px solid #afafaf;
+  font-size: 20px;
+  cursor: pointer;
+  margin: 0;
+}
+
+.delivery1span span:nth-child(1) {
+  border-top-left-radius: 2px;
+  border-bottom-left-radius: 2px;
+  padding: 2px 20px;
+}
+
+.delivery1span span:nth-child(2) {
+  color: gray;
+  background-color: #fafafa;
+  border-left: none;
+  border-right: none;
+  cursor: auto;
+  padding: 2px 70px;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.delivery1span span:nth-child(3) {
+  border-top-right-radius: 2px;
+  border-bottom-right-radius: 2px;
+  padding: 2px 20px;
+}
+
 .deliverySec p {
   font-size: 15px;
   color: #5e5e5e;
+  text-align: center;
+}
+
+.delivery1Div p {
+  text-align: justify;
+  padding-left: 10px;
 }
 
 .deliverySec Button {
@@ -657,4 +717,8 @@
 
 .cardCarouselContainer img {
   height: 220px;
+}
+
+.aboutContainer {
+  margin-top: 50px;
 }

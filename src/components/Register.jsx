@@ -1,8 +1,51 @@
-import React from "react";
+import React, { useRef } from "react";
 import { Link } from "react-router-dom";
 import "../css/register.css";
+import axios from "axios";
 
 const Register = () => {
+  const firstName = useRef();
+  const lastName = useRef();
+  const email = useRef();
+  const password = useRef();
+  const phone = useRef();
+
+  const handleSubmit = (event) => {
+    const firstNameValue = firstName.current.value;
+    const lastNameValue = lastName.current.value;
+    const emailValue = email.current.value;
+    const passwordValue = password.current.value;
+    const phoneValue = phone.current.value;
+    console.log(
+      `First Name: ${firstNameValue} \nLast Name: ${lastNameValue} \nEmail: ${emailValue} \nPassword: ${passwordValue} \nPhone: ${phoneValue}`
+    );
+
+    axios
+      .post(`http://ecommerce.reworkstaging.name.ng/v2/users`, {
+        first_name: firstNameValue,
+        last_name: lastNameValue,
+        email: emailValue,
+        phone: phoneValue,
+        password: passwordValue,
+      })
+      .then(
+        (response) => {
+          console.log(response, response.id);
+        },
+        (error) => {
+          console.log(error);
+        }
+      );
+    event.preventDefault();
+    // return {
+    //   firstNameValue,
+    //   lastNameValue,
+    //   emailValue,
+    //   passwordValue,
+    //   phoneValue,
+    // };
+  };
+
   return (
     <>
       <div className="register">
@@ -10,23 +53,23 @@ const Register = () => {
 
         <div className="registerForm">
           <form>
-            <input type="email" placeholder="Email Address" />
+            <input type="name" placeholder="First Name" ref={firstName} />
             <br />
-            <input type="password" placeholder="password" />
+            <input type="name" placeholder="Last Name" ref={lastName} />
             <br />
-            <input type="password" placeholder="Confirm Password" />
+            <input type="email" placeholder="Email Address" ref={email} />
             <br />
-            <input type="text" placeholder="Membership Number (optional)" />
+            <input type="password" placeholder="password" ref={password} />
             <br />
-            <Link>Where can I find my membership number?</Link>
+            <input type="phone" placeholder="Phone" ref={phone} />
             <br />
             <p>
               By creating an account you agree to Costco,
               <Link>terms and conditions</Link> of use.
             </p>
-            <button>
-              {" "}
-              <Link to="/signUp">Create Account</Link>
+            <button onClick={handleSubmit}>
+              Create Account
+              {/* <Link to="/signUp">Create Account</Link> */}
             </button>
           </form>
           <h3>

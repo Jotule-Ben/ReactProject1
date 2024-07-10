@@ -1,4 +1,5 @@
 import React from "react";
+
 import "../css/productDetail.css";
 import { Link } from "react-router-dom";
 import Navbar from "./Navbar";
@@ -18,7 +19,8 @@ import card2 from "../asset/bbySecCard4.png";
 import card3 from "../asset/bbySecCard6.png";
 import card4 from "../asset/bbySecCard7.png";
 import { MdStars } from "react-icons/md";
-// import img7 from "../asset/costco40.svg";
+import img7 from "../asset/costco40.png";
+import AnchorLink from "react-anchor-link-smooth-scroll";
 
 const ProductDetail = () => {
   return (
@@ -84,12 +86,29 @@ const ProductDetail = () => {
             </div>
             <div className="deliverySec delivery1">
               <strong>Delivery</strong>
+              <div className="delivery1Div">
+                <FaTruck />
+                <p>
+                  <strong>Estimated Friday, July 12</strong> if orderd now.
+                  <br />
+                  Delivery ZIP Code: <strong>98101</strong> <span>Change</span>
+                </p>
+              </div>
+              <div className="delivery1span">
+                <span>-</span>
+                <span>1</span>
+                <span>+</span>
+              </div>
             </div>
             <div className="deliverySec">
               <strong>Same-Day Delivery</strong>
               <div>
-                <img src="{img6}" alt="" />
-                <p>Prices and Availability Will Vary</p>
+                <img src={img7} alt="" />
+                <p>
+                  {" "}
+                  <strong> Prices</strong> and <strong>Availability</strong>{" "}
+                  Will Vary
+                </p>
               </div>
               <Button>Shop Same-Day Now</Button>
             </div>
@@ -132,17 +151,29 @@ const ProductDetail = () => {
         <div>
           <div className="fixedSec">
             <ul>
-              <li>Product Details</li>
-              <li>Specifications</li>
-              <li>Shipping & Returns</li>
-              <li>Reviews</li>
+              <li>
+                <AnchorLink href="#productDetailsMain">
+                  Product Details
+                </AnchorLink>
+              </li>
+              <li>
+                <AnchorLink href="#specifications">Specifications</AnchorLink>
+              </li>
+              <li>
+                <AnchorLink href="#shippingAndReturns">
+                  Shipping & Returns
+                </AnchorLink>
+              </li>
+              <li>
+                <AnchorLink href="#aboutSecTwoContainer">Reviews</AnchorLink>
+              </li>
             </ul>
           </div>
 
           <div className="aboutContainer">
             <div className="aboutSecOneContainer">
               <div className="textContainer">
-                <div className="productDetailsMain">
+                <div className="productDetailsMain" id="productDetailsMain">
                   <div className="productDetailsSub">
                     <h4>Product Details</h4>
                     <small>
@@ -181,7 +212,7 @@ const ProductDetail = () => {
                   </div>
                 </div>
 
-                <div className="specifications">
+                <div className="specifications" id="specifications">
                   <h4>Specifications</h4>
                   <div className="specificationFirstRow">
                     <div>Brand</div>
@@ -192,7 +223,7 @@ const ProductDetail = () => {
                     <div>900 Count(s)</div>
                   </div>
                 </div>
-                <div className="shippingAndReturns">
+                <div className="shippingAndReturns" id="shippingAndReturns">
                   <h4>Shipping & Returns</h4>
                   <p>
                     If you’re not completely satisfied with this Kirkland
@@ -240,7 +271,7 @@ const ProductDetail = () => {
               </div>
             </div>
 
-            <div className="aboutSecTwoContainer">
+            <div className="aboutSecTwoContainer" id="aboutSecTwoContainer">
               <div className="reviewsContainer">
                 <h4>Reviews</h4>
                 <div>

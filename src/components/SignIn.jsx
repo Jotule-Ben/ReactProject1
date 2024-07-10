@@ -1,8 +1,31 @@
-import React from "react";
+import React, { useRef } from "react";
 import { Link } from "react-router-dom";
 import "../css/signup.css";
+import axios from "axios";
 
 const SignIn = () => {
+  const email = useRef();
+  const password = useRef();
+
+  const handleSubmit = () => {
+    const emailValue = email.current.value;
+    const passwordValue = password.current.value;
+    axios
+      .post(`http://ecommerce.reworkstaging.name.ng/v2/users/login`, {
+        email: emailValue,
+        password: passwordValue,
+      })
+      .then(
+        (response) => {
+          console.log(response, response.id);
+          alert("Login Successful!", response.id);
+        },
+        (error) => {
+          console.log(error);
+        }
+      );
+  };
+
   return (
     <>
       <div className="signUp">
@@ -10,9 +33,9 @@ const SignIn = () => {
 
         <div className="signInForm">
           <form>
-            <input type="email" placeholder="Email Address" />
+            <input type="email" placeholder="Email Address" ref={email} />
             <br />
-            <input type="password" placeholder="password" />
+            <input type="password" placeholder="password" ref={password} />
             <Link>Forgot Password?</Link>
             <br />
             <div className="checkbox">
@@ -21,8 +44,9 @@ const SignIn = () => {
             </div>
             <br />
             <p>Check this box only when on a private device.</p>
-            <button>
-              <Link to="/">Sign In</Link>
+            <button onClick={handleSubmit}>
+              <Link to="">Sign In</Link>
+              {/* <Link to="/">Sign In</Link> */}
             </button>
           </form>
           <h3>New to Costco?</h3>
