@@ -5,7 +5,6 @@ import { Link } from "react-router-dom";
 import "../css/merchant.css";
 import AccountNavbar from "./AccountNavbar";
 import AccountFooter from "./AccountFooter";
-import MerchantNavbar from "./MerchantNavbar";
 
 const MerchantAccount = () => {
   // Login to merchant account

@@ -13,8 +13,8 @@ const MerchantNavbar = () => {
               <img src={costcologo} alt="" width="20%" />
             </Navbar.Brand>
             <Nav className="me-auto">
-              <Nav.Link href="#home">All Products</Nav.Link>
-              <Nav.Link href="#features">All Categories</Nav.Link>
+              <Nav.Link href="/allProducts">All Products</Nav.Link>
+              <Nav.Link href="/allCategories">All Categories</Nav.Link>
             </Nav>
           </Container>
         </Navbar>

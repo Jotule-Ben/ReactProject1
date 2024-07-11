@@ -15,6 +15,8 @@ import MerchantAccount from "./components/MerchantAccount";
 import UpdateMerchantPassword from "./components/UpdateMerchantPassword";
 import UpdateMerchantInfo from "./components/UpdateMerchantInfo";
 import UpdateUserDetails from "./components/UpdateUserDetails";
+import AllProduct from "./components/AllProduct";
+import AllCategories from "./components/AllCategories";
 
 function App() {
   return (
@@ -37,6 +39,9 @@ function App() {
           element={<UpdateMerchantInfo />}
         />
         <Route path="/updateUserDetail" exac element={<UpdateUserDetails />} />
+        <Route path="/merchantdashboard" exac element={<AllProduct />} />
+        <Route path="/allCategories" exac element={<AllCategories />} />
+        <Route path="/allProduct" exac element={<AllProduct />} />
       </Routes>
     </>
   );
