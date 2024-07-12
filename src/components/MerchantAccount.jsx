@@ -18,8 +18,8 @@ const MerchantAccount = () => {
     phones,
     store,
     description,
-    handleSubmit,
-    handleMerchantSubmit,
+    merchantLogin,
+    handleCreateMerchant,
   } = useContext(Context);
   return (
     <>
@@ -41,7 +41,7 @@ const MerchantAccount = () => {
               </div>
               <br />
               <p>Check this box only when on a private device.</p>
-              <button onClick={handleSubmit}>
+              <button onClick={merchantLogin}>
                 Sign In
                 {/* <Link to="/merchantdashboard">Sign In</Link> */}
               </button>
@@ -79,7 +79,7 @@ const MerchantAccount = () => {
                 By creating an account you agree to Costco,
                 <Link>terms and conditions</Link> of use.
               </p>
-              <button onClick={handleMerchantSubmit}>Create Account</button>
+              <button onClick={handleCreateMerchant}>Create Account</button>
             </form>
           </div>
         </div>
