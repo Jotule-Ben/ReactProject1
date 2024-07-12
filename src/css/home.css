@@ -356,6 +356,10 @@
   text-align: center;
 }
 
+.appliancesCard img {
+  height: 340px !important;
+}
+
 .cardSec2 {
   max-width: 1300px;
   margin: auto;

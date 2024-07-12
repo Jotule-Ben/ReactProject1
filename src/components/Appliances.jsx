@@ -8,7 +8,7 @@ import { FaStar, FaStarHalf } from "react-icons/fa6";
 const Appliances = () => {
   return (
     <div className="cardCarouselSection">
-      <Card className="cardCarouselContainer">
+      <Card className="cardCarouselContainer appliancesCard">
         <Card.Img variant="top" src={card2} />
         <Card.Body>
           <Card.Text>
@@ -28,7 +28,7 @@ const Appliances = () => {
         </Card.Body>
       </Card>
 
-      <Card className="cardCarouselContainer">
+      <Card className="cardCarouselContainer appliancesCard">
         <Card.Img variant="top" src={card1} />
         <Card.Body>
           <Card.Text>
@@ -49,7 +49,7 @@ const Appliances = () => {
         </Card.Body>
       </Card>
 
-      <Card className="cardCarouselContainer">
+      <Card className="cardCarouselContainer appliancesCard">
         <Card.Img variant="top" src={card2} />
         <Card.Body>
           <Card.Text>
@@ -69,7 +69,7 @@ const Appliances = () => {
         </Card.Body>
       </Card>
 
-      <Card className="cardCarouselContainer">
+      <Card className="cardCarouselContainer appliancesCard">
         <Card.Img variant="top" src={card1} />
         <Card.Body>
           <Card.Text>
@@ -90,7 +90,7 @@ const Appliances = () => {
         </Card.Body>
       </Card>
 
-      <Card className="cardCarouselContainer">
+      <Card className="cardCarouselContainer appliancesCard">
         <Card.Img variant="top" src={card2} />
         <Card.Body>
           <Card.Text>
