@@ -92,13 +92,13 @@ export const GlobalProvider = ({ children }) => {
     // }
 
     if (formType === "login") {
-      if (!values.loginEmail) {
-        errors.loginEmail = "Email is required";
-      } else if (!regex.test(values.loginEmail)) {
-        errors.loginEmail = "Email is invalid";
+      if (!values.email) {
+        errors.email = "Email is required";
+      } else if (!regex.test(values.email)) {
+        errors.email = "Email is invalid";
       }
-      if (!values.loginPassword) {
-        errors.loginPassword = "Password is required";
+      if (!values.password) {
+        errors.password = "Password is required";
       }
     } else if (formType === "createMerchant") {
       if (!values.firstName) {
