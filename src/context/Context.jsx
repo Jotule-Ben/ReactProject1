@@ -114,9 +114,13 @@ export const GlobalProvider = ({ children }) => {
       }
       if (!values.merchantPassword) {
         errors.merchantPassword = "Password is required";
+      } else if (!values.merchantPassword > 4) {
+        errors.merchantPassword = " Password cannot be less than 4 characters";
       }
       if (!values.phone) {
-        errors.phone = "Phone is required";
+        errors.phone = "Phone number is required";
+      } else if (values.phone !== 11) {
+        errors.phone = "Not a valid Phone number";
       }
       if (!values.store) {
         errors.store = "Store name is required";
@@ -125,7 +129,9 @@ export const GlobalProvider = ({ children }) => {
         errors.description = "Description is required";
       }
       if (!values.phones) {
-        errors.phones = "Other phones are required";
+        errors.phones = "Other Phone number is required";
+      } else if (values.phones !== 11) {
+        errors.phones = "Not a valid Phone number";
       }
     }
 
