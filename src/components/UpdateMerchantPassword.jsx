@@ -4,7 +4,7 @@ import "../css/signup.css";
 import { Context } from "../context/Context";
 
 const UpdateMerchantPassword = () => {
-  const { formValues, formErrors, handleChange, handleSubmit } =
+  const { formValues, formErrors, handleChange, updateMerchantPassword } =
     useContext(Context);
 
   return (
@@ -32,7 +32,7 @@ const UpdateMerchantPassword = () => {
 
             <p className="error">{formErrors.newPassword}</p>
             <br />
-            <button onClick={handleSubmit}>
+            <button onClick={updateMerchantPassword}>
               <Link to="">Change Password</Link>
             </button>
           </form>

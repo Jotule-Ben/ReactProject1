@@ -133,6 +133,15 @@ export const GlobalProvider = ({ children }) => {
       } else if (values.phones !== 11) {
         errors.phones = "Not a valid Phone number";
       }
+    } else if (formType === "updateMerchantPassword") {
+      if (!values.oldPassword) {
+        errors.oldPassword = "Old password is required";
+      }
+      if (!values.newPassword) {
+        errors.newPassword = "New password is required";
+      } else if (!values.newPassword > 4) {
+        errors.newPassword = "New Password cannot be less than 4 characters";
+      }
     }
 
     return errors;
@@ -249,23 +258,6 @@ export const GlobalProvider = ({ children }) => {
   //     `First Name: ${firstName} \nLast Name: ${lastName} \nmerchantEmail: ${merchantEmail}  \nPhone: ${phone}`
   //   );
 
-  //   if (
-  //     firstName === "" ||
-  //     lastName === "" ||
-  //     merchantEmail === "" ||
-  //     phone === "" ||
-  //     store === "" ||
-  //     description === "" ||
-  //     phones === "" ||
-  //     state === "" ||
-  //     district === "" ||
-  //     twitter === "" ||
-  //     FB === "" ||
-  //     IG === ""
-  //   ) {
-  //     alert("Incorrectly filled!");
-  //     return;
-  //   } else {
   //     axios
   //       .put(
   //         `http://ecommerce.reworkstaging.name.ng/v2/merchants/${merchantId}`,
@@ -299,7 +291,32 @@ export const GlobalProvider = ({ children }) => {
   //         }
   //       );
   //   }
-  // };
+
+  const updateMerchantPassword = (e) => {
+    // Update Merchant Password
+    e.preventDefault();
+    handleSubmit(e, "updateMerchantPassword");
+    axios
+      .put(`${api}/merchants/${merchantId}/change-passwd`, {
+        old_password: formValues.oldPassword,
+        new_password: formValues.newPassword,
+      })
+      .then(
+        (response) => {
+          console.log(response, response.data.id);
+          // Clear input fields
+          formValues.oldPassword = "";
+          formValues.newPassword = "";
+          console.log(merchantId);
+          if (response.data.id === merchantId) {
+            alert("Successful", formValues.oldPassword, formValues.newPassword);
+          }
+        },
+        (error) => {
+          console.log(error);
+        }
+      );
+  };
 
   const value = {
     // email,
@@ -324,6 +341,7 @@ export const GlobalProvider = ({ children }) => {
     // setDescription,
     merchantLogin,
     handleCreateMerchant,
+    updateMerchantPassword,
     // state,
     // setState,
     // district,
