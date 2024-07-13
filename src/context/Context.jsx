@@ -1,4 +1,4 @@
-import React, { createContext, useRef } from "react";
+import React, { createContext, useEffect, useState } from "react";
 import axios from "axios";
 
 export const Context = createContext();
@@ -7,65 +7,189 @@ export const GlobalProvider = ({ children }) => {
   const api = `http://ecommerce.reworkstaging.name.ng/v2`;
   let merchantId;
 
+  const initialValues = {
+    oldPassword: "",
+    newPassword: "",
+    email: "",
+    password: "",
+    firstName: "",
+    lastName: "",
+    merchantEmail: "",
+    merchantPassword: "",
+    phone: "",
+    phones: "",
+    store: "",
+    description: "",
+    state: "",
+    district: "",
+    twitter: "",
+    FB: "",
+    IG: "",
+  };
+  const [formValues, setFormValues] = useState(initialValues);
+  const [formErrors, setFormErrors] = useState({});
+  const [isSubmit, setIsSubmit] = useState(false);
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormValues({ ...formValues, [name]: value });
+  };
+
+  const validate = (values, formType) => {
+    const errors = {};
+    const regex = /^[a-zA-Z0-9]+@(?:[a-zA-Z0-9]+\.)+[A-Za-z]+$/;
+
+    // if (!values.oldPassword) {
+    //   errors.oldPassword = "Old password is required";
+    // }
+    // if (!values.newPassword) {
+    //   errors.newPassword = "New password is required";
+    // }
+    // if (!values.password) {
+    //   errors.password = " Password is required";
+    // }
+    // if (!values.password > 4) {
+    //   errors.password = " Password cannot be less than 4 characters";
+    // }
+    // if (!values.email) {
+    //   errors.email = "Email is required";
+    // } else if (!regex.test(values.email)) {
+    //   errors.email = " Email is Invalid";
+    // }
+    // if (!values.firstName) {
+    //   errors.firstName = "First Name is required";
+    // }
+    // if (!values.lastName) {
+    //   errors.lastName = "Last Name is required";
+    // }
+    // if (!values.merchantEmail) {
+    //   errors.merchantEmail = "Email is required";
+    // }
+    // if (!regex.test(values.merchantEmail)) {
+    //   errors.merchantEmail = " Email is Invalid";
+    // }
+    // if (!values.merchantPassword) {
+    //   errors.merchantPassword = "Password is required";
+    // }
+    // if (!values.phone) {
+    //   errors.phone = "Phone is required";
+    // }
+    // if (!values.store) {
+    //   errors.store = "Store name is required";
+    // }
+    // if (!values.description) {
+    //   errors.description = "Description is required";
+    // }
+    // if (!values.phones) {
+    //   errors.phones = "Other phones is required";
+    // } else if (values.phones !== 11) {
+    //   errors.phones = "Not a valid Phone number";
+    // }
+    // if (!values.phone) {
+    //   errors.phone = "Phone number is required";
+    // } else if (values.phone !== 11) {
+    //   errors.phone = "Not a valid Phone number";
+    // }
+
+    if (formType === "login") {
+      if (!values.loginEmail) {
+        errors.loginEmail = "Email is required";
+      } else if (!regex.test(values.loginEmail)) {
+        errors.loginEmail = "Email is invalid";
+      }
+      if (!values.loginPassword) {
+        errors.loginPassword = "Password is required";
+      }
+    } else if (formType === "createMerchant") {
+      if (!values.firstName) {
+        errors.firstName = "First Name is required";
+      }
+      if (!values.lastName) {
+        errors.lastName = "Last Name is required";
+      }
+      if (!values.merchantEmail) {
+        errors.merchantEmail = "Email is required";
+      } else if (!regex.test(values.merchantEmail)) {
+        errors.merchantEmail = "Email is invalid";
+      }
+      if (!values.merchantPassword) {
+        errors.merchantPassword = "Password is required";
+      }
+      if (!values.phone) {
+        errors.phone = "Phone is required";
+      }
+      if (!values.store) {
+        errors.store = "Store name is required";
+      }
+      if (!values.description) {
+        errors.description = "Description is required";
+      }
+      if (!values.phones) {
+        errors.phones = "Other phones are required";
+      }
+    }
+
+    return errors;
+  };
+
+  const handleSubmit = (e, formType) => {
+    // e.preventDefault();
+    setFormErrors(validate(formValues, formType));
+    setIsSubmit(true);
+  };
+
+  useEffect(() => {
+    if (Object.keys(formErrors).length === 0 && isSubmit) {
+      console.log(formValues);
+    }
+  }, [formErrors, isSubmit, formValues]);
+
   // Create Update and Login to merchant account
-  const email = useRef();
-  const password = useRef();
-  const firstName = useRef();
-  const lastName = useRef();
-  const merchantEmail = useRef();
-  const merchantPassword = useRef();
-  const phone = useRef();
-  const phones = useRef();
-  const store = useRef();
-  const description = useRef();
-  const state = useRef();
-  const district = useRef();
-  const twitter = useRef();
-  const FB = useRef();
-  const IG = useRef();
+  // const [email, setEmail] = useState("");
+  // const [password, setPassword] = useState("");
+  // const [firstName, setFirstName] = useState("");
+  // const [lastName, setLastName] = useState("");
+  // const [merchantEmail, setMerchantEmail] = useState("");
+  // const [merchantPassword, setMerchantPassword] = useState("");
+  // const [phone, setPhone] = useState("");
+  // const [phones, setPhones] = useState("");
+  // const [store, setStore] = useState("");
+  // const [description, setDescription] = useState("");
+  // const [state, setState] = useState("");
+  // const [district, setDistrict] = useState("");
+  // const [twitter, setTwitter] = useState("");
+  // const [FB, setFB] = useState("");
+  // const [IG, setIG] = useState("");
 
-  const handleCreateMerchant = (event) => {
-    event.preventDefault();
-
-    const firstNameValue = firstName.current.value;
-    const lastNameValue = lastName.current.value;
-    const merchantEmailValue = merchantEmail.current.value;
-    const merchantPasswordValue = merchantPassword.current.value;
-    const phoneValue = phone.current.value;
-    const storeValue = store.current.value;
-    const descriptionValue = description.current.value;
-    const phonesValue = phones.current.value;
-
-    console.log(
-      `First Name: ${firstNameValue} \nLast Name: ${lastNameValue} \nmerchantEmail: ${merchantEmailValue} \nmerchantPassword: ${merchantPasswordValue} \nPhone: ${phoneValue}`
-    );
+  const handleCreateMerchant = (e) => {
+    e.preventDefault();
+    handleSubmit(e, "createMerchant");
 
     axios
       .post(`${api}/merchants`, {
-        first_name: firstNameValue,
-        last_name: lastNameValue,
-        email: merchantEmailValue,
-        phone: phoneValue,
-        store_name: storeValue,
-        descp: descriptionValue,
+        first_name: formValues.firstName,
+        last_name: formValues.lastName,
+        email: formValues.merchantEmail,
+        phone: formValues.phone,
+        store_name: formValues.store,
+        descp: formValues.description,
         icon: "",
         banner: "",
-        phones: phonesValue,
-        password: merchantPasswordValue,
+        phones: formValues.phones,
+        password: formValues.merchantPassword,
       })
       .then(
         (response) => {
           console.log(response, response.data.id);
           // Clear input fields
-          firstName.current.value = "";
-          lastName.current.value = "";
-          merchantEmail.current.value = "";
-          merchantPassword.current.value = "";
-          phone.current.value = "";
-          store.current.value = "";
-          description.current.value = "";
-          phones.current.value = "";
-          // alert("Successful");
+          formValues.firstName = "";
+          formValues.lastName = "";
+          formValues.merchantEmail = "";
+          formValues.phone = "";
+          formValues.store = "";
+          formValues.description = "";
+          formValues.phones = "";
+          formValues.merchantPassword = "";
           localStorage.setItem("merchantId", response.data.id);
           merchantId = localStorage.getItem("merchantId");
           console.log(merchantId);
@@ -75,7 +199,6 @@ export const GlobalProvider = ({ children }) => {
         },
         (error) => {
           console.log(error);
-          alert("Error");
         }
       );
   };
@@ -88,24 +211,23 @@ export const GlobalProvider = ({ children }) => {
   console.log(merchantId);
 
   // Log merchant in
-  const merchantLogin = (event) => {
-    event.preventDefault();
-    const emailValue = email.current.value;
-    const passwordValue = password.current.value;
+  const merchantLogin = (e) => {
+    handleSubmit(e, "login");
+    e.preventDefault();
     axios
       .post(`${api}/merchants/login`, {
-        email: emailValue,
-        password: passwordValue,
+        email: formValues.email,
+        password: formValues.password,
       })
       .then(
         (response) => {
           console.log(response, response.data.id);
           // Clear input fields
-          email.current.value = "";
-          password.current.value = "";
+          formValues.email = "";
+          formValues.password = "";
           console.log(merchantId);
           if (response.data.id === merchantId) {
-            alert("Successful", emailValue, passwordValue);
+            alert("Successful", formValues.email, formValues.password);
           }
         },
         (error) => {
@@ -114,78 +236,104 @@ export const GlobalProvider = ({ children }) => {
       );
   };
 
-  const handleUpdateMerchantDetails = (event) => {
-    event.preventDefault();
+  // const handleUpdateMerchantDetails = (event) => {
+  //   event.preventDefault();
 
-    const firstNameValue = firstName.current.value;
-    const lastNameValue = lastName.current.value;
-    const merchantEmailValue = merchantEmail.current.value;
-    const phoneValue = phone.current.value;
-    const storeValue = store.current.value;
-    const descriptionValue = description.current.value;
-    const phonesValue = phones.current.value;
-    const stateValue = state.current.value;
-    const districtValue = district.current.value;
-    const XValue = twitter.current.value;
-    const FBValue = FB.current.value;
-    const IGValue = IG.current.value;
-    console.log(
-      `First Name: ${firstNameValue} \nLast Name: ${lastNameValue} \nmerchantEmail: ${merchantEmailValue}  \nPhone: ${phoneValue}`
-    );
+  //   console.log(
+  //     `First Name: ${firstName} \nLast Name: ${lastName} \nmerchantEmail: ${merchantEmail}  \nPhone: ${phone}`
+  //   );
 
-    axios
-      .put(
-        `http://ecommerce.reworkstaging.name.ng/v2/merchants/${merchantId}`,
-        {
-          first_name: firstNameValue,
-          last_name: lastNameValue,
-          email: merchantEmailValue,
-          phone: phoneValue,
-          store_name: storeValue,
-          descp: descriptionValue,
-          icon: "",
-          banner: "",
-          state: stateValue,
-          district: districtValue,
-          social_media: {
-            x: XValue,
-            face_book: FBValue,
-            instagram: IGValue,
-          },
-          phones: phonesValue,
-        }
-      )
-      .then(
-        (response) => {
-          console.log(response, response.id);
-          alert("Successful");
-        },
-        (error) => {
-          console.log(error);
-          alert("Error");
-        }
-      );
-  };
+  //   if (
+  //     firstName === "" ||
+  //     lastName === "" ||
+  //     merchantEmail === "" ||
+  //     phone === "" ||
+  //     store === "" ||
+  //     description === "" ||
+  //     phones === "" ||
+  //     state === "" ||
+  //     district === "" ||
+  //     twitter === "" ||
+  //     FB === "" ||
+  //     IG === ""
+  //   ) {
+  //     alert("Incorrectly filled!");
+  //     return;
+  //   } else {
+  //     axios
+  //       .put(
+  //         `http://ecommerce.reworkstaging.name.ng/v2/merchants/${merchantId}`,
+  //         {
+  //           first_name: firstName,
+  //           last_name: lastName,
+  //           email: merchantEmail,
+  //           phone: phone,
+  //           store_name: store,
+  //           descp: description,
+  //           icon: "",
+  //           banner: "",
+  //           state: state,
+  //           district: district,
+  //           social_media: {
+  //             x: twitter,
+  //             face_book: FB,
+  //             instagram: IG,
+  //           },
+  //           phones: phones,
+  //         }
+  //       )
+  //       .then(
+  //         (response) => {
+  //           console.log(response, response.id);
+  //           alert("Successful");
+  //         },
+  //         (error) => {
+  //           console.log(error);
+  //           alert("Error");
+  //         }
+  //       );
+  //   }
+  // };
 
   const value = {
-    email,
-    password,
-    firstName,
-    lastName,
-    merchantEmail,
-    merchantPassword,
-    phone,
-    phones,
-    store,
-    description,
+    // email,
+    // setEmail,
+    // password,
+    // setPassword,
+    // firstName,
+    // setFirstName,
+    // lastName,
+    // setLastName,
+    // merchantEmail,
+    // setMerchantEmail,
+    // merchantPassword,
+    // setMerchantPassword,
+    // phone,
+    // setPhone,
+    // phones,
+    // setPhones,
+    // store,
+    // setStore,
+    // description,
+    // setDescription,
     merchantLogin,
     handleCreateMerchant,
-    state,
-    district,
-    twitter,
-    FB,
-    IG,
-    handleUpdateMerchantDetails,
+    // state,
+    // setState,
+    // district,
+    // setDistrict,
+    // twitter,
+    // setTwitter,
+    // FB,
+    // setFB,
+    // IG,
+    // setIG,
+    // handleUpdateMerchantDetails,
+
+    formValues,
+    formErrors,
+    handleChange,
+    handleSubmit,
   };
 
   return <Context.Provider value={value}>{children}</Context.Provider>;
