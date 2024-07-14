@@ -33,7 +33,10 @@ export const GlobalProvider = ({ children }) => {
     Useremail: "",
     Userphone: "",
     Userpassword: "",
+    oldUserPassword: "",
+    newUserPassword: "",
   };
+
   const [formValues, setFormValues] = useState(initialValues);
   const [formErrors, setFormErrors] = useState({});
   const [isSubmit, setIsSubmit] = useState(false);
@@ -153,6 +156,26 @@ export const GlobalProvider = ({ children }) => {
       if (!values.Userphone) {
         errors.Userphone = "Phone number is required";
       }
+    } else if (formType === "userLogin") {
+      if (!values.Useremail) {
+        errors.Useremail = "Email is required";
+      } else if (!regex.test(values.Useremail)) {
+        errors.Useremail = "Email is invalid";
+      }
+      if (!values.Userpassword) {
+        errors.Userpassword = "Password is required";
+      }
+
+      // else if (formType === "updateUserPassword") {
+      //   if (!values.oldUserPassword) {
+      //     errors.oldUserPassword = "Old password is required";
+      //   }
+      //   if (!values.newUserPassword) {
+      //     errors.newUserPassword = "New password is required";
+      //   } else if (!values.newUserPassword > 4) {
+      //     errors.newUserPassword =
+      //       "New Password cannot be less than 4 characters";
+      //   }
     }
 
     return errors;
@@ -351,6 +374,34 @@ export const GlobalProvider = ({ children }) => {
   userId = getUserIdFromLocalStorage();
   console.log(userId);
 
+  // Log User in
+  const handleUserLogin = (e) => {
+    if (!handleSubmit(e, "userLogin")) return;
+    e.preventDefault();
+    axios
+      .post(`${api}/users/login`, {
+        email: formValues.Useremail,
+        password: formValues.Userpassword,
+      })
+      .then(
+        (response) => {
+          console.log(response, response.data.id);
+          console.log(userId);
+          if (response.data.id === userId) {
+            alert("Successful", formValues.Useremail, formValues.Userpassword);
+            navigate("/");
+          } else {
+            alert("Invalid email or password");
+          }
+          // Clear input fields
+          setFormValues(initialValues);
+        },
+        (error) => {
+          console.log(error);
+        }
+      );
+  };
+
   const value = {
     merchantLogin,
     handleCreateMerchant,
@@ -361,6 +412,7 @@ export const GlobalProvider = ({ children }) => {
     handleChange,
     handleSubmit,
     handleCreateUser,
+    handleUserLogin,
   };
 
   return <Context.Provider value={value}>{children}</Context.Provider>;

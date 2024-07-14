@@ -1,30 +1,11 @@
-import React, { useRef } from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import "../css/signup.css";
-import axios from "axios";
+import { Context } from "../context/Context";
 
 const SignIn = () => {
-  const email = useRef();
-  const password = useRef();
-
-  const handleSubmit = () => {
-    const emailValue = email.current.value;
-    const passwordValue = password.current.value;
-    axios
-      .post(`http://ecommerce.reworkstaging.name.ng/v2/users/login`, {
-        email: emailValue,
-        password: passwordValue,
-      })
-      .then(
-        (response) => {
-          console.log(response, response.id);
-          alert("Login Successful!", response.id);
-        },
-        (error) => {
-          console.log(error);
-        }
-      );
-  };
+  const { formValues, formErrors, handleChange, handleUserLogin } =
+    useContext(Context);
 
   return (
     <>
@@ -33,9 +14,26 @@ const SignIn = () => {
 
         <div className="signInForm">
           <form>
-            <input type="email" placeholder="Email Address" ref={email} />
+            <input
+              type="email"
+              name="Useremail"
+              placeholder="Email Address"
+              value={formValues.Useremail}
+              onChange={handleChange}
+            />
             <br />
-            <input type="password" placeholder="password" ref={password} />
+            <p className="error">{formErrors.Useremail}</p>
+            <br />
+            <input
+              type="password"
+              name="Userpassword"
+              placeholder="password"
+              value={formValues.Userpassword}
+              onChange={handleChange}
+            />
+            <br />
+            <p className="error">{formErrors.Userpassword}</p>
+            <br />
             <Link to="/updateUserDetail">Forgot Password?</Link>
             <br />
             <div className="checkbox">
@@ -44,10 +42,7 @@ const SignIn = () => {
             </div>
             <br />
             <p>Check this box only when on a private device.</p>
-            <button onClick={handleSubmit}>
-              <Link to="">Sign In</Link>
-              {/* <Link to="/">Sign In</Link> */}
-            </button>
+            <button onClick={handleUserLogin}>Sign In</button>
           </form>
           <h3>New to Costco?</h3>
           <button>
