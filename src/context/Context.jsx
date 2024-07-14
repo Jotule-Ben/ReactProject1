@@ -142,6 +142,49 @@ export const GlobalProvider = ({ children }) => {
       } else if (!values.newPassword > 4) {
         errors.newPassword = "New Password cannot be less than 4 characters";
       }
+    } else if (formType === "updateMerchantDetails") {
+      if (!values.firstName) {
+        errors.firstName = "First Name is required";
+      }
+      if (!values.lastName) {
+        errors.lastName = "Last Name is required";
+      }
+      if (!values.merchantEmail) {
+        errors.merchantEmail = "Email is required";
+      } else if (!regex.test(values.merchantEmail)) {
+        errors.merchantEmail = "Email is invalid";
+      }
+      if (!values.phone) {
+        errors.phone = "Phone number is required";
+      } else if (values.phone !== 11) {
+        errors.phone = "Not a valid Phone number";
+      }
+      if (!values.store) {
+        errors.store = "Store name is required";
+      }
+      if (!values.description) {
+        errors.description = "Description is required";
+      }
+      if (!values.state) {
+        errors.state = "State is required";
+      }
+      if (!values.district) {
+        errors.district = "District is required";
+      }
+      if (!values.twitter) {
+        errors.twitter = "X account is required";
+      }
+      if (!values.IG) {
+        errors.IG = "IG account is required";
+      }
+      if (!values.FB) {
+        errors.FB = "FB account is required";
+      }
+      if (!values.phones) {
+        errors.phones = "Other Phone number is required";
+      } else if (values.phones !== 11) {
+        errors.phones = "Not a valid Phone number";
+      }
     }
 
     return errors;
@@ -251,49 +294,49 @@ export const GlobalProvider = ({ children }) => {
       );
   };
 
-  // const handleUpdateMerchantDetails = (event) => {
-  //   event.preventDefault();
+  // Update merchant Details
+  const handleUpdateMerchantDetails = (e) => {
+    e.preventDefault();
+    handleSubmit(e, "updateMerchantDetails");
 
-  //   console.log(
-  //     `First Name: ${firstName} \nLast Name: ${lastName} \nmerchantEmail: ${merchantEmail}  \nPhone: ${phone}`
-  //   );
+    axios
+      .put(
+        `http://ecommerce.reworkstaging.name.ng/v2/merchants/${merchantId}`,
+        {
+          first_name: formValues.firstName,
+          last_name: formValues.lastName,
+          email: formValues.merchantEmail,
+          phone: formValues.phone,
+          store_name: formValues.store,
+          descp: formValues.description,
+          icon: "",
+          banner: "",
+          state: formValues.state,
+          district: formValues.district,
+          social_media: {
+            x: formValues.twitter,
+            face_book: formValues.FB,
+            instagram: formValues.IG,
+          },
+          phones: formValues.phones,
+        }
+      )
+      .then(
+        (response) => {
+          console.log(response, response.id);
+          alert("Successful");
+          // Clear Input fields
+          // setFormValues = initialValues;
+        },
+        (error) => {
+          console.log(error);
+          alert("Error");
+        }
+      );
+  };
 
-  //     axios
-  //       .put(
-  //         `http://ecommerce.reworkstaging.name.ng/v2/merchants/${merchantId}`,
-  //         {
-  //           first_name: firstName,
-  //           last_name: lastName,
-  //           email: merchantEmail,
-  //           phone: phone,
-  //           store_name: store,
-  //           descp: description,
-  //           icon: "",
-  //           banner: "",
-  //           state: state,
-  //           district: district,
-  //           social_media: {
-  //             x: twitter,
-  //             face_book: FB,
-  //             instagram: IG,
-  //           },
-  //           phones: phones,
-  //         }
-  //       )
-  //       .then(
-  //         (response) => {
-  //           console.log(response, response.id);
-  //           alert("Successful");
-  //         },
-  //         (error) => {
-  //           console.log(error);
-  //           alert("Error");
-  //         }
-  //       );
-  //   }
-
+  // Update Merchant Password
   const updateMerchantPassword = (e) => {
-    // Update Merchant Password
     e.preventDefault();
     handleSubmit(e, "updateMerchantPassword");
     axios
@@ -319,41 +362,10 @@ export const GlobalProvider = ({ children }) => {
   };
 
   const value = {
-    // email,
-    // setEmail,
-    // password,
-    // setPassword,
-    // firstName,
-    // setFirstName,
-    // lastName,
-    // setLastName,
-    // merchantEmail,
-    // setMerchantEmail,
-    // merchantPassword,
-    // setMerchantPassword,
-    // phone,
-    // setPhone,
-    // phones,
-    // setPhones,
-    // store,
-    // setStore,
-    // description,
-    // setDescription,
     merchantLogin,
     handleCreateMerchant,
     updateMerchantPassword,
-    // state,
-    // setState,
-    // district,
-    // setDistrict,
-    // twitter,
-    // setTwitter,
-    // FB,
-    // setFB,
-    // IG,
-    // setIG,
-    // handleUpdateMerchantDetails,
-
+    handleUpdateMerchantDetails,
     formValues,
     formErrors,
     handleChange,

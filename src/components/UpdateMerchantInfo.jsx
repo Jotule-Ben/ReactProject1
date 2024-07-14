@@ -5,21 +5,8 @@ import AccountNavbar from "./AccountNavbar";
 import AccountFooter from "./AccountFooter";
 
 const UpdateMerchantInfo = () => {
-  const {
-    firstName,
-    lastName,
-    merchantEmail,
-    phone,
-    phones,
-    store,
-    description,
-    state,
-    district,
-    twitter,
-    FB,
-    IG,
-    handleUpdateMerchantDetails,
-  } = useContext(Context);
+  const { formValues, formErrors, handleChange, handleUpdateMerchantDetails } =
+    useContext(Context);
 
   return (
     <>
@@ -27,33 +14,125 @@ const UpdateMerchantInfo = () => {
       <div className="signUp">
         <div className="signInForm">
           <form>
-            <input type="name" placeholder="First Name" ref={firstName} />
+            <input
+              type="name"
+              name="firstName"
+              placeholder="First Name"
+              onChange={handleChange}
+              value={formValues.firstName}
+            />{" "}
             <br />
-            <input type="name" placeholder="Last Name" ref={lastName} />
+            <p className="error">{formErrors.firstName}</p>
+            <br />
+            <input
+              type="name"
+              name="lastName"
+              placeholder="Last Name"
+              onChange={handleChange}
+              value={formValues.lastName}
+            />{" "}
+            <br />
+            <p className="error">{formErrors.lastName}</p>
             <br />
             <input
               type="email"
+              name="merchantEmail"
               placeholder="Email Address"
-              ref={merchantEmail}
-            />
+              onChange={handleChange}
+              value={formValues.merchantEmail}
+            />{" "}
             <br />
-            <input type="number" placeholder="Phone" ref={phone} />
+            <p className="error">{formErrors.merchantEmail}</p>
             <br />
-            <input type="text" placeholder="Store Name" ref={store} />
+            <input
+              type="number"
+              name="phone"
+              placeholder="Phone"
+              onChange={handleChange}
+              value={formValues.phone}
+            />{" "}
             <br />
-            <input type="text" placeholder="Description" ref={description} />
+            <p className="error">{formErrors.phone}</p>
             <br />
-            <input type="text" placeholder="State" ref={state} />
+            <input
+              type="text"
+              name="store"
+              placeholder="Store Name"
+              onChange={handleChange}
+              value={formValues.store}
+            />{" "}
             <br />
-            <input type="text" placeholder="District" ref={district} />
+            <p className="error">{formErrors.store}</p>
             <br />
-            <input type="text" placeholder="X(Twitter)" ref={twitter} />
+            <input
+              type="text"
+              name="description"
+              placeholder="Description"
+              onChange={handleChange}
+              value={formValues.description}
+            />{" "}
             <br />
-            <input type="text" placeholder="Facebook" ref={FB} />
+            <p className="error">{formErrors.description}</p>
             <br />
-            <input type="text" placeholder="Instagram" ref={IG} />
+            <input
+              type="text"
+              name="state"
+              placeholder="State"
+              onChange={handleChange}
+              value={formValues.state}
+            />{" "}
             <br />
-            <input type="number" placeholder="Phones" ref={phones} />
+            <p className="error">{formErrors.state}</p>
+            <br />
+            <input
+              type="text"
+              name="district"
+              placeholder="District"
+              onChange={handleChange}
+              value={formValues.district}
+            />{" "}
+            <br />
+            <p className="error">{formErrors.district}</p>
+            <br />
+            <input
+              type="text"
+              name="twitter"
+              placeholder="X(Twitter)"
+              onChange={handleChange}
+              value={formValues.twitter}
+            />{" "}
+            <br />
+            <p className="error">{formErrors.twitter}</p>
+            <br />
+            <input
+              type="text"
+              name="FB"
+              placeholder="Facebook"
+              onChange={handleChange}
+              value={formValues.FB}
+            />{" "}
+            <br />
+            <p className="error">{formErrors.FB}</p>
+            <br />
+            <input
+              type="text"
+              name="IG"
+              placeholder="Instagram"
+              onChange={handleChange}
+              value={formValues.IG}
+            />{" "}
+            <br />
+            <p className="error">{formErrors.IG}</p>
+            <br />
+            <input
+              type="number"
+              name="phones"
+              placeholder="Phones"
+              onChange={handleChange}
+              value={formValues.phones}
+            />{" "}
+            <br />
+            <p className="error">{formErrors.phones}</p>
             <br />
             <button onClick={handleUpdateMerchantDetails}>
               Update Details
