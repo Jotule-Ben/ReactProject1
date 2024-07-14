@@ -1,50 +1,11 @@
-import React, { useRef } from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import "../css/register.css";
-import axios from "axios";
+import { Context } from "../context/Context";
 
 const Register = () => {
-  const firstName = useRef();
-  const lastName = useRef();
-  const email = useRef();
-  const password = useRef();
-  const phone = useRef();
-
-  const handleSubmit = (event) => {
-    const firstNameValue = firstName.current.value;
-    const lastNameValue = lastName.current.value;
-    const emailValue = email.current.value;
-    const passwordValue = password.current.value;
-    const phoneValue = phone.current.value;
-    console.log(
-      `First Name: ${firstNameValue} \nLast Name: ${lastNameValue} \nEmail: ${emailValue} \nPassword: ${passwordValue} \nPhone: ${phoneValue}`
-    );
-
-    axios
-      .post(`http://ecommerce.reworkstaging.name.ng/v2/users`, {
-        first_name: firstNameValue,
-        last_name: lastNameValue,
-        email: emailValue,
-        phone: phoneValue,
-        password: passwordValue,
-      })
-      .then(
-        (response) => {
-          console.log(response, response.id);
-        },
-        (error) => {
-          console.log(error);
-        }
-      );
-    event.preventDefault();
-    // return {
-    //   firstNameValue,
-    //   lastNameValue,
-    //   emailValue,
-    //   passwordValue,
-    //   phoneValue,
-    // };
-  };
+  const { formValues, formErrors, handleChange, handleCreateUser } =
+    useContext(Context);
 
   return (
     <>
@@ -53,21 +14,61 @@ const Register = () => {
 
         <div className="registerForm">
           <form>
-            <input type="name" placeholder="First Name" ref={firstName} />
+            <input
+              type="name"
+              name="UserfirstName"
+              placeholder="First Name"
+              value={formValues.UserfirstName}
+              onChange={handleChange}
+            />{" "}
             <br />
-            <input type="name" placeholder="Last Name" ref={lastName} />
+            <p className="error">{formErrors.UserfirstName}</p>
             <br />
-            <input type="email" placeholder="Email Address" ref={email} />
+            <input
+              type="name"
+              name="UserlastName"
+              placeholder="Last Name"
+              value={formValues.UserlastName}
+              onChange={handleChange}
+            />{" "}
             <br />
-            <input type="password" placeholder="password" ref={password} />
+            <p className="error">{formErrors.UserlastName}</p>
             <br />
-            <input type="phone" placeholder="Phone" ref={phone} />
+            <input
+              type="email"
+              name="Useremail"
+              placeholder="Email Address"
+              value={formValues.Useremail}
+              onChange={handleChange}
+            />{" "}
+            <br />
+            <p className="error">{formErrors.Useremail}</p>
+            <br />
+            <input
+              type="password"
+              name="Userpassword"
+              placeholder="password"
+              value={formValues.Userpassword}
+              onChange={handleChange}
+            />{" "}
+            <br />
+            <p className="error">{formErrors.Userpassword}</p>
+            <br />
+            <input
+              type="phone"
+              name="Userphone"
+              placeholder="Phone"
+              value={formValues.Userphone}
+              onChange={handleChange}
+            />{" "}
+            <br />
+            <p className="error">{formErrors.Userphone}</p>
             <br />
             <p>
               By creating an account you agree to Costco,
               <Link>terms and conditions</Link> of use.
             </p>
-            <button onClick={handleSubmit}>
+            <button onClick={handleCreateUser}>
               Create Account
               {/* <Link to="/signUp">Create Account</Link> */}
             </button>

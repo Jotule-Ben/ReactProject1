@@ -7,6 +7,7 @@ export const Context = createContext();
 export const GlobalProvider = ({ children }) => {
   const api = `http://ecommerce.reworkstaging.name.ng/v2`;
   let merchantId;
+  let userId;
   const navigate = useNavigate();
 
   const initialValues = {
@@ -27,6 +28,11 @@ export const GlobalProvider = ({ children }) => {
     twitter: "",
     FB: "",
     IG: "",
+    UserfirstName: "",
+    UserlastName: "",
+    Useremail: "",
+    Userphone: "",
+    Userpassword: "",
   };
   const [formValues, setFormValues] = useState(initialValues);
   const [formErrors, setFormErrors] = useState({});
@@ -127,6 +133,26 @@ export const GlobalProvider = ({ children }) => {
       if (!values.phones) {
         errors.phones = "Other Phone number is required";
       }
+    } else if (formType === "createUser") {
+      if (!values.UserfirstName) {
+        errors.UserfirstName = "First Name is required";
+      }
+      if (!values.UserlastName) {
+        errors.UserlastName = "Last Name is required";
+      }
+      if (!values.Useremail) {
+        errors.Useremail = "Email is required";
+      } else if (!regex.test(values.Useremail)) {
+        errors.Useremail = "Email is invalid";
+      }
+      if (!values.Userpassword) {
+        errors.merchantPassword = "Password is required";
+      } else if (!values.merchantPassword > 4) {
+        errors.Userpassword = " Password cannot be less than 4 characters";
+      }
+      if (!values.Userphone) {
+        errors.Userphone = "Phone number is required";
+      }
     }
 
     return errors;
@@ -190,7 +216,8 @@ export const GlobalProvider = ({ children }) => {
 
   // Log merchant in
   const merchantLogin = (e) => {
-    handleSubmit(e, "login");
+    if (!handleSubmit(e, "login")) return;
+    handleSubmit(e, "");
     e.preventDefault();
     axios
       .post(`${api}/merchants/login`, {
@@ -219,7 +246,7 @@ export const GlobalProvider = ({ children }) => {
   // Update merchant Details
   const handleUpdateMerchantDetails = (e) => {
     e.preventDefault();
-    handleSubmit(e, "updateMerchantDetails");
+    if (!handleSubmit(e, "updateMerchantDetails")) return;
 
     axios
       .put(
@@ -246,8 +273,12 @@ export const GlobalProvider = ({ children }) => {
       .then(
         (response) => {
           console.log(response, response.id);
-          // Clear Input fields
-          // setFormValues = initialValues;
+          if (response.statusText === "ok") {
+            // Clear Input fields
+            setFormValues(initialValues);
+            console.log(response);
+            alert("Details Successfully Updated");
+          }
         },
         (error) => {
           console.log(error);
@@ -258,7 +289,8 @@ export const GlobalProvider = ({ children }) => {
   // Update Merchant Password
   const updateMerchantPassword = (e) => {
     e.preventDefault();
-    handleSubmit(e, "updateMerchantPassword");
+    if (!handleSubmit(e, "updateMerchantPassword")) return;
+
     axios
       .put(`${api}/merchants/${merchantId}/change-passwd`, {
         old_password: formValues.oldPassword,
@@ -267,12 +299,11 @@ export const GlobalProvider = ({ children }) => {
       .then(
         (response) => {
           console.log(response, response.data.id);
-          // Clear input fields
-          formValues.oldPassword = "";
-          formValues.newPassword = "";
-          console.log(merchantId);
-          if (response.data.id === merchantId) {
-            alert("Successful", formValues.oldPassword, formValues.newPassword);
+          if (response.statusText === "OK") {
+            // Clear Input fields
+            setFormValues(initialValues);
+            alert("Password Successfully Updated");
+            console.log(response);
           }
         },
         (error) => {
@@ -280,6 +311,45 @@ export const GlobalProvider = ({ children }) => {
         }
       );
   };
+
+  // Create User
+  const handleCreateUser = (e) => {
+    e.preventDefault();
+    if (!handleSubmit(e, "createUser")) return;
+
+    axios
+      .post(`${api}/users`, {
+        first_name: formValues.UserfirstName,
+        last_name: formValues.UserlastName,
+        email: formValues.Useremail,
+        phone: formValues.Userphone,
+        password: formValues.Userpassword,
+      })
+      .then(
+        (response) => {
+          console.log(response, response.id);
+          localStorage.setItem("userId", response.data.id);
+          userId = localStorage.getItem("userId");
+          console.log(userId);
+          if (response.statusText === "OK") {
+            // Clear Input fields
+            setFormValues(initialValues);
+            alert("User Successfully Created! \nLogin");
+            console.log(response);
+          }
+        },
+        (error) => {
+          console.log(error);
+        }
+      );
+  };
+
+  // get user id from local storage
+  function getUserIdFromLocalStorage() {
+    return localStorage.getItem("userId");
+  }
+  userId = getUserIdFromLocalStorage();
+  console.log(userId);
 
   const value = {
     merchantLogin,
@@ -290,6 +360,7 @@ export const GlobalProvider = ({ children }) => {
     formErrors,
     handleChange,
     handleSubmit,
+    handleCreateUser,
   };
 
   return <Context.Provider value={value}>{children}</Context.Provider>;

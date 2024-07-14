@@ -85,6 +85,11 @@
   background-color: #297ac0;
 }
 
+/* button a {
+  color: #fff;
+  text-decoration: none;
+} */
+
 .signUp form {
   border-bottom: 1px solid rgb(205, 205, 205);
   margin-bottom: 30px;
