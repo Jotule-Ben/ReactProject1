@@ -12,6 +12,7 @@
   padding: 25px;
   border: 1px solid rgb(198, 198, 198);
   height: 60vh;
+  width: 35%;
 }
 
 .merchantLogInForm {
@@ -76,4 +77,8 @@
 
 .createAccount form button:hover {
   background-color: #297ac0;
+}
+
+.merchantLogInForm {
+  width: 40%;
 }

@@ -7,7 +7,9 @@ export const Context = createContext();
 export const GlobalProvider = ({ children }) => {
   const api = `http://ecommerce.reworkstaging.name.ng/v2`;
   let merchantId;
+  let merchantName;
   let userId;
+  let userName;
   const navigate = useNavigate();
 
   const initialValues = {
@@ -165,19 +167,32 @@ export const GlobalProvider = ({ children }) => {
       if (!values.Userpassword) {
         errors.Userpassword = "Password is required";
       }
-
-      // else if (formType === "updateUserPassword") {
-      //   if (!values.oldUserPassword) {
-      //     errors.oldUserPassword = "Old password is required";
-      //   }
-      //   if (!values.newUserPassword) {
-      //     errors.newUserPassword = "New password is required";
-      //   } else if (!values.newUserPassword > 4) {
-      //     errors.newUserPassword =
-      //       "New Password cannot be less than 4 characters";
-      //   }
+    } else if (formType === "updateUserPassword") {
+      if (!values.oldUserPassword) {
+        errors.oldUserPassword = "Old password is required";
+      }
+      if (!values.newUserPassword) {
+        errors.newUserPassword = "New password is required";
+      } else if (!values.newUserPassword > 4) {
+        errors.newUserPassword =
+          "New Password cannot be less than 4 characters";
+      }
+    } else if (formType === "updateUserDetails") {
+      if (!values.UserfirstName) {
+        errors.UserfirstName = "First Name is required";
+      }
+      if (!values.UserlastName) {
+        errors.UserlastName = "Last Name is required";
+      }
+      if (!values.Useremail) {
+        errors.Useremail = "Email is required";
+      } else if (!regex.test(values.Useremail)) {
+        errors.Useremail = "Email is invalid";
+      }
+      if (!values.Userphone) {
+        errors.Userphone = "Phone number is required";
+      }
     }
-
     return errors;
   };
 
@@ -214,12 +229,12 @@ export const GlobalProvider = ({ children }) => {
       })
       .then(
         (response) => {
-          console.log(response, response.data.id);
           // Clear input fields
           setFormValues(initialValues);
           localStorage.setItem("merchantId", response.data.id);
           merchantId = localStorage.getItem("merchantId");
-          console.log(merchantId);
+          localStorage.setItem("merchantName", response.data.first_name);
+          merchantName = localStorage.getItem("merchantName");
           if (response.statusText === "OK") {
             alert("Merchant successfully created", response.data.id);
           }
@@ -235,12 +250,20 @@ export const GlobalProvider = ({ children }) => {
     return localStorage.getItem("merchantId");
   }
   merchantId = getmerchantIdFromLocalStorage();
-  console.log(merchantId);
+  // console.log(merchantId);
+
+  // get merchant name from local storage
+  function getmerchantNameFromLocalStorage() {
+    return localStorage.getItem("merchantName");
+  }
+  merchantName = getmerchantNameFromLocalStorage();
+  console.log(merchantName);
+
+  // let firstLetterOfMerchantName = merchantName[0];
 
   // Log merchant in
   const merchantLogin = (e) => {
     if (!handleSubmit(e, "login")) return;
-    handleSubmit(e, "");
     e.preventDefault();
     axios
       .post(`${api}/merchants/login`, {
@@ -249,8 +272,6 @@ export const GlobalProvider = ({ children }) => {
       })
       .then(
         (response) => {
-          console.log(response, response.data.id);
-          console.log(merchantId);
           if (response.data.id === merchantId) {
             alert("Successful", formValues.email, formValues.password);
             navigate("/merchantDashboard");
@@ -295,11 +316,9 @@ export const GlobalProvider = ({ children }) => {
       )
       .then(
         (response) => {
-          console.log(response, response.id);
           if (response.statusText === "ok") {
             // Clear Input fields
             setFormValues(initialValues);
-            console.log(response);
             alert("Details Successfully Updated");
           }
         },
@@ -321,12 +340,10 @@ export const GlobalProvider = ({ children }) => {
       })
       .then(
         (response) => {
-          console.log(response, response.data.id);
           if (response.statusText === "OK") {
             // Clear Input fields
             setFormValues(initialValues);
             alert("Password Successfully Updated");
-            console.log(response);
           }
         },
         (error) => {
@@ -350,15 +367,14 @@ export const GlobalProvider = ({ children }) => {
       })
       .then(
         (response) => {
-          console.log(response, response.id);
           localStorage.setItem("userId", response.data.id);
           userId = localStorage.getItem("userId");
-          console.log(userId);
+          localStorage.setItem("userName", response.data.first_name);
+          userName = localStorage.getItem("userName");
           if (response.statusText === "OK") {
             // Clear Input fields
             setFormValues(initialValues);
             alert("User Successfully Created! \nLogin");
-            console.log(response);
           }
         },
         (error) => {
@@ -372,7 +388,26 @@ export const GlobalProvider = ({ children }) => {
     return localStorage.getItem("userId");
   }
   userId = getUserIdFromLocalStorage();
-  console.log(userId);
+  // console.log(userId);
+
+  // get user name from local storage
+  function getUserNameFromLocalStorage() {
+    return localStorage.getItem("userName");
+  }
+  userName = getUserNameFromLocalStorage();
+  console.log(userName);
+
+  // let firstLetterOfUserName = userName[0];
+
+  const ShowUserLoggedIn = () => {
+    useEffect(() => {
+      if (userName !== "" || userName !== undefined) {
+        return userName;
+      } else {
+        return "SignUp / Register";
+      }
+    }, []);
+  };
 
   // Log User in
   const handleUserLogin = (e) => {
@@ -385,8 +420,6 @@ export const GlobalProvider = ({ children }) => {
       })
       .then(
         (response) => {
-          console.log(response, response.data.id);
-          console.log(userId);
           if (response.data.id === userId) {
             alert("Successful", formValues.Useremail, formValues.Userpassword);
             navigate("/");
@@ -395,6 +428,56 @@ export const GlobalProvider = ({ children }) => {
           }
           // Clear input fields
           setFormValues(initialValues);
+        },
+        (error) => {
+          console.log(error);
+        }
+      );
+  };
+
+  // Update user details
+  const handleUpdateUserDetails = (e) => {
+    e.preventDefault();
+    if (!handleSubmit(e, "updateUserDetails")) return;
+
+    axios
+      .put(`http://ecommerce.reworkstaging.name.ng/v2/users/${userId}`, {
+        first_name: formValues.UserfirstName,
+        last_name: formValues.UserlastName,
+        email: formValues.Useremail,
+        phone: formValues.Userphone,
+      })
+      .then(
+        (response) => {
+          if (response.statusText === "OK") {
+            alert("Details Successfully Updated");
+            // Clear Input fields
+            setFormValues(initialValues);
+          }
+        },
+        (error) => {
+          console.log(error);
+        }
+      );
+  };
+
+  // Update user Password
+  const handleUpdateUserPassword = (e) => {
+    e.preventDefault();
+    if (!handleSubmit(e, "updateUserPassword")) return;
+
+    axios
+      .put(`${api}/users/${userId}/change-passwd`, {
+        old_password: formValues.oldUserPassword,
+        new_password: formValues.newUserPassword,
+      })
+      .then(
+        (response) => {
+          if (response.statusText === "OK") {
+            // Clear Input fields
+            setFormValues(initialValues);
+            alert("Password Successfully Updated");
+          }
         },
         (error) => {
           console.log(error);
@@ -413,6 +496,9 @@ export const GlobalProvider = ({ children }) => {
     handleSubmit,
     handleCreateUser,
     handleUserLogin,
+    handleUpdateUserDetails,
+    handleUpdateUserPassword,
+    ShowUserLoggedIn,
   };
 
   return <Context.Provider value={value}>{children}</Context.Provider>;
