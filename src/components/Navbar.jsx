@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import { Form, InputGroup, Button } from "react-bootstrap";
 import "../css/nav.css";
@@ -11,10 +11,8 @@ import {
 } from "react-icons/fa6";
 import { FaHamburger, FaSearch } from "react-icons/fa";
 import { FiMenu } from "react-icons/fi";
-import { Context } from "../context/Context";
 
 const Navbar = () => {
-  const { ShowUserLoggedIn } = useContext(Context);
   return (
     <>
       <div className="navbarContainer">
