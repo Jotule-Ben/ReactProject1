@@ -12,6 +12,22 @@ export const GlobalProvider = ({ children }) => {
   let userName;
   const navigate = useNavigate();
 
+  const [formData, setFormData] = useState({
+    categoryName: "",
+  });
+
+  // Handle input changes
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prevState) => ({
+      ...prevState,
+      [name]: value,
+      [name]: value !== undefined ? value : "",
+    }));
+  };
+
+  const [categories, setCategories] = useState([]);
+
   const initialValues = {
     oldPassword: "",
     newPassword: "",
@@ -205,7 +221,7 @@ export const GlobalProvider = ({ children }) => {
 
   useEffect(() => {
     if (Object.keys(formErrors).length === 0 && isSubmit) {
-      console.log(formValues);
+      // console.log(formValues);
     }
   }, [formErrors, isSubmit, formValues]);
 
@@ -257,7 +273,7 @@ export const GlobalProvider = ({ children }) => {
     return localStorage.getItem("merchantName");
   }
   merchantName = getmerchantNameFromLocalStorage();
-  console.log(merchantName);
+  // console.log(merchantName);
 
   // let firstLetterOfMerchantName = merchantName[0];
 
@@ -395,7 +411,7 @@ export const GlobalProvider = ({ children }) => {
     return localStorage.getItem("userName");
   }
   userName = getUserNameFromLocalStorage();
-  console.log(userName);
+  // console.log(userName);
 
   // let firstLetterOfUserName = userName[0];
 
@@ -485,6 +501,75 @@ export const GlobalProvider = ({ children }) => {
       );
   };
 
+  // Create Category
+  const handleCreateCategory = (e) => {
+    e.preventDefault();
+
+    axios
+      .post(`${api}/categories`, {
+        merchant_id: merchantId,
+        name: formData.categoryName,
+        image:
+          "https://s.alicdn.com/@img/imgextra/i3/O1CN01gRUkNN1sW5HWJb8Me_!!6000000005773-2-tps-200-200.png",
+      })
+      .then(
+        (response) => {
+          if (response.statusText === "OK") {
+            // Clear Input fields
+            setFormData({ categoryName: "" });
+
+            // Show newly created category immediately
+            setCategories((prevCategories) => [
+              ...prevCategories,
+              response.data,
+            ]);
+            alert("Category Successfully Created");
+          }
+        },
+        (error) => {
+          console.log(error);
+        }
+      );
+  };
+
+  // Get categories
+  useEffect(() => {
+    axios
+      .get(`${api}/categories?merchant_id=${merchantId}`)
+      .then(
+        (response) => {
+          setCategories(response.data);
+        },
+        (error) => {
+          console.log(error);
+        }
+      )
+      .catch((error) => {
+        console.log(error);
+      });
+  }, [merchantId]);
+
+  // Handle Delete Category
+  // const handleGetCategoryId = (e) => {
+  //   const id = e.target;
+  //   console.log(id);
+  // };
+  const handleDeleteCategory = async (id) => {
+    // await axios.delete(`/categories/:category_id`);
+    // setCategories(categories.filter((category) => category.id !== id));
+    axios.delete(`${api}/categories/${id}`).then(
+      (response) => {
+        // setCategories(response.filter((category) => category.id !== id));
+        setCategories((prevCategories) =>
+          prevCategories.filter((category) => category.id !== id)
+        );
+      },
+      (error) => {
+        console.log(error);
+      }
+    );
+  };
+
   const value = {
     merchantLogin,
     handleCreateMerchant,
@@ -499,6 +584,13 @@ export const GlobalProvider = ({ children }) => {
     handleUpdateUserDetails,
     handleUpdateUserPassword,
     ShowUserLoggedIn,
+    handleCreateCategory,
+    formData,
+    handleInputChange,
+    categories,
+    setCategories,
+    // handleGetCategoryId,
+    handleDeleteCategory,
   };
 
   return <Context.Provider value={value}>{children}</Context.Provider>;
