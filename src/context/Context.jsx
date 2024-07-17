@@ -14,6 +14,16 @@ export const GlobalProvider = ({ children }) => {
 
   const [formData, setFormData] = useState({
     categoryName: "",
+    productTitle: "",
+    productDescription: "",
+    productPrice: "",
+    productBrand: "",
+    productQuantity: "",
+    productCurrency: "",
+    productMinQuantity: "",
+    productMaxQuantity: "",
+    productDiscount: "",
+    productDiscountExpiration: "",
   });
 
   // Handle input changes
@@ -27,6 +37,7 @@ export const GlobalProvider = ({ children }) => {
   };
 
   const [categories, setCategories] = useState([]);
+  const [createProduct, setCreateCategory] = useState([]);
 
   const initialValues = {
     oldPassword: "",
@@ -550,13 +561,7 @@ export const GlobalProvider = ({ children }) => {
   }, [merchantId]);
 
   // Handle Delete Category
-  // const handleGetCategoryId = (e) => {
-  //   const id = e.target;
-  //   console.log(id);
-  // };
   const handleDeleteCategory = async (id) => {
-    // await axios.delete(`/categories/:category_id`);
-    // setCategories(categories.filter((category) => category.id !== id));
     axios.delete(`${api}/categories/${id}`).then(
       (response) => {
         // setCategories(response.filter((category) => category.id !== id));
@@ -568,6 +573,152 @@ export const GlobalProvider = ({ children }) => {
         console.log(error);
       }
     );
+  };
+
+  // Create product
+
+  const getInitialState = () => {
+    const value = "Orange";
+    return value;
+  };
+
+  const [selectValue, setselectValue] = useState(getInitialState);
+  const [selectCategoryValue, setselectCategoryValue] =
+    useState(getInitialState);
+
+  const handleSelectChange = (e, id) => {
+    setselectValue(e.target.value, e.target.value.id);
+    console.log(e.target.value, id);
+  };
+
+  const handleSelectCategoryChange = (e) => {
+    const selectedCategoryId = e.target.value;
+    setselectCategoryValue(selectedCategoryId);
+    console.log("Selected Category ID:", selectedCategoryId);
+  };
+
+  const [file, setFile] = useState(null);
+
+  const handleFileChange = (event) => {
+    const selectedFile = event.target.files[0];
+    if (selectedFile) {
+      setFile(selectedFile);
+    }
+  };
+
+  const handleFileSubmit = (e) => {
+    e.preventDefault();
+
+    axios
+      .post(
+        `
+    http://bucket.reworkstaging.name.ng/resources`,
+        {
+          id: 231050054,
+          image: file,
+        }
+      )
+      .then(
+        (response) => {
+          if (response.statusText === "OK") {
+            alert("succesfully Uploaded", response);
+          }
+        },
+        (error) => {
+          console.log(error);
+        }
+      );
+    if (file) {
+      alert(
+        `File name: ${file.name}\nFile size: ${file.size}\nFile type: ${file.type}`
+      );
+    } else {
+      alert("No file selected");
+    }
+  };
+
+  const handleCreateProduct = (e) => {
+    e.preventDefault();
+
+    axios
+      .post(`${api}/products`, {
+        title: formData.productTitle,
+        descp: formData.productDescription,
+        price: formData.productPrice,
+        brand: formData.productBrand,
+        quantity: formData.productQuantity,
+        images: [
+          "https://s.alicdn.com/@sc04/kf/H8700687947a44b3fbfd55a09bae5b7fee.jpg",
+        ],
+        currency: formData.productCurrency,
+        min_qty: formData.productMinQuantity,
+        max_qty: formData.productMaxQuantity,
+        discount: formData.productDiscount,
+        discount_expiration: formData.productDiscountExpiration,
+        has_refund_policy: selectValue,
+        has_discount: selectValue,
+        has_shipment: selectValue,
+        has_variation: selectValue,
+        shipping_locations: [selectValue],
+        attrib: [
+          {
+            type: "",
+            content: [
+              {
+                name: "",
+                value: "",
+              },
+              {
+                name: "",
+                value: "",
+              },
+              {
+                name: "",
+                value: "",
+              },
+              {
+                name: "",
+                value: "",
+              },
+              {
+                name: "",
+                value: "",
+              },
+            ],
+          },
+          {
+            type: "",
+            content: [
+              {
+                name: "",
+                value: "",
+              },
+            ],
+          },
+        ],
+        category_id: selectCategoryValue,
+        merchant_id: merchantId,
+      })
+      .then(
+        (response) => {
+          console.log(selectValue);
+          if (response.statusText === "OK") {
+            console.log(selectValue);
+            // Clear Input fields
+            setFormData({ categoryName: "" });
+
+            // Show newly created category immediately
+            setCategories((prevCategories) => [
+              ...prevCategories,
+              response.data,
+            ]);
+            alert("Category Successfully Created");
+          }
+        },
+        (error) => {
+          console.log(error);
+        }
+      );
   };
 
   const value = {
@@ -591,6 +742,12 @@ export const GlobalProvider = ({ children }) => {
     setCategories,
     // handleGetCategoryId,
     handleDeleteCategory,
+    getInitialState,
+    handleSelectChange,
+    handleCreateProduct,
+    handleSelectCategoryChange,
+    handleFileChange,
+    handleFileSubmit,
   };
 
   return <Context.Provider value={value}>{children}</Context.Provider>;
