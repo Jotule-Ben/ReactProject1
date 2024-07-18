@@ -35,7 +35,7 @@ const AllCategories = () => {
           <tbody>
             {categories.map((category, index) => (
               <tr key={category.id}>
-                <td>{index}</td>
+                <td>{index + 1}</td>
                 <td>{category.name}</td>
                 <td>
                   <Button

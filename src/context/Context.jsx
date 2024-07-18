@@ -578,17 +578,23 @@ export const GlobalProvider = ({ children }) => {
   // Create product
 
   const getInitialState = () => {
-    const value = "Orange";
+    const value = "";
     return value;
   };
 
   const [selectValue, setselectValue] = useState(getInitialState);
   const [selectCategoryValue, setselectCategoryValue] =
     useState(getInitialState);
+  const [selectCountryValue, setselectCountryValue] = useState(getInitialState);
 
-  const handleSelectChange = (e, id) => {
-    setselectValue(e.target.value, e.target.value.id);
-    console.log(e.target.value, id);
+  const handleSelectChange = (e) => {
+    setselectValue(e.target.value);
+    console.log(e.target.value);
+  };
+
+  const handleSelectLocationChange = (e) => {
+    setselectCountryValue(e.target.value);
+    console.log(e.target.value);
   };
 
   const handleSelectCategoryChange = (e) => {
@@ -639,7 +645,6 @@ export const GlobalProvider = ({ children }) => {
 
   const handleCreateProduct = (e) => {
     e.preventDefault();
-    alert("Clicked!!");
 
     axios
       .post(`${api}/products`, {
@@ -648,9 +653,7 @@ export const GlobalProvider = ({ children }) => {
         price: formData.productPrice,
         brand: formData.productBrand,
         quantity: formData.productQuantity,
-        images: [
-          "https://s.alicdn.com/@sc04/kf/H8700687947a44b3fbfd55a09bae5b7fee.jpg",
-        ],
+        images: "",
         currency: formData.productCurrency,
         min_qty: formData.productMinQuantity,
         max_qty: formData.productMaxQuantity,
@@ -660,7 +663,7 @@ export const GlobalProvider = ({ children }) => {
         has_discount: selectValue,
         has_shipment: selectValue,
         has_variation: selectValue,
-        shipping_locations: [selectValue],
+        shipping_locations: [selectCountryValue],
         attrib: [
           {
             type: "",
@@ -720,11 +723,11 @@ export const GlobalProvider = ({ children }) => {
             });
 
             // Show newly created products immediately
-            setCreateproducts((prevProducts) => [
-              ...prevProducts,
-              response.data,
-            ]);
-            alert("Category Successfully Created");
+            // setCreateproducts((prevProducts) => [
+            //   ...prevProducts,
+            //   response.data,
+            // ]);
+            alert("Product Successfully Created");
           }
         },
         (error) => {
@@ -732,6 +735,24 @@ export const GlobalProvider = ({ children }) => {
         }
       );
   };
+
+  // Get products
+  useEffect(() => {
+    axios
+      .get(`${api}/products?merchant_id=${merchantId}`)
+      .then(
+        (response) => {
+          setCreateproducts(response.data);
+          console.log(response);
+        },
+        (error) => {
+          console.log(error);
+        }
+      )
+      .catch((error) => {
+        console.log(error);
+      });
+  }, [merchantId]);
 
   const value = {
     merchantLogin,
@@ -761,6 +782,7 @@ export const GlobalProvider = ({ children }) => {
     handleFileChange,
     handleFileSubmit,
     createProduct,
+    handleSelectLocationChange,
   };
 
   return <Context.Provider value={value}>{children}</Context.Provider>;

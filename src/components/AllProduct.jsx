@@ -23,6 +23,7 @@ const AllProduct = () => {
     handleFileChange,
     handleFileSubmit,
     createProduct,
+    handleSelectLocationChange,
   } = useContext(Context);
 
   return (
@@ -41,16 +42,17 @@ const AllProduct = () => {
             </tr>
           </thead>
           <tbody>
-            {createProduct.map((product, index) => (
-              <tr key={createProduct.id}>
-                <td>{index}</td>
-                <td>{product.name}</td>
-                <td>{product.currency}</td>
-                <td> {product.price}</td>
-                <td>{product.brand}</td>
-                <td>{product.amount}</td>
-              </tr>
-            ))}
+            {Array.isArray(createProduct) &&
+              createProduct.map((product, index) => (
+                <tr key={product.id}>
+                  <td>{index + 1}</td>
+                  <td>{product.name}</td>
+                  <td>{product.currency}</td>
+                  <td> {product.price}</td>
+                  <td>{product.brand}</td>
+                  <td>{product.amount}</td>
+                </tr>
+              ))}
             <tr>
               <td>1</td>
               <td>Men Show</td>
@@ -297,7 +299,7 @@ const AllProduct = () => {
               multiple
               multiselect
               value={getInitialState.value}
-              onChange={handleSelectChange}
+              onChange={handleSelectLocationChange}
             >
               <option value="all">All Countries</option>
               <option value="canada">Canada</option>
