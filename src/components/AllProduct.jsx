@@ -22,6 +22,7 @@ const AllProduct = () => {
     handleCreateProduct,
     handleFileChange,
     handleFileSubmit,
+    createProduct,
   } = useContext(Context);
 
   return (
@@ -36,22 +37,20 @@ const AllProduct = () => {
               <th>Currency</th>
               <th>Price</th>
               <th>Brand</th>
-              <th></th>
+              <th>Amount</th>
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td>1</td>
-              <td>Men Show</td>
-              <td>NGN</td>
-              <td> 25930.67</td>
-              <td>Samsung</td>
-              <td>
-                <Button variant="danger" onClick={() => console.log("danger")}>
-                  Delete
-                </Button>
-              </td>
-            </tr>
+            {createProduct.map((product, index) => (
+              <tr key={createProduct.id}>
+                <td>{index}</td>
+                <td>{product.name}</td>
+                <td>{product.currency}</td>
+                <td> {product.price}</td>
+                <td>{product.brand}</td>
+                <td>{product.amount}</td>
+              </tr>
+            ))}
             <tr>
               <td>1</td>
               <td>Men Show</td>

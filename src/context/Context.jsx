@@ -37,7 +37,7 @@ export const GlobalProvider = ({ children }) => {
   };
 
   const [categories, setCategories] = useState([]);
-  const [createProduct, setCreateCategory] = useState([]);
+  const [createProduct, setCreateproducts] = useState([]);
 
   const initialValues = {
     oldPassword: "",
@@ -639,6 +639,7 @@ export const GlobalProvider = ({ children }) => {
 
   const handleCreateProduct = (e) => {
     e.preventDefault();
+    alert("Clicked!!");
 
     axios
       .post(`${api}/products`, {
@@ -701,15 +702,26 @@ export const GlobalProvider = ({ children }) => {
       })
       .then(
         (response) => {
-          console.log(selectValue);
+          console.log(selectValue, response);
           if (response.statusText === "OK") {
             console.log(selectValue);
             // Clear Input fields
-            setFormData({ categoryName: "" });
+            setFormData({
+              productTitle: "",
+              productDescription: "",
+              productPrice: "",
+              productBrand: "",
+              productQuantity: "",
+              productCurrency: "",
+              productMinQuantity: "",
+              productMaxQuantity: "",
+              productDiscount: "",
+              productDiscountExpiration: "",
+            });
 
-            // Show newly created category immediately
-            setCategories((prevCategories) => [
-              ...prevCategories,
+            // Show newly created products immediately
+            setCreateproducts((prevProducts) => [
+              ...prevProducts,
               response.data,
             ]);
             alert("Category Successfully Created");
@@ -748,6 +760,7 @@ export const GlobalProvider = ({ children }) => {
     handleSelectCategoryChange,
     handleFileChange,
     handleFileSubmit,
+    createProduct,
   };
 
   return <Context.Provider value={value}>{children}</Context.Provider>;
