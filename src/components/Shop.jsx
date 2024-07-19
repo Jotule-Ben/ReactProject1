@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import "../css/shop.css";
 import { Link } from "react-router-dom";
 import banner from "../asset/BbyHeroImg.png";
@@ -19,8 +19,10 @@ import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 import { FaStar } from "react-icons/fa6";
 import { TfiAngleRight } from "react-icons/tfi";
+import { Context } from "../context/Context";
 
 const Shop = () => {
+  const { createProduct } = useContext(Context);
   return (
     <>
       <Navbar />
@@ -103,32 +105,38 @@ const Shop = () => {
 
         <div className="cardContainer">
           <div className="cardsec">
-            <Card className="cardContent">
-              <Link to="/detail">
-                <Card.Img variant="top" src={card6} />
-              </Link>
-              <Card.Body>
-                <Card.Title>$21.99</Card.Title>
+            {createProduct.map((product) => (
+              <Card className="cardContent">
                 <Link to="/detail">
-                  Kirkland signature baby wipes fragrance free, 900-count
+                  <Card.Img
+                    variant="top"
+                    src="https://www.costco.com/kirkland-signature-procare-with-dual-hmo's%2c-non-gmo-infant-formula-42-oz%2c-2-pack.product.100810650.html"
+                  />
                 </Link>
-                <br />
-                <Link>
-                  <FaStar /> <FaStar /> <FaStar /> <FaStar /> <FaStar />
-                  (10140)
-                </Link>
-                <Card.Text>Delivery Available</Card.Text>
-                <p>
-                  {" "}
-                  <input type="checkbox" />
-                  <span>Compare Product</span>
-                </p>
-                <div className="cardFooter">
-                  <span>-</span> <span>1</span> <span>+</span>
-                  <Button variant="primary">Add</Button>
-                </div>
-              </Card.Body>
-            </Card>
+                <Card.Body>
+                  <Card.Title>${product.price}</Card.Title>
+                  <Link to="/detail">
+                    {/* Kirkland signature baby wipes fragrance free, 900-count */}
+                    {product.title}
+                  </Link>
+                  <br />
+                  <Link>
+                    <FaStar /> <FaStar /> <FaStar /> <FaStar /> <FaStar />
+                    (10140)
+                  </Link>
+                  <Card.Text>Delivery Available</Card.Text>
+                  <p>
+                    {" "}
+                    <input type="checkbox" />
+                    <span>Compare Product</span>
+                  </p>
+                  <div className="cardFooter">
+                    <span>-</span> <span>1</span> <span>+</span>
+                    <Button variant="primary">Add</Button>
+                  </div>
+                </Card.Body>
+              </Card>
+            ))}
 
             <Card className="cardContent">
               <Card.Img variant="top" src={card7} />
@@ -152,7 +160,7 @@ const Shop = () => {
               </Card.Body>
             </Card>
 
-            <Card className="cardContent">
+            {/* <Card className="cardContent">
               <Card.Img variant="top" src={card8} />
               <Card.Body>
                 <Card.Title>$21.99</Card.Title>
@@ -385,7 +393,7 @@ const Shop = () => {
                   <Button variant="primary">Select Options</Button>
                 </div>
               </Card.Body>
-            </Card>
+            </Card> */}
           </div>
           <div className="cardSecFooter">
             <div className="cardFooterPagination">

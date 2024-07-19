@@ -24,6 +24,7 @@ export const GlobalProvider = ({ children }) => {
     productMaxQuantity: "",
     productDiscount: "",
     productDiscountExpiration: "",
+    productImage: "",
   });
 
   // Handle input changes
@@ -603,48 +604,10 @@ export const GlobalProvider = ({ children }) => {
     console.log("Selected Category ID:", selectedCategoryId);
   };
 
-  const [file, setFile] = useState(null);
-
-  const handleFileChange = (event) => {
-    const selectedFile = event.target.files[0];
-    if (selectedFile) {
-      setFile(selectedFile);
-    }
-  };
-
-  const handleFileSubmit = (e) => {
-    e.preventDefault();
-
-    axios
-      .post(
-        `
-    http://bucket.reworkstaging.name.ng/resources`,
-        {
-          id: 231050054,
-          image: file,
-        }
-      )
-      .then(
-        (response) => {
-          if (response.statusText === "OK") {
-            alert("succesfully Uploaded", response);
-          }
-        },
-        (error) => {
-          console.log(error);
-        }
-      );
-    if (file) {
-      alert(
-        `File name: ${file.name}\nFile size: ${file.size}\nFile type: ${file.type}`
-      );
-    } else {
-      alert("No file selected");
-    }
-  };
-
   const handleCreateProduct = (e) => {
     e.preventDefault();
+
+    console.log("Type:", typeof createProduct);
 
     axios
       .post(`${api}/products`, {
@@ -653,7 +616,7 @@ export const GlobalProvider = ({ children }) => {
         price: formData.productPrice,
         brand: formData.productBrand,
         quantity: formData.productQuantity,
-        images: "",
+        images: formData.productImage,
         currency: formData.productCurrency,
         min_qty: formData.productMinQuantity,
         max_qty: formData.productMaxQuantity,
@@ -708,6 +671,7 @@ export const GlobalProvider = ({ children }) => {
           console.log(selectValue, response);
           if (response.statusText === "OK") {
             console.log(selectValue);
+            console.log(response);
             // Clear Input fields
             setFormData({
               productTitle: "",
@@ -723,10 +687,10 @@ export const GlobalProvider = ({ children }) => {
             });
 
             // Show newly created products immediately
-            // setCreateproducts((prevProducts) => [
-            //   ...prevProducts,
-            //   response.data,
-            // ]);
+            setCreateproducts((prevProducts) => [
+              ...prevProducts,
+              response.data.data,
+            ]);
             alert("Product Successfully Created");
           }
         },
@@ -742,8 +706,9 @@ export const GlobalProvider = ({ children }) => {
       .get(`${api}/products?merchant_id=${merchantId}`)
       .then(
         (response) => {
-          setCreateproducts(response.data);
-          console.log(response);
+          setCreateproducts(response.data.data);
+          console.log(response.data.data[0].title);
+          console.log(response.data.data);
         },
         (error) => {
           console.log(error);
@@ -773,14 +738,11 @@ export const GlobalProvider = ({ children }) => {
     handleInputChange,
     categories,
     setCategories,
-    // handleGetCategoryId,
     handleDeleteCategory,
     getInitialState,
     handleSelectChange,
     handleCreateProduct,
     handleSelectCategoryChange,
-    handleFileChange,
-    handleFileSubmit,
     createProduct,
     handleSelectLocationChange,
   };

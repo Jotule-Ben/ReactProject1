@@ -20,8 +20,6 @@ const AllProduct = () => {
     handleSelectChange,
     handleSelectCategoryChange,
     handleCreateProduct,
-    handleFileChange,
-    handleFileSubmit,
     createProduct,
     handleSelectLocationChange,
   } = useContext(Context);
@@ -46,25 +44,13 @@ const AllProduct = () => {
               createProduct.map((product, index) => (
                 <tr key={product.id}>
                   <td>{index + 1}</td>
-                  <td>{product.name}</td>
-                  <td>{product.currency}</td>
+                  {/* <td>{product.title}</td> */}
+                  {/* <td>{product.currency}</td> */}
                   <td> {product.price}</td>
                   <td>{product.brand}</td>
-                  <td>{product.amount}</td>
+                  <td>{product.quantity}</td>
                 </tr>
               ))}
-            <tr>
-              <td>1</td>
-              <td>Men Show</td>
-              <td>NGN</td>
-              <td> 25930.67</td>
-              <td>Samsung</td>
-              <td>
-                <Button variant="danger" onClick={() => console.log("danger")}>
-                  Delete
-                </Button>
-              </td>
-            </tr>
           </tbody>
         </Table>
 
@@ -85,8 +71,6 @@ const AllProduct = () => {
             <input
               name="productTitle"
               style={{ width: "100%", padding: "5px", borderRadius: "5px" }}
-              class="input"
-              id="addnewtodo"
               type="text"
               placeholder="add a title ..."
               value={formData.productTitle || ""}
@@ -100,8 +84,6 @@ const AllProduct = () => {
             <input
               name="productDescription"
               style={{ width: "100%", padding: "5px", borderRadius: "5px" }}
-              class="input"
-              id="description"
               type="text"
               placeholder="add a description ..."
               value={formData.productDescription || ""}
@@ -115,8 +97,6 @@ const AllProduct = () => {
             <input
               name="productPrice"
               style={{ width: "100%", padding: "5px", borderRadius: "5px" }}
-              class="input"
-              id="product_price"
               type="text"
               placeholder="price ..."
               value={formData.productPrice || ""}
@@ -130,10 +110,8 @@ const AllProduct = () => {
             <input
               name="productBrand"
               style={{ width: "100%", padding: "5px", borderRadius: "5px" }}
-              class="input"
-              id="brand"
               type="text"
-              placeholder="add a title ..."
+              placeholder="add a brand ..."
               value={formData.productBrand || ""}
               onChange={handleInputChange}
             />
@@ -145,10 +123,8 @@ const AllProduct = () => {
             <input
               name="productQuantity"
               style={{ width: "100%", padding: "5px", borderRadius: "5px" }}
-              class="input"
-              id="product_qty"
               type="number"
-              placeholder="add a title ..."
+              placeholder="Product Quantity ..."
               value={formData.productQuantity || ""}
               onChange={handleInputChange}
             />
@@ -160,10 +136,8 @@ const AllProduct = () => {
             <input
               name="productCurrency"
               style={{ width: "100%", padding: "5px", borderRadius: "5px" }}
-              class="input"
-              id="currency"
               type="text"
-              placeholder="add a title ..."
+              placeholder="Currency ..."
               value={formData.productCurrency || ""}
               onChange={handleInputChange}
             />
@@ -175,10 +149,8 @@ const AllProduct = () => {
             <input
               name="productMinQuantity"
               style={{ width: "100%", padding: "5px", borderRadius: "5px" }}
-              class="input"
-              id="min_qty"
               type="text"
-              placeholder="add a title ..."
+              placeholder="Minimum Quantity ..."
               value={formData.productMinQuantity || ""}
               onChange={handleInputChange}
             />
@@ -190,10 +162,8 @@ const AllProduct = () => {
             <input
               name="productMaxQuantity"
               style={{ width: "100%", padding: "5px", borderRadius: "5px" }}
-              class="input"
-              id="max_qty"
               type="text"
-              placeholder="add a title ..."
+              placeholder="Maximum Quantity ..."
               value={formData.productMaxQuantity || ""}
               onChange={handleInputChange}
             />
@@ -205,10 +175,8 @@ const AllProduct = () => {
             <input
               name="productDiscount"
               style={{ width: "100%", padding: "5px", borderRadius: "5px" }}
-              class="input"
-              id="discount"
               type="text"
-              placeholder="add a title ..."
+              placeholder="Discount ..."
               value={formData.productDiscount || ""}
               onChange={handleInputChange}
             />
@@ -220,10 +188,8 @@ const AllProduct = () => {
             <input
               name="productDiscountExpiration"
               style={{ width: "100%", padding: "5px", borderRadius: "5px" }}
-              class="input"
-              id="discount_expiration"
               type="datetime-local"
-              placeholder="add a title ..."
+              placeholder="Discount Expiration ..."
               value={formData.productDiscountExpiration || ""}
               onChange={handleInputChange}
             />
@@ -235,7 +201,6 @@ const AllProduct = () => {
             <select
               style={{ width: "100%", padding: "5px", borderRadius: "5px" }}
               name=""
-              id="refund_policy"
               value={getInitialState.value}
               onChange={handleSelectChange}
             >
@@ -250,7 +215,6 @@ const AllProduct = () => {
             <select
               style={{ width: "100%", padding: "5px", borderRadius: "5px" }}
               name=""
-              id="has_discount"
               value={getInitialState.value}
               onChange={handleSelectChange}
             >
@@ -265,7 +229,6 @@ const AllProduct = () => {
             <select
               style={{ width: "100%", padding: "5px", borderRadius: "5px" }}
               name=""
-              id="has_shipment"
               value={getInitialState.value}
               onChange={handleSelectChange}
             >
@@ -280,7 +243,6 @@ const AllProduct = () => {
             <select
               style={{ width: "100%", padding: "5px", borderRadius: "5px" }}
               name=""
-              id="has_variation"
               value={getInitialState.value}
               onChange={handleSelectChange}
             >
@@ -295,7 +257,6 @@ const AllProduct = () => {
             <select
               style={{ width: "100%", padding: "5px", borderRadius: "5px" }}
               name=""
-              id="shipping_location"
               multiple
               multiselect
               value={getInitialState.value}
@@ -314,7 +275,6 @@ const AllProduct = () => {
             <select
               style={{ width: "100%", padding: "5px", borderRadius: "5px" }}
               name="taskTags"
-              id="taskTags"
               value={getInitialState.value}
               onChange={handleSelectCategoryChange}
             >
@@ -328,12 +288,13 @@ const AllProduct = () => {
 
           <Modal.Body>
             <input
-              type="file"
-              id="fileInput"
-              onChange={handleFileChange}
-              multiple
+              name="productImage"
+              style={{ width: "100%", padding: "5px", borderRadius: "5px" }}
+              type="text"
+              placeholder="add a title ..."
+              value={formData.productImage || ""}
+              onChange={handleInputChange}
             />
-            <button onClick={handleFileSubmit}>Upload</button>
           </Modal.Body>
           <Modal.Footer>
             <Button variant="primary" onClick={handleCreateProduct}>
