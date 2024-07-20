@@ -18,6 +18,7 @@ import UpdateUserDetails from "./components/UpdateUserDetails";
 import AllProduct from "./components/AllProduct";
 import AllCategories from "./components/AllCategories";
 import MerchantNavbar from "./components/MerchantNavbar";
+import Cart from "./pages/Cart";
 
 function App() {
   return (
@@ -43,6 +44,7 @@ function App() {
         <Route path="/merchantdashboard" exac element={<MerchantNavbar />} />
         <Route path="/allCategories" exac element={<AllCategories />} />
         <Route path="/allProducts" exac element={<AllProduct />} />
+        <Route path="/cart" exac element={<Cart />} />
       </Routes>
     </>
   );

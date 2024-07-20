@@ -97,7 +97,7 @@ const Navbar = () => {
                 <Link> Orders & Returns </Link>
               </li>
               <li>
-                <Link>
+                <Link to="/cart">
                   <span className="cart">
                     <FaCartArrowDown />
                   </span>
