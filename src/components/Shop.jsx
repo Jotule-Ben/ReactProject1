@@ -22,7 +22,9 @@ import { TfiAngleRight } from "react-icons/tfi";
 import { Context } from "../context/Context";
 
 const Shop = () => {
-  const { createProduct } = useContext(Context);
+  const { createProduct, addToCart, setSelectedProductId } =
+    useContext(Context);
+
   return (
     <>
       <Navbar />
@@ -106,12 +108,9 @@ const Shop = () => {
         <div className="cardContainer">
           <div className="cardsec">
             {createProduct.map((product) => (
-              <Card className="cardContent">
+              <Card className="cardContent" key={product.id}>
                 <Link to="/detail">
-                  <Card.Img
-                    variant="top"
-                    src="https://www.costco.com/kirkland-signature-procare-with-dual-hmo's%2c-non-gmo-infant-formula-42-oz%2c-2-pack.product.100810650.html"
-                  />
+                  <Card.Img variant="top" src={product.image} />
                 </Link>
                 <Card.Body>
                   <Card.Title>${product.price}</Card.Title>
@@ -132,7 +131,16 @@ const Shop = () => {
                   </p>
                   <div className="cardFooter">
                     <span>-</span> <span>1</span> <span>+</span>
-                    <Button variant="primary">Add</Button>
+                    <Button
+                      variant="primary"
+                      // onClick={handleGetProductId(product.id)}
+                      // onClick={addToCart}
+                      onClick={() => {
+                        addToCart(product.id);
+                      }}
+                    >
+                      Add
+                    </Button>
                   </div>
                 </Card.Body>
               </Card>
