@@ -1,0 +1,205 @@
+.cartflextitle {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-left: 3px;
+}
+
+.cartflextitle h1 {
+  font-weight: 400;
+}
+
+.cartflextitle span {
+  font-size: 25px;
+}
+
+.cartflextitle hr {
+  color: #a4a4a4;
+  width: 66%;
+  margin-bottom: 40px;
+  margin-top: 35px;
+}
+
+.cartPreview {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #a4a4a4;
+}
+
+.cartBlockSec p {
+  font-size: 15px;
+}
+
+.cartBlockSec p:nth-child(2) {
+  font-size: 13px;
+}
+
+.cartQuantity {
+  display: flex;
+}
+
+.cartQuantityFlex {
+  display: flex;
+  justify-content: space-between;
+}
+
+.cartQuantity > span {
+  padding: 4px;
+  background-color: #eaeaea;
+  color: #32638d;
+  font-size: 25px;
+  border: 1px solid #333;
+  height: 40px;
+  width: 35px;
+  text-align: center;
+  padding-top: 0px;
+  cursor: pointer;
+}
+
+.cartQuantity span:nth-child(1) {
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  border-right: none;
+}
+
+.cartQuantity span:nth-child(2) {
+  color: #333;
+  background-color: #fcfcfc;
+  width: 40px;
+}
+
+.cartQuantity span:nth-child(3) {
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  border-left: none;
+}
+
+.cartQuantityFlex p:nth-child(2) {
+  font-size: 15px;
+}
+
+.cartFlexContainer a {
+  text-decoration: none;
+}
+
+.cartFlexContainer a:hover {
+  text-decoration: underline;
+}
+
+.shippingSection1 {
+  border: 3px solid #4383ba;
+  padding: 10px;
+  margin-bottom: 30px;
+  background-color: #eeeded;
+}
+
+.shippingSection1 p {
+  margin-bottom: 0;
+}
+
+.shippingSection1 strong:first-of-type {
+  padding-bottom: 10px;
+}
+
+.shippingSection1 strong:last-of-type {
+  color: #1d8e1d;
+}
+
+.shippingSection2 {
+  border: 1px solid gray;
+  padding: 10px;
+  margin-bottom: 20px;
+}
+
+.shippingSection2 p {
+  margin-bottom: 0;
+}
+
+.shippingSection2 strong {
+  color: #1d8e1d;
+}
+
+.shippingSection div:last-of-type {
+  padding-top: 15px;
+  text-align: right;
+}
+
+.cartFlexContainer {
+  display: flex;
+}
+
+.productPreviewTextTwo {
+  width: 100%;
+}
+
+.earnSection {
+  border: 1px solid #5e5e5e;
+  padding: 10px;
+}
+
+.earnFlex {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 10px;
+}
+
+.earnFlex a {
+  font-size: 15px;
+  line-height: 1.3;
+  padding-left: 8px;
+}
+
+.earnBlock p {
+  margin-bottom: 1px;
+  font-size: 14px;
+}
+
+.earnSection button {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  border: none;
+}
+
+.earnSection {
+  margin-bottom: 10px;
+}
+
+.subtotal {
+  padding: 15px;
+  border: 1px solid grey;
+  background-color: #fafafa;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 1px 2px 0px;
+}
+
+.subtotalSec1 {
+  border-bottom: 1px solid #acacac;
+  padding-bottom: 10px;
+}
+
+.subtotalSec1 > div {
+  display: flex;
+  justify-content: space-between;
+}
+
+.subtotalSec2 div:first-of-type {
+  display: flex;
+  justify-content: space-between;
+  font-weight: 500;
+}
+
+.subtotalSec2 div:first-of-type p {
+  font-size: 18px !important;
+}
+
+.subtotalSec2 div:last-of-type p {
+  font-size: 12px;
+}
+
+.subtotal button {
+  width: 100%;
+  color: #fafafa;
+  padding: 10px;
+  border: none;
+  background-color: #008000;
+}
