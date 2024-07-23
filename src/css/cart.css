@@ -23,6 +23,7 @@
   display: flex;
   justify-content: space-between;
   padding-bottom: 15px;
+  margin-bottom: 20px;
   border-bottom: 1px solid #a4a4a4;
 }
 
@@ -128,7 +129,7 @@
   display: flex;
 }
 
-.productPreviewTextTwo {
+.cartPage .productPreviewTextTwo {
   width: 100%;
 }
 
@@ -202,4 +203,10 @@
   padding: 10px;
   border: none;
   background-color: #008000;
+}
+
+.cartFlexContainer {
+  margin-bottom: 20px !important;
+  padding-bottom: 10px !important;
+  /* border-bottom: 1px solid #eaeaea; */
 }

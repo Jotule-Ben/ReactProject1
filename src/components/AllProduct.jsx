@@ -22,6 +22,8 @@ const AllProduct = () => {
     handleCreateProduct,
     createProduct,
     handleSelectLocationChange,
+    handleFileChange,
+    handleFileSubmit,
   } = useContext(Context);
 
   return (
@@ -42,13 +44,13 @@ const AllProduct = () => {
           <tbody>
             {Array.isArray(createProduct) &&
               createProduct.map((product, index) => (
-                <tr key={product.id}>
+                <tr key={product?.id}>
                   <td>{index + 1}</td>
-                  {/* <td>{product.title}</td> */}
-                  {/* <td>{product.currency}</td> */}
-                  <td> {product.price}</td>
-                  <td>{product.brand}</td>
-                  <td>{product.quantity}</td>
+                  <td>{product?.title}</td>
+                  <td>{product?.currency}</td>
+                  <td> {product?.price}</td>
+                  <td>{product?.brand}</td>
+                  <td>{product?.quantity}</td>
                 </tr>
               ))}
           </tbody>
@@ -290,11 +292,14 @@ const AllProduct = () => {
             <input
               name="productImage"
               style={{ width: "100%", padding: "5px", borderRadius: "5px" }}
+              // type="file"
               type="text"
-              placeholder="add a title ..."
+              placeholder="add an image URL ..."
               value={formData.productImage || ""}
               onChange={handleInputChange}
+              // onChange={handleFileChange}
             />
+            <button onClick={handleFileSubmit}>Upload</button>
           </Modal.Body>
           <Modal.Footer>
             <Button variant="primary" onClick={handleCreateProduct}>
