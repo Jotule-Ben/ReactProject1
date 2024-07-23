@@ -1,8 +1,6 @@
 import React, { createContext, useEffect, useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import { BsWindowSidebar } from "react-icons/bs";
-
 export const Context = createContext();
 
 export const GlobalProvider = ({ children }) => {
