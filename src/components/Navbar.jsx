@@ -43,7 +43,7 @@ const Navbar = () => {
           </div>
         );
       } else {
-        <Link to="/signUp"> Sign In / Register </Link>;
+        return <Link to="/signUp"> Sign In / Register </Link>;
       }
     }, []);
   };
@@ -72,10 +72,10 @@ const Navbar = () => {
                 <Link> New Lower Prices </Link>
               </li>
               <li>
-                <Link> Get Email Offers </Link>
+                <Link> Customer Service </Link>
               </li>
               <li>
-                <Link> Customer Service </Link>
+                <Link to="/updateUserDetail"> Manage Account </Link>
               </li>
               <li>
                 <Link to="/merchantaccount"> Settings </Link>
@@ -108,7 +108,18 @@ const Navbar = () => {
             </ul>
           </div>
           <div className="navLinkSecondGroup">
-            <img src={costcologo} alt="Logo" />
+            <Link to="/" style={{ width: "6%" }}>
+              <img
+                src={costcologo}
+                alt="Logo"
+                style={{
+                  width: "210%",
+                  height: "20%",
+                  margin: "0",
+                  padding: "0",
+                }}
+              />
+            </Link>
             <div>
               <InputGroup className="mb-3 inputGroup">
                 <Form.Control
@@ -124,7 +135,34 @@ const Navbar = () => {
               </InputGroup>
             </div>
             <ul>
-              <li>{UserLoggedIn}</li>
+              <li>
+                {userName && userName !== "" && userName !== undefined ? (
+                  <div
+                    style={{
+                      padding: "5px",
+                      textAlign: "center",
+                      marginBottom: "0px",
+                      backgroundColor: "palevioletred",
+                      borderRadius: "50%",
+                      height: "25px",
+                      width: "25px",
+                    }}
+                  >
+                    <p
+                      style={{
+                        padding: "0",
+                        margin: "0",
+                        marginTop: "-2px",
+                        color: "white",
+                      }}
+                    >
+                      {firstLetterOfUserName}
+                    </p>
+                  </div>
+                ) : (
+                  <Link to="/signUp">Sign In / Register</Link>
+                )}
+              </li>
               <li>
                 <Link> Orders & Returns </Link>
               </li>
@@ -142,19 +180,23 @@ const Navbar = () => {
 
         <div className="navLinkThirdGroup">
           <ul>
-            <li className="dropdown">
-              <Link className="dropbtn" to="/shop">
+            <li className="dropdown2">
+              <Link className="dropbtn2" to="/shop">
                 <span>
                   <FiMenu />
                 </span>
                 Shop
               </Link>
 
-              <div className="dropdown-content">
-                <div className="row">
-                  <div className="column">
+              <div className="dropdown-content2" style={{ left: "-1120px" }}>
+                <div className="row2">
+                  <div className="column2">
                     <h6>Appliances </h6>
-                    <h6>Baby </h6>
+                    <h6>
+                      <Link to="/shop" style={{ color: "#333" }}>
+                        Baby{" "}
+                      </Link>
+                    </h6>
                     <h6>Beauty </h6>
                     <h6>Clothing, Luggage & Handbags </h6>
                     <h6>Computers </h6>
