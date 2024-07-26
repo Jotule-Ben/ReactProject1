@@ -8,61 +8,93 @@ import { Context } from "../context/Context";
 import image from "../asset/cartLastImage.png";
 
 const Cart = () => {
-  const { cart, removeFromCart, incrementQty, decrementQty, getTotalPrice } =
-    useContext(Context);
+  const {
+    cart,
+    removeFromCart,
+    incrementQty,
+    decrementQty,
+    getTotalPrice,
+    cartQuantity,
+    userId,
+    deleteCartItem,
+    price,
+  } = useContext(Context);
   return (
     <>
       <Navbar />
       <Container fluid className="cartPage">
         <div className="cartflextitle">
           <h1>
-            Cart <span>({cart.length}Items)</span>
+            Cart <span>({cart?.length}Items)</span>
           </h1>
 
           <hr />
         </div>
 
-        {cart.length === 0 ? (
+        {cart === 0 ? (
           <h2>Cart Is Empty</h2>
         ) : (
           <>
             <Row className="cartFlexContainer">
               <Col xs={12} md={8}>
-                {cart.map((item) => (
-                  <div className="cartPreview" key={item.id}>
+                {cart?.map((product) => (
+                  <div className="cartPreview" key={product.id}>
                     <div className="cartPreviewImage mx-2">
                       <Image
-                        src={item.image}
+                        src={product.image}
                         // src="https://images.pexels.com/photos/1266808/pexels-photo-1266808.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-                        alt={item.title}
+                        alt={product.title}
                         className="rounded"
                         width="200px"
                         margin-right
                       />
                     </div>
                     <div className="cartBlockSec">
-                      <p>
-                        Kirkland Signature Baby Wipes Fragrance Free, 900-count{" "}
-                      </p>
+                      <p>{product.title}</p>
                       <p>Item 1493488 </p>
-                      <p>${item.price}</p>
+                      <p>${product.amount}</p>
                       <div className="cartQuantityFlex">
                         <div className="cartQuantity">
-                          <span onClick={() => decrementQty(item.id)}>-</span>
+                          {/* <span onClick={() => decrementQty(item.id)}>-</span>
                           <span>{item.quantity}</span>
-                          <span onClick={() => incrementQty(item.id)}>+</span>
+                          <span onClick={() => incrementQty(item.id)}>+</span> */}
+                          <span
+                            onClick={() =>
+                              cartQuantity({
+                                quantity: product.quantity - 1,
+                                user_id: userId,
+                                product_id: product.id,
+                                has_variation: false,
+                              })
+                            }
+                          >
+                            -
+                          </span>
+                          <span>{product.quantity}</span>
+                          <span
+                            onClick={() =>
+                              cartQuantity({
+                                quantity: product.quantity + 1,
+                                user_id: userId,
+                                product_id: product.id,
+                                has_variation: false,
+                              })
+                            }
+                          >
+                            +
+                          </span>
                         </div>
                         <div>
                           <p>Total</p>
                           <p>
                             $
-                            {parseFloat(item.price.replace(/,/g, "")) *
-                              parseInt(item.quantity)}
+                            {product.amount.replace(/,/g, "") *
+                              product.quantity}
                           </p>
                         </div>
                       </div>
                       <br />
-                      <Link onClick={() => removeFromCart(item.id)}>
+                      <Link onClick={() => deleteCartItem(product.id)}>
                         Remove
                       </Link>
                     </div>
@@ -125,7 +157,8 @@ const Cart = () => {
                     <div className="subtotalSec1">
                       <div>
                         <p>Subtotal</p>
-                        <p>${getTotalPrice()}</p>
+                        {/* <p>${getTotalPrice()}</p> */}
+                        <p>${price}</p>
                       </div>
                       <div>
                         <p>
@@ -136,7 +169,8 @@ const Cart = () => {
                     </div>
                     <div className="subtotalSec2">
                       <div>
-                        <p>Estimated Total</p> <p>${getTotalPrice()}</p>
+                        {/* <p>Estimated Total</p> <p>${getTotalPrice()}</p> */}
+                        <p>Estimated Total</p> <p>${price}</p>
                       </div>
                       <p>Applicable taxes will be calculated at checkout.</p>
                     </div>

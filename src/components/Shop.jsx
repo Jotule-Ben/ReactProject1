@@ -22,7 +22,7 @@ import { TfiAngleRight } from "react-icons/tfi";
 import { Context } from "../context/Context";
 
 const Shop = () => {
-  const { createProduct, addToCart, setSelectedProductId } =
+  const { createProduct, addToCart, userId, setSelectedProductId } =
     useContext(Context);
 
   return (
@@ -134,9 +134,16 @@ const Shop = () => {
                     <Button
                       variant="primary"
                       // onClick={handleGetProductId(product.id)}
-                      // onClick={addToCart}
+                      // onClick={() => {
+                      //   addToCart(product);
+                      // }}
                       onClick={() => {
-                        addToCart(product);
+                        addToCart({
+                          quantity: 2,
+                          user_id: userId,
+                          product_id: product.id,
+                          has_variation: false,
+                        });
                       }}
                     >
                       Add
