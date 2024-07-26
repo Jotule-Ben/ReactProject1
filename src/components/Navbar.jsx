@@ -9,44 +9,12 @@ import {
   FaCartArrowDown,
   FaLocationDot,
 } from "react-icons/fa6";
-import { FaHamburger, FaSearch } from "react-icons/fa";
+import { FaSearch } from "react-icons/fa";
 import { FiMenu } from "react-icons/fi";
 import { Context } from "../context/Context";
 
 const Navbar = () => {
   const { userName, firstLetterOfUserName } = useContext(Context);
-  const UserLoggedIn = () => {
-    useEffect(() => {
-      if (userName && userName !== "" && userName !== undefined) {
-        return (
-          <div
-            style={{
-              padding: "5px",
-              textAlign: "center",
-              marginBottom: "0px",
-              backgroundColor: "palevioletred",
-              borderRadius: "50%",
-              height: "25px",
-              width: "25px",
-            }}
-          >
-            <p
-              style={{
-                padding: "0",
-                margin: "0",
-                marginTop: "-4px",
-                color: "white",
-              }}
-            >
-              {firstLetterOfUserName}
-            </p>
-          </div>
-        );
-      } else {
-        return <Link to="/signUp"> Sign In / Register </Link>;
-      }
-    }, []);
-  };
   return (
     <>
       <div className="navbarContainer">
