@@ -286,7 +286,7 @@ export const GlobalProvider = ({ children }) => {
   merchantName = getmerchantNameFromLocalStorage();
   // console.log(merchantName);
 
-  // let firstLetterOfMerchantName = merchantName[0];
+  let firstLetterOfMerchantName = merchantName.slice(0, 1);
 
   // Log merchant in
   const merchantLogin = (e) => {
@@ -424,12 +424,36 @@ export const GlobalProvider = ({ children }) => {
   userName = getUserNameFromLocalStorage();
   // console.log(userName);
 
-  // let firstLetterOfUserName = userName[0];
+  // let firstLetterOfUserName = userName.slice(0, 1);
 
   const ShowUserLoggedIn = () => {
     useEffect(() => {
       if (userName !== "" || userName !== undefined) {
-        return userName;
+        // return userName;
+        return (
+          <div
+            style={{
+              padding: "5px",
+              textAlign: "center",
+              marginBottom: "0px",
+              backgroundColor: "palevioletred",
+              borderRadius: "50%",
+              height: "25px",
+              width: "25px",
+            }}
+          >
+            <p
+              style={{
+                padding: "0",
+                margin: "0",
+                marginTop: "-4px",
+                color: "white",
+              }}
+            >
+              B
+            </p>
+          </div>
+        );
       } else {
         return "SignUp / Register";
       }
@@ -871,10 +895,13 @@ export const GlobalProvider = ({ children }) => {
     getTotalPrice,
     cart,
     handleFileChange,
-
     handleFileSubmit,
+    userName,
+    firstLetterOfMerchantName,
+    // firstLetterOfUserName,
     // handleGetProductId,
     // setSelectedProductId,
+    merchantName,
   };
 
   return <Context.Provider value={value}>{children}</Context.Provider>;
